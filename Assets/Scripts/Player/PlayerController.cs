@@ -40,6 +40,6 @@ public class PlayerController : MonoBehaviour {
         // Horizontal movement
         rb.AddForce(new Vector2(moveInput * moveSpeed, 0));
         // Pass movement speed to animator
-        anim.SetFloat("speed",moveInput);
+        anim.SetFloat("speed",Mathf.Abs(moveInput));
     }
 }
