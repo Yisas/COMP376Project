@@ -2,6 +2,7 @@
 
 ##TODO
 - Discuss PlayerIdle animation
+- Switch floor collider to edge
 
 ![alt tag](https://github.com/Yisas/COMP376Project/blob/master/Guidelines_1.png)
 ![alt tag](https://github.com/Yisas/COMP376Project/blob/master/Guidelines_2.png)

@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour {
 
     public float moveSpeed;
     public float jumpForce;
+    public float jabSpeed;
     public LayerMask mWhatIsGround;
     public float kGroundCheckRadius = 0.1f;
     Vector3 direction;
@@ -14,8 +15,9 @@ public class PlayerController : MonoBehaviour {
     bool moving;
     bool grounded;
     bool falling;
+    bool attackingMelee;                     
 
-    //references
+    // References
     Rigidbody2D rb;
 	Transform transform;
     Transform sprites;
@@ -41,7 +43,13 @@ public class PlayerController : MonoBehaviour {
         CheckGrounded();
         CheckFalling();
         CollectInput();
-	}
+
+        if (attackingMelee)
+        {
+            MeleeAttack();
+            attackingMelee = false;
+        }
+    }
 
     void FixedUpdate()
     {
@@ -52,15 +60,15 @@ public class PlayerController : MonoBehaviour {
     private void CollectInput()
     {
         moveInput = Input.GetAxis("Horizontal");
+        attackingMelee = Input.GetButtonDown("Melee Attack");
     }
 
     private void Move()
     {
-        direction = new Vector2(moveInput, 0.0f);
         // Horizontal movement
+        direction = new Vector2(moveInput, 0.0f);
         transform.Translate(direction * Time.deltaTime * moveSpeed);
         FaceDirection (direction);
-        //rb.AddForce(new Vector2(moveInput * moveSpeed, 0));
         // Pass movement speed to animator
         anim.SetFloat("speed",Mathf.Abs(moveInput));
     }
@@ -71,6 +79,12 @@ public class PlayerController : MonoBehaviour {
         {
             rb.velocity = new Vector2(0.0f, jumpForce);
         }
+    }
+
+    private void MeleeAttack()
+    {
+        anim.SetFloat("jabSpeed",jabSpeed);
+        anim.SetTrigger("jab");
     }
 
 	private void FaceDirection(Vector2 direction)
