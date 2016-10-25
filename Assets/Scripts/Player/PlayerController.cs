@@ -3,16 +3,28 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
-
+    
     public int playerNumber;
+	[Header("--- General Movement Variables ---")]
     public float moveSpeed;
     public float jumpForce;
+
+	[Header("--- Attack Variables ---")]
+	[Tooltip("This float is communicated to the animator to set the speed of the jab animation")]
     public float jabSpeed;
+	[Tooltip("Minimum velocity treshold after which the player is considered running and the jab attack will be a dash")]
+	public float jabDashTreshold;	
+	[Tooltip("Single force to be applied on the dash attack")]
+	public float jabDashForce;
+
+	[Header("--- State Variables ---")]
     public LayerMask mWhatIsGround;
     public float kGroundCheckRadius = 0.1f;
     Vector3 direction;
 
     // Booleans
+	bool inputLocked = false;		// Character controls will need to be locked for small intervals of time, like during a dash jab
+	bool movementLocked = false;	// As above but just for the movement
     bool running;
     bool moving;
     bool grounded;
@@ -47,7 +59,9 @@ public class PlayerController : MonoBehaviour
     {
         CheckGrounded();
         CheckFalling();
-        CollectInput();
+
+		if(!inputLocked)
+        	CollectInput();
 
         if (attackingMelee)
         {
@@ -64,8 +78,12 @@ public class PlayerController : MonoBehaviour
 
     private void CollectInput()
     {
-        moveInput = Input.GetAxis("Horizontal " + playerNumber);
+        if (!movementLocked)
+            moveInput = Input.GetAxis("Horizontal " + playerNumber);
+
         attackingMelee = Input.GetButtonDown("Melee Attack " + playerNumber);
+		
+        
     }
 
     private void Move()
@@ -88,6 +106,19 @@ public class PlayerController : MonoBehaviour
 
     private void MeleeAttack()
     {
+		// Read a speed treshold to see if you should do a dash attack
+		if (Mathf.Abs (moveInput) >= jabDashTreshold) 
+		{
+			// Lock movement inputs
+			movementLocked = true;
+			// Keep velocity in y, new velocity burst in x
+			moveInput = 0;
+			// Cancel prior horizontal velocity
+			rb.velocity = new Vector2 (0, rb.velocity.y);
+			// Using force instead of velocity to add single dash burst
+			rb.AddForce (new Vector2( jabDashForce * Mathf.Sign(direction.x), 0));
+		}
+
         anim.SetFloat("jabSpeed",jabSpeed);
         anim.SetTrigger("jab");
     }
@@ -125,4 +156,13 @@ public class PlayerController : MonoBehaviour
         Debug.Log("I am colliding with " + col.gameObject.name);
     }
     
+	public void SetInputLocked(bool locked)
+	{
+		inputLocked = locked;
+	}
+
+	public void SetMovementLocked(bool locked)
+	{
+		movementLocked = locked;
+	}
 }
