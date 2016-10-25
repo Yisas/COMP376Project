@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour {
     private void MeleeAttack()
     {
 		// Read a speed treshold to see if you should do a dash attack
-		if (Mathf.Abs (rb.velocity.x) >= jabDashTreshold) 
+		if (Mathf.Abs (moveInput) >= jabDashTreshold) 
 		{
 			// Lock movement inputs
 			movementLocked = true;
