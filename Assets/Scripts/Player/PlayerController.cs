@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour
+{
 
+    public int playerNumber;
     public float moveSpeed;
     public float jumpForce;
     public float jabSpeed;
@@ -25,16 +27,19 @@ public class PlayerController : MonoBehaviour {
     Transform groundCheck;
 
     private float moveInput = 0.0f;
+    
 
 	// Use this for initialization
 	void Start ()
-    {
+	{
         // Setup references
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
         transform = GetComponent<Transform>();
         sprites = transform.FindChild("Sprites");
         groundCheck = transform.FindChild("GroundCheck");
+
+       
     }
 	
 	// Update is called once per frame
@@ -59,8 +64,8 @@ public class PlayerController : MonoBehaviour {
 
     private void CollectInput()
     {
-        moveInput = Input.GetAxis("Horizontal");
-        attackingMelee = Input.GetButtonDown("Melee Attack");
+        moveInput = Input.GetAxis("Horizontal " + playerNumber);
+        attackingMelee = Input.GetButtonDown("Melee Attack " + playerNumber);
     }
 
     private void Move()
@@ -113,6 +118,11 @@ public class PlayerController : MonoBehaviour {
     private void CheckFalling()
     {
         falling = rb.velocity.y < 0.0f;
+    }
+
+    public void OnCollisionEnter2DChild(Collision2D col)
+    {
+        Debug.Log("I am colliding with " + col.gameObject.name);
     }
     
 }
