@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
     Vector3 direction;
 
     // Booleans
+	bool inputLocked = false;		// Character controls will need to be locked for small intervals of time, like during a dash jab
     bool running;
     bool moving;
     bool grounded;
@@ -42,7 +43,9 @@ public class PlayerController : MonoBehaviour {
     {
         CheckGrounded();
         CheckFalling();
-        CollectInput();
+
+		if(!inputLocked)
+        	CollectInput();
 
         if (attackingMelee)
         {
@@ -115,4 +118,8 @@ public class PlayerController : MonoBehaviour {
         falling = rb.velocity.y < 0.0f;
     }
     
+	public void SetInputLocked(bool locked)
+	{
+		inputLocked = locked;
+	}
 }
