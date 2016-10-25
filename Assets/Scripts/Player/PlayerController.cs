@@ -3,11 +3,19 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
+	[Header("--- General Movement Variables ---")]
     public float moveSpeed;
     public float jumpForce;
+
+	[Header("--- Attack Variables ---")]
+	[Tooltip("This float is communicated to the animator to set the speed of the jab animation")]
     public float jabSpeed;
-	public float jabDashTreshold;	// Minimum velocity treshold after which the player is considered running and the jab attack will be a dash
-	public float jabDashForce;		// Single force to be applied on the dash attack
+	[Tooltip("Minimum velocity treshold after which the player is considered running and the jab attack will be a dash")]
+	public float jabDashTreshold;	
+	[Tooltip("Single force to be applied on the dash attack")]
+	public float jabDashForce;
+
+	[Header("--- State Variables ---")]
     public LayerMask mWhatIsGround;
     public float kGroundCheckRadius = 0.1f;
     Vector3 direction;
