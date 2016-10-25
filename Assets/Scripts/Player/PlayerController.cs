@@ -6,12 +6,14 @@ public class PlayerController : MonoBehaviour {
     public float moveSpeed;
     public float jumpForce;
     public float jabSpeed;
+	public float jabDashForce;
     public LayerMask mWhatIsGround;
     public float kGroundCheckRadius = 0.1f;
     Vector3 direction;
 
     // Booleans
 	bool inputLocked = false;		// Character controls will need to be locked for small intervals of time, like during a dash jab
+	bool movementLocked = false;	// As above but just for the movement
     bool running;
     bool moving;
     bool grounded;
@@ -62,7 +64,13 @@ public class PlayerController : MonoBehaviour {
 
     private void CollectInput()
     {
-        moveInput = Input.GetAxis("Horizontal");
+		// Movement Inputs
+		if (!movementLocked) 
+		{
+			moveInput = Input.GetAxis ("Horizontal");
+		}
+
+		// Attack Inputs
         attackingMelee = Input.GetButtonDown("Melee Attack");
     }
 
@@ -86,6 +94,16 @@ public class PlayerController : MonoBehaviour {
 
     private void MeleeAttack()
     {
+		// TODO read a speed treshold to see if you should do a dash attack
+
+		// TODO Hard coding dash attack for now
+		// Lock movement inputs
+		movementLocked = true;
+		// Keep velocity in y, new velocity burst in x
+		moveInput = 0;
+		rb.velocity = new Vector2 (0, rb.velocity.y);
+		rb.AddForce (new Vector2( jabDashForce * Mathf.Sign(direction.x), 0));
+
         anim.SetFloat("jabSpeed",jabSpeed);
         anim.SetTrigger("jab");
     }
@@ -121,5 +139,10 @@ public class PlayerController : MonoBehaviour {
 	public void SetInputLocked(bool locked)
 	{
 		inputLocked = locked;
+	}
+
+	public void SetMovementLocked(bool locked)
+	{
+		movementLocked = locked;
 	}
 }

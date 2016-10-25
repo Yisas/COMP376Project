@@ -19,4 +19,13 @@ public class AuxAnimationCommunicator : MonoBehaviour {
 		else if(locked==1)
 			playerController.SetInputLocked (true);
 	}
+
+	// Using integer notation for input since the animator function called doesn't support bool
+	public void SetMovementLocked(int locked)
+	{
+		if(locked == 0)
+			playerController.SetMovementLocked (false);
+		else if(locked==1)
+			playerController.SetMovementLocked (true);
+	}
 }
