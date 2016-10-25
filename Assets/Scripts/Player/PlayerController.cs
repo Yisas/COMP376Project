@@ -6,7 +6,8 @@ public class PlayerController : MonoBehaviour {
     public float moveSpeed;
     public float jumpForce;
     public float jabSpeed;
-	public float jabDashForce;
+	public float jabDashTreshold;	// Minimum velocity treshold after which the player is considered running and the jab attack will be a dash
+	public float jabDashForce;		// Single force to be applied on the dash attack
     public LayerMask mWhatIsGround;
     public float kGroundCheckRadius = 0.1f;
     Vector3 direction;
@@ -94,15 +95,18 @@ public class PlayerController : MonoBehaviour {
 
     private void MeleeAttack()
     {
-		// TODO read a speed treshold to see if you should do a dash attack
-
-		// TODO Hard coding dash attack for now
-		// Lock movement inputs
-		movementLocked = true;
-		// Keep velocity in y, new velocity burst in x
-		moveInput = 0;
-		rb.velocity = new Vector2 (0, rb.velocity.y);
-		rb.AddForce (new Vector2( jabDashForce * Mathf.Sign(direction.x), 0));
+		// Read a speed treshold to see if you should do a dash attack
+		if (Mathf.Abs (rb.velocity.x) >= jabDashTreshold) 
+		{
+			// Lock movement inputs
+			movementLocked = true;
+			// Keep velocity in y, new velocity burst in x
+			moveInput = 0;
+			// Cancel prior horizontal velocity
+			rb.velocity = new Vector2 (0, rb.velocity.y);
+			// Using force instead of velocity to add single dash burst
+			rb.AddForce (new Vector2( jabDashForce * Mathf.Sign(direction.x), 0));
+		}
 
         anim.SetFloat("jabSpeed",jabSpeed);
         anim.SetTrigger("jab");
