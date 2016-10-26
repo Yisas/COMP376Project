@@ -3,10 +3,12 @@ using System.Collections;
 
 public class PlayerCollisionDetector : MonoBehaviour
 {
-    private GameObject parentObject;
+    private PlayerController player;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
+	    player = transform.root.gameObject.GetComponent<PlayerController>();
 	}
 	
 	// Update is called once per frame
@@ -14,8 +16,25 @@ public class PlayerCollisionDetector : MonoBehaviour
 	
 	}
 
-    void OnCollisionEnter2D(Collision2D col)
+    private IEnumerator Wait(float seconds)
     {
+        yield return new WaitForSeconds(seconds);
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        GameObject oppositePlayer = col.transform.root.gameObject;
         
+        if (col.gameObject.CompareTag("Hand"))
+        {
+            player.RemoveHealth(oppositePlayer);
+        }
+        
+    }
+
+    void OnTriggerExit2D(Collider2D col)
+    {
+        StartCoroutine(Wait(0.75f));
+        player.SetIsHit(false);
     }
 }

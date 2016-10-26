@@ -8,8 +8,9 @@ public class PlayerController : MonoBehaviour
 	[Header("--- General Movement Variables ---")]
     public float moveSpeed;
     public float jumpForce;
+    public bool animIsJabbing;
 
-	[Header("--- Attack Variables ---")]
+    [Header("--- Attack Variables ---")]
 	[Tooltip("This float is communicated to the animator to set the speed of the jab animation")]
     public float jabSpeed;
 	[Tooltip("Minimum velocity treshold after which the player is considered running and the jab attack will be a dash")]
@@ -29,7 +30,9 @@ public class PlayerController : MonoBehaviour
     bool moving;
     bool grounded;
     bool falling;
-    bool attackingMelee;                     
+    bool attackingMelee;
+    bool isHit;
+                         
 
     // References
     Rigidbody2D rb;
@@ -39,7 +42,7 @@ public class PlayerController : MonoBehaviour
     Transform groundCheck;
 
     private float moveInput = 0.0f;
-    
+    private float jabCounter = 0.0f;
 
 	// Use this for initialization
 	void Start ()
@@ -68,6 +71,8 @@ public class PlayerController : MonoBehaviour
             MeleeAttack();
             attackingMelee = false;
         }
+
+        
     }
 
     void FixedUpdate()
@@ -120,10 +125,12 @@ public class PlayerController : MonoBehaviour
 		}
 
         anim.SetFloat("jabSpeed",jabSpeed);
-        anim.SetTrigger("jab");
+        //anim.SetTrigger("jab");
+        anim.SetBool("isAttacking", true);
+        animIsJabbing = true;
     }
 
-	private void FaceDirection(Vector2 direction)
+    private void FaceDirection(Vector2 direction)
 	{
         if (direction.x != 0.0f)
         {
@@ -151,9 +158,31 @@ public class PlayerController : MonoBehaviour
         falling = rb.velocity.y < 0.0f;
     }
 
-    public void OnCollisionEnter2DChild(Collision2D col)
+    public void RemoveHealth(GameObject oppositePlayer)
     {
-        Debug.Log("I am colliding with " + col.gameObject.name);
+        PlayerController opponent = oppositePlayer.GetComponent<PlayerController>();
+        if (opponent)
+        {
+            if (opponent.animIsJabbing && !isHit)
+            {
+                //after 3 jabs, take off the next limb.
+                isHit = true;
+                jabCounter++;
+                print(jabCounter);
+            }
+        }
+        
+            
+    }
+
+    public void SetIsHit(bool hit)
+    {
+        this.isHit = hit;
+    }
+
+    public bool IsHit()
+    {
+        return isHit;
     }
     
 	public void SetInputLocked(bool locked)
@@ -165,4 +194,10 @@ public class PlayerController : MonoBehaviour
 	{
 		movementLocked = locked;
 	}
+
+    public Animator GetAnimator()
+    {
+        return anim;
+    }
+
 }

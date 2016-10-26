@@ -28,4 +28,10 @@ public class AuxAnimationCommunicator : MonoBehaviour {
 		else if(locked==1)
 			playerController.SetMovementLocked (true);
 	}
+
+    public void DisableIsAttacking()
+    {
+        playerController.animIsJabbing = false;
+        playerController.GetAnimator().SetBool("isAttacking", false);
+    }
 }
