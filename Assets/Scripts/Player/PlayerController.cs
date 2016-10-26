@@ -8,6 +8,11 @@ public class PlayerController : MonoBehaviour
 	[Header("--- General Movement Variables ---")]
     public float moveSpeed;
     public float jumpForce;
+	[Tooltip("This float is communicated to the animator to set the speed of the prepare for jump animation")]
+	public float jumpPrepareSpeed;
+	[Tooltip("This float is communicated to the animator to set the speed of the jump animation")]
+	public float jumpSpeed;
+	[HideInInspector]				
     public bool animIsJabbing;
 
     [Header("--- Attack Variables ---")]
@@ -32,6 +37,7 @@ public class PlayerController : MonoBehaviour
 	bool inputLocked = false;		// Character controls will need to be locked for small intervals of time, like during a dash jab
 	bool movementLocked = false;	// As above but just for the movement
     bool running;
+	bool jumping;
     bool moving;
     bool grounded;
     bool falling;
@@ -87,7 +93,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         Move();
-        Jump();
+		JumpPrepare();
     }
 
     private void CollectInput()
@@ -97,7 +103,7 @@ public class PlayerController : MonoBehaviour
 
         attackingMelee = Input.GetButtonDown("Melee Attack " + playerNumber);
 		
-        
+		jumping = Input.GetButtonDown ("Jump" + playerNumber);
     }
 
     private void Move()
@@ -110,13 +116,26 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("speed",Mathf.Abs(moveInput));
     }
 
-    private void Jump()
+	// The animator will finish the jump sequence after this method is called
+    private void JumpPrepare()
     {
-        if (grounded && Input.GetButton("Jump"))
+		if (grounded && jumping)
         {
-            rb.velocity = new Vector2(0.0f, jumpForce);
+			jumping = false;
+
+			// Set animator speed variables and trigger attack type
+			anim.SetFloat("jumpPrepareSpeed", jumpPrepareSpeed);
+			anim.SetFloat("jumpSpeed", jumpSpeed);
+			anim.SetTrigger ("jump");
+
         }
     }
+
+	// The animator will call this method to apply the physics movement when the prepare animation is done
+	public void JumpStart()
+	{
+		rb.velocity = new Vector2(0.0f, jumpForce);
+	}
 
     private void MeleeAttack()
 	{
@@ -168,10 +187,13 @@ public class PlayerController : MonoBehaviour
             if (col.gameObject != gameObject)
             {
                 grounded = true;
+				anim.SetBool ("grounded", grounded);
                 return;
             }
         }
         grounded = false;
+
+		anim.SetBool ("grounded", grounded);
     }
 
     private void CheckFalling()

@@ -33,4 +33,9 @@ public class AuxAnimationCommunicator : MonoBehaviour {
     {
         playerController.animIsJabbing = false;
     }
+
+	public void JumpStart()
+	{
+		playerController.JumpStart ();
+	}
 }
