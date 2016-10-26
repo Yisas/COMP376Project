@@ -35,7 +35,16 @@ public class PlayerCollisionDetector : MonoBehaviour
 
         if (col.gameObject.CompareTag("Hand"))
         {
-            player.RemoveHealth(oppositePlayer);
+            if (gameObject != oppositePlayer)
+                player.GetHitByJab(oppositePlayer);
+        }
+
+        else if (col.gameObject.CompareTag("Club"))
+        {
+            print(gameObject.name);
+            print(col.gameObject.name);
+            if(gameObject != oppositePlayer)
+                player.GetHitByClub(oppositePlayer);
         }
         
     }

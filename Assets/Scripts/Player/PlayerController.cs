@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
 	public float jumpSpeed;
 	[HideInInspector]				
     public bool animIsJabbing;
+    public bool animIsClubbing;
 
     [Header("--- Attack Variables ---")]
 	[Tooltip("This float is communicated to the animator to set the speed of the jab animation")]
@@ -165,6 +166,7 @@ public class PlayerController : MonoBehaviour
 			anim.SetFloat ("clubPrepareSpeed",clubAttackSpeed);
 			anim.SetFloat ("clubSpeed",clubAttackPepare);
 			anim.SetTrigger ("club");
+		    animIsClubbing = true;
 		}
         
         
@@ -201,7 +203,7 @@ public class PlayerController : MonoBehaviour
         falling = rb.velocity.y < 0.0f;
     }
 
-    public void RemoveHealth(GameObject oppositePlayer)
+    public void GetHitByJab(GameObject oppositePlayer)
     {
         PlayerController opponent = oppositePlayer.GetComponent<PlayerController>();
         if (opponent)
@@ -220,15 +222,25 @@ public class PlayerController : MonoBehaviour
         }  
     }
 
+    public void GetHitByClub(GameObject oppositePlayer)
+    {
+        PlayerController opponent = oppositePlayer.GetComponent<PlayerController>();
+        if (opponent)
+        {
+            if (opponent.animIsClubbing && !isHit)
+            {
+                isHit = true;
+                health.TakeOffLimb();
+            }
+        }
+    }
+
     public void SetIsHit(bool hit)
     {
         isHit = hit;
     }
 
-    public bool IsHit()
-    {
-        return isHit;
-    }
+    
     
 	public void SetInputLocked(bool locked)
 	{

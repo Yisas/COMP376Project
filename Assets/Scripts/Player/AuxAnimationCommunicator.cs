@@ -29,7 +29,7 @@ public class AuxAnimationCommunicator : MonoBehaviour {
 			playerController.SetMovementLocked (true);
 	}
 
-    public void DisableIsAttacking()
+    public void DisableIsJabbing()
     {
         playerController.animIsJabbing = false;
     }
@@ -38,4 +38,9 @@ public class AuxAnimationCommunicator : MonoBehaviour {
 	{
 		playerController.JumpStart ();
 	}
+
+    public void DisableIsClubbing()
+    {
+        playerController.animIsClubbing = false;
+    }
 }
