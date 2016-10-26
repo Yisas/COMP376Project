@@ -29,7 +29,9 @@ public class PlayerCollisionDetector : MonoBehaviour
 		if(oppositePlayer.GetComponent<PlayerController>() != null)
 			if (oppositePlayer.GetComponent<PlayerController> ().playerNumber == player.playerNumber) 
 			{
+			#if UNITY_EDITOR
 			Debug.Log ("Player " + player.playerNumber + " collided with itslef from PlayerCollisionDetection script attached to object " + gameObject.name + " and object " + col.gameObject.name + ". Aborting collision detection methods.");
+			#endif
 				return;
 			}
 
