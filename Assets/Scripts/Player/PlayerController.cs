@@ -163,8 +163,8 @@ public class PlayerController : MonoBehaviour
 		else 
 		{
 			// Set animator speed variables and trigger attack type
-			anim.SetFloat ("clubPrepareSpeed",clubAttackSpeed);
-			anim.SetFloat ("clubSpeed",clubAttackPepare);
+			anim.SetFloat ("clubPrepareSpeed",clubAttackPepare);
+			anim.SetFloat ("clubSpeed",clubAttackSpeed);
 			anim.SetTrigger ("club");
 		    animIsClubbing = true;
 		}
