@@ -24,7 +24,15 @@ public class PlayerCollisionDetector : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         GameObject oppositePlayer = col.transform.root.gameObject;
-        
+
+		// Defensive programming, layer visibility should take care of the player hitting itself
+		if(oppositePlayer.GetComponent<PlayerController>() != null)
+			if (oppositePlayer.GetComponent<PlayerController> ().playerNumber == player.playerNumber) 
+			{
+				Debug.Log ("Collided with same player from PlayerCollisionDetectin");
+				return;
+			}
+
         if (col.gameObject.CompareTag("Hand"))
         {
             player.RemoveHealth(oppositePlayer);

@@ -37,10 +37,13 @@ public class PlayerController : MonoBehaviour
     bool falling;
     bool attackingMelee;
     bool isHit;
-	bool hasWeapon = false;			// FIX ME: Hard coded to true temporarily to test animations
+	[Header("This is temporarily public until we add the functionality to modify at runtime.")]
+	public bool hasWeapon;			
 
 	// Numerical variables
 	private float moveInput = 0.0f;
+	private float jabCounter = 0.0f;
+
 
     // References
     Rigidbody2D rb;
@@ -48,8 +51,6 @@ public class PlayerController : MonoBehaviour
     Transform sprites;
     Animator anim;
     Transform groundCheck;
-    
-    private float jabCounter = 0.0f;
     private Health health;
     
 	// Use this for initialization
@@ -187,6 +188,7 @@ public class PlayerController : MonoBehaviour
             {
                 isHit = true; //I can't be hit twice by the same jab animation
                 jabCounter++;
+				Debug.Log (jabCounter);
                 if (jabCounter >= 3) //if I have been hit 3 times or more by a jab
                 {
                     health.TakeOffLimb();
