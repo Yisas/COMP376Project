@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour
 
     private float moveInput = 0.0f;
     private float jabCounter = 0.0f;
+    private Health health;
 
 	// Use this for initialization
 	void Start ()
@@ -53,9 +54,9 @@ public class PlayerController : MonoBehaviour
         transform = GetComponent<Transform>();
         sprites = transform.FindChild("Sprites");
         groundCheck = transform.FindChild("GroundCheck");
+	    health = GetComponent<Health>();
 
-       
-    }
+	}
 	
 	// Update is called once per frame
 	void Update ()
@@ -163,21 +164,22 @@ public class PlayerController : MonoBehaviour
         PlayerController opponent = oppositePlayer.GetComponent<PlayerController>();
         if (opponent)
         {
-            if (opponent.animIsJabbing && !isHit)
+            if (opponent.animIsJabbing && !isHit) //if the opponent is in jab motion and I have not been hit yet
             {
-                //after 3 jabs, take off the next limb.
-                isHit = true;
+                isHit = true; //I can't be hit twice by the same jab animation
                 jabCounter++;
-                print(jabCounter);
+                if (jabCounter >= 3) //if I have been hit 3 times or more by a jab
+                {
+                    health.TakeOffLimb();
+                    jabCounter = 0; //reset the jab counter
+                }
             }
-        }
-        
-            
+        }  
     }
 
     public void SetIsHit(bool hit)
     {
-        this.isHit = hit;
+        isHit = hit;
     }
 
     public bool IsHit()
