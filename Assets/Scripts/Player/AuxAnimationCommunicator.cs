@@ -32,6 +32,5 @@ public class AuxAnimationCommunicator : MonoBehaviour {
     public void DisableIsAttacking()
     {
         playerController.animIsJabbing = false;
-        playerController.GetAnimator().SetBool("isAttacking", false);
     }
 }

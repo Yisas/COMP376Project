@@ -18,6 +18,11 @@ public class PlayerController : MonoBehaviour
 	[Tooltip("Single force to be applied on the dash attack")]
 	public float jabDashForce;
 
+	[Tooltip("Speed at witch the club animation prepares for the strike.")]
+	public float clubAttackPepare;
+	[Tooltip("Speed for the club attack animation.")]
+	public float clubAttackSpeed;
+
 	[Header("--- State Variables ---")]
     public LayerMask mWhatIsGround;
     public float kGroundCheckRadius = 0.1f;
@@ -32,7 +37,10 @@ public class PlayerController : MonoBehaviour
     bool falling;
     bool attackingMelee;
     bool isHit;
-                         
+	bool hasWeapon = false;			// FIX ME: Hard coded to true temporarily to test animations
+
+	// Numerical variables
+	private float moveInput = 0.0f;
 
     // References
     Rigidbody2D rb;
@@ -40,11 +48,10 @@ public class PlayerController : MonoBehaviour
     Transform sprites;
     Animator anim;
     Transform groundCheck;
-
-    private float moveInput = 0.0f;
+    
     private float jabCounter = 0.0f;
     private Health health;
-
+    
 	// Use this for initialization
 	void Start ()
 	{
@@ -111,24 +118,36 @@ public class PlayerController : MonoBehaviour
     }
 
     private void MeleeAttack()
-    {
-		// Read a speed treshold to see if you should do a dash attack
-		if (Mathf.Abs (moveInput) >= jabDashTreshold) 
-		{
-			// Lock movement inputs
-			movementLocked = true;
-			// Keep velocity in y, new velocity burst in x
-			moveInput = 0;
-			// Cancel prior horizontal velocity
-			rb.velocity = new Vector2 (0, rb.velocity.y);
-			// Using force instead of velocity to add single dash burst
-			rb.AddForce (new Vector2( jabDashForce * Mathf.Sign(direction.x), 0));
-		}
+	{
+		// If the player doesn't have a weapon, jab attack...
+		if (!hasWeapon) {
+			// Read a speed treshold to see if you should do a dash attack
+			if (Mathf.Abs (moveInput) >= jabDashTreshold) {
+				// Lock movement inputs
+				movementLocked = true;
+				// Keep velocity in y, new velocity burst in x
+				moveInput = 0;
+				// Cancel prior horizontal velocity
+				rb.velocity = new Vector2 (0, rb.velocity.y);
+				// Using force instead of velocity to add single dash burst
+				rb.AddForce (new Vector2 (jabDashForce * Mathf.Sign (direction.x), 0));
+			}
 
-        anim.SetFloat("jabSpeed",jabSpeed);
-        //anim.SetTrigger("jab");
-        anim.SetBool("isAttacking", true);
-        animIsJabbing = true;
+			// Set animator speed variables and trigger attack type
+			anim.SetFloat ("jabSpeed", jabSpeed);
+			anim.SetTrigger ("jab");
+            animIsJabbing = true;
+        }
+		// ... else use weapon as a club
+		else 
+		{
+			// Set animator speed variables and trigger attack type
+			anim.SetFloat ("clubPrepareSpeed",clubAttackSpeed);
+			anim.SetFloat ("clubSpeed",clubAttackPepare);
+			anim.SetTrigger ("club");
+		}
+        
+        
     }
 
     private void FaceDirection(Vector2 direction)
