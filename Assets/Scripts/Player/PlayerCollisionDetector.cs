@@ -29,7 +29,7 @@ public class PlayerCollisionDetector : MonoBehaviour
 		if(oppositePlayer.GetComponent<PlayerController>() != null)
 			if (oppositePlayer.GetComponent<PlayerController> ().playerNumber == player.playerNumber) 
 			{
-				Debug.Log ("Collided with same player from PlayerCollisionDetectin");
+			Debug.Log ("Player " + player.playerNumber + " collided with itslef from PlayerCollisionDetection script attached to object " + gameObject.name);
 				return;
 			}
 
