@@ -126,12 +126,14 @@ public class PlayerController : MonoBehaviour
 				rb.AddForce (new Vector2 (jabDashForce * Mathf.Sign (direction.x), 0));
 			}
 
+			// Set animator speed variables and trigger attack type
 			anim.SetFloat ("jabSpeed", jabSpeed);
 			anim.SetTrigger ("jab");
 		}
 		// ... else use weapon as a club
 		else 
 		{
+			// Set animator speed variables and trigger attack type
 			anim.SetFloat ("clubPrepareSpeed",clubAttackSpeed);
 			anim.SetFloat ("clubSpeed",clubAttackPepare);
 			anim.SetTrigger ("club");
