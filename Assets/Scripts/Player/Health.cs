@@ -14,11 +14,9 @@ public class Health : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-	    if(nbOfLimbs <= 0 && !isDead)
+	    if(nbOfLimbs <= 0)
         {
-            //kill
-            print("I'm dead.");
-            isDead = true;
+            Kill();
         }
 	}
 
@@ -44,5 +42,15 @@ public class Health : MonoBehaviour
             print("I took off head");
             nbOfLimbs--;
         }
+    }
+
+    public void Kill()
+    {
+        if (!isDead)
+        {
+            print("I'm dead.");
+            isDead = true;
+        }
+            
     }
 }

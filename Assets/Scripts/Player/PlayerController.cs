@@ -234,6 +234,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void GetHitByThrowingLimb()
+    {
+        health.Kill();
+    }
+
     private IEnumerator RemoveLimb(float seconds)
     {
         isHit = true;
