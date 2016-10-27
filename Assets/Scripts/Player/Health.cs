@@ -16,6 +16,7 @@ public class Health : MonoBehaviour
 	    if(nbOfLimbs <= 0)
         {
             //kill
+            print("I'm dead.");
         }
 	}
 
@@ -24,18 +25,21 @@ public class Health : MonoBehaviour
         if(nbOfLimbs == 3)
         {
             //take off arm
+            print("I took off arm");
             nbOfLimbs--;
         }
 
         else if(nbOfLimbs == 2)
         {
             //take off leg
+            print("I took off leg");
             nbOfLimbs--;
         }
 
         else if(nbOfLimbs == 1)
         {
             //take off head
+            print("I took off head");
             nbOfLimbs--;
         }
     }

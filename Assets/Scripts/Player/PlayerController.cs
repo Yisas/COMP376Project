@@ -8,7 +8,13 @@ public class PlayerController : MonoBehaviour
 	[Header("--- General Movement Variables ---")]
     public float moveSpeed;
     public float jumpForce;
+	[Tooltip("This float is communicated to the animator to set the speed of the prepare for jump animation")]
+	public float jumpPrepareSpeed;
+	[Tooltip("This float is communicated to the animator to set the speed of the jump animation")]
+	public float jumpSpeed;
+	[HideInInspector]				
     public bool animIsJabbing;
+    public bool animIsClubbing;
 
     [Header("--- Attack Variables ---")]
 	[Tooltip("This float is communicated to the animator to set the speed of the jab animation")]
@@ -32,15 +38,19 @@ public class PlayerController : MonoBehaviour
 	bool inputLocked = false;		// Character controls will need to be locked for small intervals of time, like during a dash jab
 	bool movementLocked = false;	// As above but just for the movement
     bool running;
+	bool jumping;
     bool moving;
     bool grounded;
     bool falling;
     bool attackingMelee;
     bool isHit;
-	bool hasWeapon = false;			// FIX ME: Hard coded to true temporarily to test animations
+	[Header("This is temporarily public until we add the functionality to modify at runtime.")]
+	public bool hasWeapon;			
 
 	// Numerical variables
 	private float moveInput = 0.0f;
+	private float jabCounter = 0.0f;
+
 
     // References
     Rigidbody2D rb;
@@ -48,8 +58,6 @@ public class PlayerController : MonoBehaviour
     Transform sprites;
     Animator anim;
     Transform groundCheck;
-    
-    private float jabCounter = 0.0f;
     private Health health;
     
 	// Use this for initialization
@@ -86,7 +94,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         Move();
-        Jump();
+		JumpPrepare();
     }
 
     private void CollectInput()
@@ -96,7 +104,7 @@ public class PlayerController : MonoBehaviour
 
         attackingMelee = Input.GetButtonDown("Melee Attack " + playerNumber);
 		
-        
+		jumping = Input.GetButtonDown ("Jump" + playerNumber);
     }
 
     private void Move()
@@ -109,13 +117,26 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("speed",Mathf.Abs(moveInput));
     }
 
-    private void Jump()
+	// The animator will finish the jump sequence after this method is called
+    private void JumpPrepare()
     {
-        if (grounded && Input.GetButton("Jump"))
+		if (grounded && jumping)
         {
-            rb.velocity = new Vector2(0.0f, jumpForce);
+			jumping = false;
+
+			// Set animator speed variables and trigger attack type
+			anim.SetFloat("jumpPrepareSpeed", jumpPrepareSpeed);
+			anim.SetFloat("jumpSpeed", jumpSpeed);
+			anim.SetTrigger ("jump");
+
         }
     }
+
+	// The animator will call this method to apply the physics movement when the prepare animation is done
+	public void JumpStart()
+	{
+		rb.velocity = new Vector2(0.0f, jumpForce);
+	}
 
     private void MeleeAttack()
 	{
@@ -142,9 +163,10 @@ public class PlayerController : MonoBehaviour
 		else 
 		{
 			// Set animator speed variables and trigger attack type
-			anim.SetFloat ("clubPrepareSpeed",clubAttackSpeed);
-			anim.SetFloat ("clubSpeed",clubAttackPepare);
+			anim.SetFloat ("clubPrepareSpeed",clubAttackPepare);
+			anim.SetFloat ("clubSpeed",clubAttackSpeed);
 			anim.SetTrigger ("club");
+		    animIsClubbing = true;
 		}
         
         
@@ -167,10 +189,13 @@ public class PlayerController : MonoBehaviour
             if (col.gameObject != gameObject)
             {
                 grounded = true;
+				anim.SetBool ("grounded", grounded);
                 return;
             }
         }
         grounded = false;
+
+		anim.SetBool ("grounded", grounded);
     }
 
     private void CheckFalling()
@@ -178,7 +203,7 @@ public class PlayerController : MonoBehaviour
         falling = rb.velocity.y < 0.0f;
     }
 
-    public void RemoveHealth(GameObject oppositePlayer)
+    public void GetHitByJab(GameObject oppositePlayer)
     {
         PlayerController opponent = oppositePlayer.GetComponent<PlayerController>();
         if (opponent)
@@ -187,6 +212,7 @@ public class PlayerController : MonoBehaviour
             {
                 isHit = true; //I can't be hit twice by the same jab animation
                 jabCounter++;
+				Debug.Log (jabCounter);
                 if (jabCounter >= 3) //if I have been hit 3 times or more by a jab
                 {
                     health.TakeOffLimb();
@@ -196,15 +222,25 @@ public class PlayerController : MonoBehaviour
         }  
     }
 
+    public void GetHitByClub(GameObject oppositePlayer)
+    {
+        PlayerController opponent = oppositePlayer.GetComponent<PlayerController>();
+        if (opponent)
+        {
+            if (opponent.animIsClubbing && !isHit)
+            {
+                isHit = true;
+                health.TakeOffLimb();
+            }
+        }
+    }
+
     public void SetIsHit(bool hit)
     {
         isHit = hit;
     }
 
-    public bool IsHit()
-    {
-        return isHit;
-    }
+    
     
 	public void SetInputLocked(bool locked)
 	{
