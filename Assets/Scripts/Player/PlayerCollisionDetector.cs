@@ -4,10 +4,6 @@ using System.Collections;
 public class PlayerCollisionDetector : MonoBehaviour
 {
     private PlayerController player;
-
-    void Awake()
-    {
-    }
     
 	// Use this for initialization
 	void Start ()
@@ -28,16 +24,20 @@ public class PlayerCollisionDetector : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         GameObject oppositePlayer = col.transform.root.gameObject;
+        PlayerController opponent = oppositePlayer.GetComponent<PlayerController>();
 
 		// Defensive programming, layer visibility should take care of the player hitting itself
-		if(oppositePlayer.GetComponent<PlayerController>() != null)
-			if (oppositePlayer.GetComponent<PlayerController> ().playerNumber == player.playerNumber) 
-			{
-			#if UNITY_EDITOR
-			Debug.Log ("Player " + player.playerNumber + " collided with itslef from PlayerCollisionDetection script attached to object " + gameObject.name + " and object " + col.gameObject.name + ". Aborting collision detection methods.");
-			#endif
-				return;
-			}
+        if (opponent)
+        {
+            if (opponent.playerNumber == player.playerNumber)
+            {
+                #if UNITY_EDITOR
+                //Debug.Log ("Player " + player.playerNumber + " collided with itslef from PlayerCollisionDetection script attached to object " + gameObject.name + " and object " + col.gameObject.name + ". Aborting collision detection methods.");
+                #endif
+                return;
+            }
+        }
+			
 
         if (col.gameObject.CompareTag("Hand"))
         {
@@ -45,19 +45,38 @@ public class PlayerCollisionDetector : MonoBehaviour
                 player.GetHitByJab(oppositePlayer);
         }
 
-        else if (col.gameObject.CompareTag("Club"))
+        else if (col.gameObject.CompareTag("Club") && !player.GetIsHit())
         {
-            print(gameObject.name);
-            print(col.gameObject.name);
-            if(gameObject != oppositePlayer)
+            if (gameObject != oppositePlayer)
+            {
                 player.GetHitByClub(oppositePlayer);
+            }
         }
         
     }
 
     void OnTriggerExit2D(Collider2D col)
     {
-        StartCoroutine(Wait(0.75f));
-        player.SetIsHit(false);
+        GameObject oppositePlayer = col.transform.root.gameObject;
+
+        // Defensive programming, layer visibility should take care of the player hitting itself
+        if (oppositePlayer.GetComponent<PlayerController>() != null)
+        {
+            if (oppositePlayer.GetComponent<PlayerController>().playerNumber == player.playerNumber)
+            {
+                #if UNITY_EDITOR
+                //Debug.Log ("Player " + player.playerNumber + " collided with itslef from PlayerCollisionDetection script attached to object " + gameObject.name + " and object " + col.gameObject.name + ". Aborting collision detection methods.");
+                #endif
+                return;
+            }
+
+            if (oppositePlayer.GetComponent<PlayerController>().animIsJabbing)
+            {
+                player.SetIsHit(false);
+            }
+        }
+
+        
+        
     }
 }

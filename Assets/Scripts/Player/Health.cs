@@ -4,6 +4,7 @@ using System.Collections;
 public class Health : MonoBehaviour
 {
     private int nbOfLimbs;
+    private bool isDead;
 
 	// Use this for initialization
 	void Start ()
@@ -13,10 +14,11 @@ public class Health : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-	    if(nbOfLimbs <= 0)
+	    if(nbOfLimbs <= 0 && !isDead)
         {
             //kill
             print("I'm dead.");
+            isDead = true;
         }
 	}
 

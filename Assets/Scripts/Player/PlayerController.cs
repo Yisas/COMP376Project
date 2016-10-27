@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
 
 	// Numerical variables
 	private float moveInput = 0.0f;
-	private float jabCounter = 0.0f;
+	private int jabCounter = 0;
 
 
     // References
@@ -229,10 +229,19 @@ public class PlayerController : MonoBehaviour
         {
             if (opponent.animIsClubbing && !isHit)
             {
-                isHit = true;
-                health.TakeOffLimb();
+                StartCoroutine(RemoveLimb(0.5f));
             }
         }
+    }
+
+    private IEnumerator RemoveLimb(float seconds)
+    {
+        isHit = true;
+        health.TakeOffLimb();
+
+        yield return new WaitForSeconds(seconds);
+
+        isHit = false;
     }
 
     public void SetIsHit(bool hit)
@@ -240,7 +249,10 @@ public class PlayerController : MonoBehaviour
         isHit = hit;
     }
 
-    
+    public bool GetIsHit()
+    {
+        return isHit;
+    }
     
 	public void SetInputLocked(bool locked)
 	{
