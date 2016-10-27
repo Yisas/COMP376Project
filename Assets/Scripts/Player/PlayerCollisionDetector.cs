@@ -28,7 +28,17 @@ public class PlayerCollisionDetector : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         GameObject oppositePlayer = col.transform.root.gameObject;
-        
+
+		// Defensive programming, layer visibility should take care of the player hitting itself
+		if(oppositePlayer.GetComponent<PlayerController>() != null)
+			if (oppositePlayer.GetComponent<PlayerController> ().playerNumber == player.playerNumber) 
+			{
+			#if UNITY_EDITOR
+			Debug.Log ("Player " + player.playerNumber + " collided with itslef from PlayerCollisionDetection script attached to object " + gameObject.name + " and object " + col.gameObject.name + ". Aborting collision detection methods.");
+			#endif
+				return;
+			}
+
         if (col.gameObject.CompareTag("Hand"))
         {
             if (gameObject != oppositePlayer)
