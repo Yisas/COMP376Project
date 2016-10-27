@@ -5,6 +5,10 @@ public class PlayerCollisionDetector : MonoBehaviour
 {
     private PlayerController player;
 
+    void Awake()
+    {
+    }
+    
 	// Use this for initialization
 	void Start ()
 	{
