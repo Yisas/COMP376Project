@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
 	[Tooltip("Single force to be applied on the dash attack")]
 	public float jabDashForce;
 
-	[Tooltip("Speed at witch the club animation prepares for the strike.")]
+    [Tooltip("Speed at witch the club animation prepares for the strike.")]
 	public float clubAttackPepare;
 	[Tooltip("Speed for the club attack animation.")]
 	public float clubAttackSpeed;
@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
     bool falling;
     bool attackingMelee;
     bool isHit;
+    bool tearOffLimb;
 	[Header("This is temporarily public until we add the functionality to modify at runtime.")]
 	public bool hasWeapon;			
 
@@ -93,6 +94,13 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+
+        if(tearOffLimb)
+        {
+            health.RipOffLimb();
+            tearOffLimb = false;
+        }
+
         Move();
 		JumpPrepare();
     }
@@ -105,6 +113,8 @@ public class PlayerController : MonoBehaviour
         attackingMelee = Input.GetButtonDown("Melee Attack " + playerNumber);
 		
 		jumping = Input.GetButtonDown ("Jump" + playerNumber);
+
+        tearOffLimb = Input.GetButtonDown("Tear Limb " + playerNumber);
     }
 
     private void Move()
