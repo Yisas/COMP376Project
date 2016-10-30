@@ -10,6 +10,8 @@ public class Health : MonoBehaviour
     [Header("--- References ---")]
     [Tooltip("A reference to this player's arm club gameobject")]
     public GameObject weaponArm;
+    [Tooltip("A reference to this player's regular foreground arm gameobject")]         // TODO: Consider switching this to a runtime search when I'm not lazy
+    public GameObject foregroundArm;
 
     // State variables
     private int nbOfLimbs;
@@ -45,7 +47,6 @@ public class Health : MonoBehaviour
             case 3:
                 anim.SetFloat("takeOffArmSpeed", tearOffArmSpeed);
                 anim.SetTrigger("takeOffArm");
-                //weaponArm.SetActive(true);
                 break;
             default:
                 break;
@@ -85,5 +86,15 @@ public class Health : MonoBehaviour
             isDead = true;
         }
             
+    }
+
+    // To be called when the default, non weapon forground arm has to be replaced by the weapon arm object
+    public void SwapArms()
+    {
+        // Deactivate whole thing IF NECESSARY THIS CAN BE CHANGED TO JUST SPIRTES AND COLLIDERS IN CASE WE NEED IT TO REMAIN ACTIVE FOR SEACHES, PROBABLY NOT HAPPENING
+        foregroundArm.SetActive(false);
+
+        // Reactivate weapon arm CONSIDER CLUB SPAWNING HERE AS A CHILD OF THE HAND INSTEAD OF REACTIVATING THE OBJECT
+        weaponArm.SetActive(true);
     }
 }
