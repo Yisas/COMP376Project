@@ -51,4 +51,9 @@ public class AuxAnimationCommunicator : MonoBehaviour {
     {
         playerHealth.SwapArms();
     }
+
+    public void SwapLegs()
+    {
+        playerHealth.SwapLegs();
+    }
 }
