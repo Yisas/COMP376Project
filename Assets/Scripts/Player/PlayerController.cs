@@ -78,6 +78,7 @@ public class PlayerController : MonoBehaviour
     {
         CheckGrounded();
         CheckFalling();
+        ClampToCamera();
 
 		if(!inputLocked)
         	CollectInput();
@@ -201,6 +202,14 @@ public class PlayerController : MonoBehaviour
     private void CheckFalling()
     {
         falling = rb.velocity.y < 0.0f;
+    }
+
+    private void ClampToCamera()
+    {
+        Vector3 position = Camera.main.WorldToViewportPoint(transform.position);
+        position.x = Mathf.Clamp(position.x, 0.03f, 0.97f);
+       // position.y = Mathf.Clamp(position.y, 0.05f, 0.95f);
+        transform.position = Camera.main.ViewportToWorldPoint(position);
     }
 
     public void GetHitByJab(GameObject oppositePlayer)
