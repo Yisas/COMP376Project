@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
 	public float jumpPrepareSpeed;
 	[Tooltip("This float is communicated to the animator to set the speed of the jump animation")]
 	public float jumpSpeed;
+	[Tooltip("This float is communicated to the animator to set the speed of the crouch animation")]
+	public float crouchSpeed;
 	[HideInInspector]				
     public bool animIsJabbing;
     public bool animIsClubbing;
@@ -40,6 +42,7 @@ public class PlayerController : MonoBehaviour
     bool running;
 	bool jumping;
     bool moving;
+	bool crouching;					
     bool grounded;
     bool falling;
     bool attackingMelee;
@@ -71,7 +74,6 @@ public class PlayerController : MonoBehaviour
         sprites = transform.FindChild("Sprites");
         groundCheck = transform.FindChild("GroundCheck");
 	    health = GetComponent<Health>();
-
 	}
 	
 	// Update is called once per frame
@@ -102,6 +104,12 @@ public class PlayerController : MonoBehaviour
         }
 
         Move();
+
+		// TODO: Crouch code, consider moving to separate method if we are keeping the feature
+			anim.SetFloat ("crouchSpeed", crouchSpeed);
+			anim.SetBool ("crouching", crouching);
+
+
 		JumpPrepare();
     }
 
@@ -115,6 +123,8 @@ public class PlayerController : MonoBehaviour
 		jumping = Input.GetButtonDown ("Jump" + playerNumber);
 
         tearOffLimb = Input.GetButtonDown("Tear Limb " + playerNumber);
+
+		crouching = (Input.GetAxis ("Crouch " + playerNumber) == 0 ? false : true);
     }
 
     private void Move()
