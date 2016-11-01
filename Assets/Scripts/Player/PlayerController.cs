@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
 	public float jumpPrepareSpeed;
 	[Tooltip("This float is communicated to the animator to set the speed of the jump animation")]
 	public float jumpSpeed;
+	[Tooltip("This float is communicated to the animator to set the speed of the crouch animation")]
+	public float crouchSpeed;
 	[HideInInspector]				
     public bool animIsJabbing;
     public bool animIsClubbing;
@@ -24,7 +26,7 @@ public class PlayerController : MonoBehaviour
 	[Tooltip("Single force to be applied on the dash attack")]
 	public float jabDashForce;
 
-	[Tooltip("Speed at witch the club animation prepares for the strike.")]
+    [Tooltip("Speed at witch the club animation prepares for the strike.")]
 	public float clubAttackPepare;
 	[Tooltip("Speed for the club attack animation.")]
 	public float clubAttackSpeed;
@@ -40,16 +42,18 @@ public class PlayerController : MonoBehaviour
     bool running;
 	bool jumping;
     bool moving;
+	bool crouching;					
     bool grounded;
     bool falling;
     bool attackingMelee;
     bool isHit;
+    bool tearOffLimb;
 	[Header("This is temporarily public until we add the functionality to modify at runtime.")]
 	public bool hasWeapon;			
 
 	// Numerical variables
 	private float moveInput = 0.0f;
-	private float jabCounter = 0.0f;
+	private int jabCounter = 0;
 
 
     // References
@@ -70,7 +74,6 @@ public class PlayerController : MonoBehaviour
         sprites = transform.FindChild("Sprites");
         groundCheck = transform.FindChild("GroundCheck");
 	    health = GetComponent<Health>();
-
 	}
 	
 	// Update is called once per frame
@@ -94,28 +97,44 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+
+        if(tearOffLimb)
+        {
+            health.RipOffLimb();			// Rip off limb returns true when the player succesfully equips a limb
+            tearOffLimb = false;
+        }
+
         Move();
+		Crouch ();
 		JumpPrepare();
     }
 
     private void CollectInput()
     {
-        if (!movementLocked)
-            moveInput = Input.GetAxis("Horizontal " + playerNumber);
+		if (!movementLocked) 
+			moveInput = Input.GetAxis ("Horizontal " + playerNumber);
 
         attackingMelee = Input.GetButtonDown("Melee Attack " + playerNumber);
 		
 		jumping = Input.GetButtonDown ("Jump" + playerNumber);
+
+        tearOffLimb = Input.GetButtonDown("Tear Limb " + playerNumber);
+
+		crouching = (Input.GetAxis ("Crouch " + playerNumber) == 0 ? false : true);
     }
 
     private void Move()
     {
-        // Horizontal movement
-        direction = new Vector2(moveInput, 0.0f);
-        transform.Translate(direction * Time.deltaTime * moveSpeed);
-        FaceDirection (direction);
-        // Pass movement speed to animator
-        anim.SetFloat("speed",Mathf.Abs(moveInput));
+		// Don't move while holding down crouch button. The crouch method cancels horizontal velocity
+		if (!crouching) 
+		{
+			// Horizontal movement
+			direction = new Vector2 (moveInput, 0.0f);
+			transform.Translate (direction * Time.deltaTime * moveSpeed);
+			FaceDirection (direction);
+			// Pass movement speed to animator
+			anim.SetFloat ("speed", Mathf.Abs (moveInput));
+		}
     }
 
 	// The animator will finish the jump sequence after this method is called
@@ -137,6 +156,18 @@ public class PlayerController : MonoBehaviour
 	public void JumpStart()
 	{
 		rb.velocity = new Vector2(0.0f, jumpForce);
+	}
+
+
+	private void Crouch()
+	{
+		if (crouching) 
+		{
+			CancelHorizontalVelocity ();
+
+			anim.SetFloat ("crouchSpeed", crouchSpeed);
+		}
+		anim.SetBool ("crouching", crouching);
 	}
 
     private void MeleeAttack()
@@ -238,18 +269,42 @@ public class PlayerController : MonoBehaviour
         {
             if (opponent.animIsClubbing && !isHit)
             {
-                isHit = true;
-                health.TakeOffLimb();
+                StartCoroutine(RemoveLimb(0.5f));
             }
         }
     }
+
+    public void GetHitByThrowingLimb()
+    {
+        health.Kill();
+    }
+
+    private IEnumerator RemoveLimb(float seconds)
+    {
+        isHit = true;
+        health.TakeOffLimb();
+
+        yield return new WaitForSeconds(seconds);
+
+        isHit = false;
+    }
+
+	private void CancelHorizontalVelocity()
+	{
+		// Cancel horizontal velocities and stop running animations
+		anim.SetFloat ("speed", 0);
+		rb.velocity = new Vector2(0, rb.velocity.y);
+	}
 
     public void SetIsHit(bool hit)
     {
         isHit = hit;
     }
 
-    
+    public bool GetIsHit()
+    {
+        return isHit;
+    }
     
 	public void SetInputLocked(bool locked)
 	{

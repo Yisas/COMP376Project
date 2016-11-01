@@ -5,11 +5,14 @@ using System.Collections;
 public class AuxAnimationCommunicator : MonoBehaviour {
 
 	PlayerController playerController;
+    Health playerHealth;
 
 	void Start()
 	{
+        // Setup references
 		playerController = GetComponentInParent<PlayerController> ();
-	}
+        playerHealth = GetComponentInParent<Health>();
+    }
 
 	// Using integer notation for input since the animator function called doesn't support bool
 	public void SetInputLocked(int locked)
@@ -42,5 +45,15 @@ public class AuxAnimationCommunicator : MonoBehaviour {
     public void DisableIsClubbing()
     {
         playerController.animIsClubbing = false;
+    }
+
+    public void SwapArms()
+    {
+        playerHealth.SwapArms();
+    }
+
+    public void SwapLegs()
+    {
+        playerHealth.SwapLegs();
     }
 }
