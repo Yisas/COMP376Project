@@ -107,8 +107,8 @@ public class PlayerController : MonoBehaviour
 
     private void CollectInput()
     {
-        if (!movementLocked)
-            moveInput = Input.GetAxis("Horizontal " + playerNumber);
+		if (!movementLocked) 
+			moveInput = Input.GetAxis ("Horizontal " + playerNumber);
 
         attackingMelee = Input.GetButtonDown("Melee Attack " + playerNumber);
 		
