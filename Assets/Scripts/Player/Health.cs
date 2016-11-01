@@ -33,7 +33,7 @@ public class Health : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
 
         // Setup variables
-        nbOfLimbs = 3;
+        nbOfLimbs = 2;
         
 	}
 	
