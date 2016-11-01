@@ -97,7 +97,7 @@ public class PlayerController : MonoBehaviour
 
         if(tearOffLimb)
         {
-            hasWeapon = health.RipOffLimb();			// Rip off limb returns true when the player succesfully equips a limb
+            health.RipOffLimb();			// Rip off limb returns true when the player succesfully equips a limb
             tearOffLimb = false;
         }
 

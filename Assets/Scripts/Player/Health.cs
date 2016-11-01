@@ -18,10 +18,13 @@ public class Health : MonoBehaviour
 	public GameObject weaponLeg;
 	[Tooltip ("A reference to this player's regular foreground leg gameobject")]         // TODO: Consider switching this to a runtime search when I'm not lazy
     public GameObject foregroundLeg;
+    [Tooltip("A reference to this player's head to take it off when he's dead.")]
+    public GameObject head;
 
 	// State variables
 	private int nbOfLimbs;
 	private bool isDead;
+    private PlayerController player;
 
 	// References
 	Animator anim;
@@ -33,8 +36,10 @@ public class Health : MonoBehaviour
 		anim = GetComponentInChildren<Animator> ();
 
 		// Setup variables
-		nbOfLimbs = 2;
-        
+		nbOfLimbs = 3;
+
+	    player = GetComponent<PlayerController>();
+
 	}
 	
 	// Update is called once per frame
@@ -49,29 +54,38 @@ public class Health : MonoBehaviour
 	// Returns true if the player had a limb to equip and succesfully equips it. Otherwise it returns false
 	public bool RipOffLimb ()
 	{
-		switch (nbOfLimbs) {
-		case 3:
-			anim.SetFloat ("takeOffArmSpeed", tearOffArmSpeed);
-			anim.SetTrigger ("takeOffArm");
-			return true;
-		case 2:
-			anim.SetFloat ("takeOffLegSpeed", tearOffLegSpeed);
-			anim.SetTrigger ("takeOffLeg");
-			return true;
-		default:
-			return false;
-		}
-            
+	    if (!player.hasWeapon)
+	    {
+            switch (nbOfLimbs)
+            {
+                case 3:
+                    anim.SetFloat("takeOffArmSpeed", tearOffArmSpeed);
+                    anim.SetTrigger("takeOffArm");
+                    player.hasWeapon = true;
+                    return true;
+                case 2:
+                    anim.SetFloat("takeOffLegSpeed", tearOffLegSpeed);
+                    anim.SetTrigger("takeOffLeg");
+                    player.hasWeapon = true;
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
+	    return false;
 	}
 
 	public void TakeOffLimb ()
 	{
 		if (nbOfLimbs == 3) {
-			//take off arm
+            //take off arm
+			foregroundArm.SetActive(false);
 			print ("I took off arm");
 			nbOfLimbs--;
 		} else if (nbOfLimbs == 2) {
 			//take off leg
+            foregroundLeg.SetActive(false);
 			print ("I took off leg");
 			nbOfLimbs--;
 		} else if (nbOfLimbs == 1) {
@@ -84,7 +98,8 @@ public class Health : MonoBehaviour
 	public void Kill ()
 	{
 		if (!isDead) {
-			print ("I'm dead.");
+            gameObject.SetActive(false);
+            print ("I'm dead.");
 			isDead = true;
 		}
             
