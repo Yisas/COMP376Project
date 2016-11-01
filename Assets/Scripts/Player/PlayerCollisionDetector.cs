@@ -21,6 +21,8 @@ public class PlayerCollisionDetector : MonoBehaviour
         yield return new WaitForSeconds(seconds);
     }
 
+    
+
     void OnTriggerEnter2D(Collider2D col)
     {
         GameObject oppositePlayer = col.transform.root.gameObject;

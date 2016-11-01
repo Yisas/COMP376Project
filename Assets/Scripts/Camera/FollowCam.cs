@@ -22,8 +22,9 @@ public class FollowCam : MonoBehaviour {
         
         if (follow != null && other != null)
         {
-            Vector3 between = new Vector3(follow.position.x + (other.position.x - follow.position.x) / 2, follow.position.y + (other.position.y - follow.position.y) / 2, transform.position.z);
-            transform.position = Vector3.Lerp(transform.position, between, smoothness * Time.deltaTime);
+            Vector2 between = new Vector2(follow.position.x + (other.position.x - follow.position.x) / 2, follow.position.y + (other.position.y - follow.position.y) / 2);
+            Vector2 direction = new Vector2(between.x - GetComponent<Transform>().position.x, between.y - GetComponent<Transform>().position.y);
+            GetComponent<Rigidbody2D>().AddForce(direction * smoothness, ForceMode2D.Impulse);
         }
        
     }
@@ -39,6 +40,5 @@ public class FollowCam : MonoBehaviour {
         this.follow = null;
         this.other = null;
     }
-
 
 }
