@@ -35,11 +35,9 @@ public class Spawner1 : MonoBehaviour {
         
         //When combat system is functionnal, use upper part. followPlayer should be handled by the combat sytem manager.
         GameObject newPlayer1 = Instantiate(players[0], spawnPoints[0].position, Quaternion.identity) as GameObject;
-        newPlayer1.transform.parent = GameObject.Find("Players").transform;
         Debug.Log("Player spawned");
 
         GameObject newPlayer2 = Instantiate(players[1], spawnPoints[1].position, Quaternion.identity) as GameObject;
-        newPlayer2.transform.parent = GameObject.Find("Players").transform;
         Debug.Log("Player spawned");
 
         cam.Follow(newPlayer1.transform, newPlayer2.transform);
