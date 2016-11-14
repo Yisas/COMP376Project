@@ -39,7 +39,6 @@ public class Health : MonoBehaviour
 		nbOfLimbs = 3;
 
 	    player = GetComponent<PlayerController>();
-
 	}
 	
 	// Update is called once per frame
@@ -99,7 +98,20 @@ public class Health : MonoBehaviour
 
     public void PutBackLimb()
     {
-        
+        switch (nbOfLimbs)
+        {
+            case 3:
+                weaponArm.SetActive(true);
+                break;
+            case 2:
+                foregroundArm.SetActive(true);
+                nbOfLimbs++;
+                break;
+            case 1:
+                foregroundLeg.SetActive(true);
+                nbOfLimbs++;
+                break;
+        }
     }
 
 	public void Kill ()

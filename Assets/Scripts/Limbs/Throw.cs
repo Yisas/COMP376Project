@@ -7,8 +7,8 @@ public class Throw : MonoBehaviour {
 
     [SerializeField] private float projectileSpeed;
 
-    private Transform armThrowTransform;
-    private Vector2 limbDirection;
+    public Transform armThrowTransform;
+    public Vector2 limbDirection;
     private bool isThrown;
 
     public int playerNumber;
@@ -16,17 +16,20 @@ public class Throw : MonoBehaviour {
     [Header("For testing purposes - Put this in the PlayerController")]
     public GameObject limbThrow;
 
-    
+	private Transform rotationPivot;
 
     // Use this for initialization
     void Start ()
     {
+		rotationPivot = transform.FindChild ("rotationPivot").transform;
+        
     }
 	
 	// Update is called once per frame
 	void Update () {
 	    if (isThrown)
 	    {
+            print("Limb direction: " + limbDirection);
 	        armThrowTransform.Translate(limbDirection*projectileSpeed, Space.World);
 	        transform.RotateAround(armThrowTransform.position, Vector3.back*limbDirection.x, 20);
 	    }
@@ -34,24 +37,32 @@ public class Throw : MonoBehaviour {
 
     public void ThrowLimb(Vector2 direction)
     {
-        GameObject parentArmThrow = Instantiate(limbThrow, transform.position + new Vector3(0.0f, -7.8f, 0.0f), Quaternion.identity) as GameObject;
-
-        if (parentArmThrow != null)
+		GameObject parentArmThrow = Instantiate(limbThrow, rotationPivot.position, transform.rotation) as GameObject;
+        GameObject limbWeaponCopy = Instantiate(gameObject, gameObject.transform.position, gameObject.transform.rotation) as GameObject;
+        
+        if (parentArmThrow != null && limbWeaponCopy != null)
         {
+            Throw throwComponent = limbWeaponCopy.GetComponent<Throw>();
             parentArmThrow.transform.SetParent(null);
-            transform.SetParent(parentArmThrow.transform);
-            transform.localRotation = Quaternion.Euler(180, 0 ,0);
-            armThrowTransform = parentArmThrow.transform;
-            limbDirection = direction;
-            parentArmThrow.transform.position += new Vector3(0.0f, 8.0f, 0.0f);
-            isThrown = true;
+            limbWeaponCopy.transform.SetParent(parentArmThrow.transform);
+            limbWeaponCopy.transform.localScale = new Vector3(20, 20, 20);
+            //transform.localRotation = Quaternion.Euler(180, 0 ,0);
+            throwComponent.armThrowTransform = parentArmThrow.transform;
+            throwComponent.limbDirection = direction;
+            gameObject.SetActive(false);
+            //parentArmThrow.transform.position += new Vector3(0.0f, 7.8f, 0.0f);
+            throwComponent.SetIsThrow(true);
         }
-
     }
 
     public bool LimbIsThrown()
     {
         return isThrown;
+    }
+
+    public void SetIsThrow(bool isThrown)
+    {
+        this.isThrown = isThrown;
     }
 
     void OnCollisionEnter2D(Collision2D col)

@@ -25,11 +25,19 @@ public class PlayerController : MonoBehaviour
 	public float jabDashTreshold;	
 	[Tooltip("Single force to be applied on the dash attack")]
 	public float jabDashForce;
+    [Tooltip("Single force to be applied upon being punched, push player back")]
+    public float jabStagger;
+    [Tooltip("Single force to be applied upon being hit by weapon, push player back")]
+    public float limbStagger;
 
     [Tooltip("Speed at witch the club animation prepares for the strike.")]
 	public float clubAttackPepare;
 	[Tooltip("Speed for the club attack animation.")]
 	public float clubAttackSpeed;
+	[Tooltip("Speed at witch the animation prepares for the strike.")]
+	public float throwAttackPepare;
+	[Tooltip("Speed for the animation.")]
+	public float throwAttackSpeed;
 
 	[Header("--- State Variables ---")]
     public LayerMask mWhatIsGround;
@@ -59,7 +67,7 @@ public class PlayerController : MonoBehaviour
 
     // References
     Rigidbody2D rb;
-	Transform transform;
+	Transform myTransform;
     Transform sprites;
     Animator anim;
     Transform groundCheck;
@@ -73,10 +81,15 @@ public class PlayerController : MonoBehaviour
         // Setup references
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
-        transform = GetComponent<Transform>();
-        sprites = transform.FindChild("Sprites");
+        myTransform = transform;
+        sprites = myTransform.FindChild("Sprites");
         groundCheck = transform.FindChild("GroundCheck");
 	    health = GetComponent<Health>();
+
+        if (playerNumber == 1)
+            direction = new Vector2(1.0f, 0);
+        if (playerNumber == 2)
+            direction = new Vector2(-1.0f, 0);
 	}
 	
 	// Update is called once per frame
@@ -140,7 +153,7 @@ public class PlayerController : MonoBehaviour
                 direction = new Vector2(moveInput, 0.0f);
             }
             //print("In the move function, the direction vector is: " + direction);
-			transform.Translate (new Vector2(moveInput, 0.0f) * Time.deltaTime * moveSpeed);
+			myTransform.Translate (new Vector2(moveInput, 0.0f) * Time.deltaTime * moveSpeed);
 			FaceDirection (direction);
 			// Pass movement speed to animator
 			anim.SetFloat ("speed", Mathf.Abs (moveInput));
@@ -158,7 +171,6 @@ public class PlayerController : MonoBehaviour
 			anim.SetFloat("jumpPrepareSpeed", jumpPrepareSpeed);
 			anim.SetFloat("jumpSpeed", jumpSpeed);
 			anim.SetTrigger ("jump");
-
         }
     }
 
@@ -214,24 +226,34 @@ public class PlayerController : MonoBehaviour
         
     }
 
+	// Starts the throw animation. The once the animation is done it will call InstantiateAndThrowLimb
     private void ThrowLimb()
     {
         if (hasWeapon && throwingLimb)
         {
-            if (weaponArm)
-            {
-                print("Im throwing limb with direction: " + direction);
-                weaponArm.GetComponent<Throw>().ThrowLimb(direction);
-            }
-
-            else if (weaponLeg)
-            {
-                print("Im throwing limb with direction: " + direction);
-                weaponLeg.GetComponent<Throw>().ThrowLimb(direction);
-            }
-            hasWeapon = false;
+			anim.SetFloat ("throwLimbPrepareSpeed", throwAttackPepare);
+			anim.SetFloat ("throwLimbSpeed", throwAttackSpeed);
+			anim.SetTrigger ("throwLimb");
         }
     }
+
+	// Called by the animation to finish the attack
+	public void InstantiateAndThrowLimb()
+	{
+		if (weaponArm.activeSelf)
+		{
+			print("Im throwing limb with direction: " + direction);
+			Debug.Log ("Position of weapon arm was: " + weaponArm.transform.position);
+			weaponArm.GetComponent<Throw>().ThrowLimb(direction);
+		}
+
+		else if (weaponLeg.activeSelf)
+		{
+			print("Im throwing limb with direction: " + direction);
+			weaponLeg.GetComponent<Throw>().ThrowLimb(direction);
+		}
+		hasWeapon = false;
+	}
 
     private void FaceDirection(Vector2 direction)
 	{
@@ -266,10 +288,10 @@ public class PlayerController : MonoBehaviour
 
     private void ClampToCamera()
     {
-        Vector3 position = Camera.main.WorldToViewportPoint(transform.position);
+        Vector3 position = Camera.main.WorldToViewportPoint(myTransform.position);
         position.x = Mathf.Clamp(position.x, 0.03f, 0.97f);
        // position.y = Mathf.Clamp(position.y, 0.05f, 0.95f);
-        transform.position = Camera.main.ViewportToWorldPoint(position);
+        myTransform.position = Camera.main.ViewportToWorldPoint(position);
     }
 
     public void GetHitByJab(GameObject oppositePlayer)
@@ -281,7 +303,8 @@ public class PlayerController : MonoBehaviour
             {
                 isHit = true; //I can't be hit twice by the same jab animation
                 jabCounter++;
-				Debug.Log (jabCounter);
+                rb.AddForce(jabStagger * (opponent.GetDirection())); // push player being hit back, "stagger"
+                Debug.Log (jabCounter);
                 if (jabCounter >= 3) //if I have been hit 3 times or more by a jab
                 {
                     health.TakeOffLimb();
@@ -298,6 +321,7 @@ public class PlayerController : MonoBehaviour
         {
             if (opponent.animIsClubbing && !isHit)
             {
+                rb.AddForce(limbStagger * (opponent.GetDirection())); // push player being hit back, "stagger"
                 StartCoroutine(RemoveLimb(0.5f));
             }
         }
@@ -348,6 +372,11 @@ public class PlayerController : MonoBehaviour
     public Animator GetAnimator()
     {
         return anim;
+    }
+
+    public Vector3 GetDirection()
+    {
+        return direction;
     }
 
 }

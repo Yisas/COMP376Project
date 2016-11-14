@@ -18,8 +18,9 @@ public class BonesPile : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        GameObject oppositePlayer = col.transform.root.gameObject;
-        PlayerController player = oppositePlayer.GetComponent<PlayerController>();
+        GameObject playerGameobject = col.transform.root.gameObject;
+        PlayerController player = playerGameobject.GetComponent<PlayerController>();
+        Health health = playerGameobject.GetComponent<Health>();
         if (!player)
         {
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
@@ -27,7 +28,9 @@ public class BonesPile : MonoBehaviour
 
         else
         {
-            
+            print("I collided with player");
+            health.PutBackLimb();
+            Destroy(gameObject);
         }
     }
 }
