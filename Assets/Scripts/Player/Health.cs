@@ -98,7 +98,8 @@ public class Health : MonoBehaviour
 	public void Kill ()
 	{
 		if (!isDead) {
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
+            Destroy(gameObject);
             print ("I'm dead.");
 			isDead = true;
 		}

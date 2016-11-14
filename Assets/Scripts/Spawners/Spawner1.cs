@@ -7,9 +7,17 @@ public class Spawner1 : MonoBehaviour {
     public Transform[] spawnPoints;
     public FollowCam cam;
 
-	// Use this for initialization
-	void Start () {
+    PlayerController[] player;
+    int numberOfPlayers;
+    int playerNumber;
+
+    // Use this for initialization
+    void Start () {
         SpawnPlayers();
+        player = FindObjectsOfType<PlayerController>();
+
+        numberOfPlayers = player.Length;
+        Debug.Log(numberOfPlayers);
     }
 	
 	// Update is called once per frame
@@ -19,7 +27,18 @@ public class Spawner1 : MonoBehaviour {
 
     void CheckIfDead()
     {
-
+        if (player[0] == null) //if player 2 is dead
+        {
+            playerNumber = 1;
+            Debug.Log("Player 2 died so there is " + player.Length);
+            cam.StopFollowing();
+            cam.Move1(player[1].transform);
+        }
+        if (player[1] == null) //if player 1 is dead
+        {
+            playerNumber = 2;
+            Debug.Log("Player 1 died so there is " + player.Length);
+        }
     }
 
     void SpawnPlayers()

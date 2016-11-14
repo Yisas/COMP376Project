@@ -14,10 +14,15 @@ public class FollowCam : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Move();
+        Move2();
 	}
 
-    void Move()
+   public void Move1(Transform player) //follow just one player
+    {
+        transform.position = new Vector3(player.position.x, player.position.y, -10);
+    }
+
+   public void Move2() //follow both players
     {
         
         if (follow != null && other != null)
