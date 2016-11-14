@@ -229,6 +229,7 @@ public class PlayerController : MonoBehaviour
                 print("Im throwing limb with direction: " + direction);
                 weaponLeg.GetComponent<Throw>().ThrowLimb(direction);
             }
+            hasWeapon = false;
         }
     }
 

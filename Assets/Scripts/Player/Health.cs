@@ -60,11 +60,13 @@ public class Health : MonoBehaviour
                     anim.SetFloat("takeOffArmSpeed", tearOffArmSpeed);
                     anim.SetTrigger("takeOffArm");
                     player.hasWeapon = true;
+                    nbOfLimbs--;
                     return true;
                 case 2:
                     anim.SetFloat("takeOffLegSpeed", tearOffLegSpeed);
                     anim.SetTrigger("takeOffLeg");
                     player.hasWeapon = true;
+                    nbOfLimbs--;
                     return true;
                 default:
                     return false;
