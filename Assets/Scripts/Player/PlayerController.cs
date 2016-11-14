@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour
     bool running;
 	bool jumping;
     bool moving;
+	bool dodging;
 	bool crouching;					
     bool grounded;
     bool falling;
@@ -143,6 +144,8 @@ public class PlayerController : MonoBehaviour
 		crouching = (Input.GetAxis ("Crouch " + playerNumber) == 0 ? false : true);
 
         throwingLimb = Input.GetButtonDown("Throw Limb " + playerNumber);
+
+		dodging = Input.GetButtonDown ("Dodge " + playerNumber);
     }
 
     private void Move()
@@ -242,7 +245,11 @@ public class PlayerController : MonoBehaviour
 
 	private void Dodge()
 	{
-
+		if (dodging) 
+		{
+			Debug.Log ("Dodge");
+			dodging = false;
+		}
 	}
 
 	// Called by the animation to finish the attack
