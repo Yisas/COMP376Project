@@ -42,6 +42,11 @@ public class AuxAnimationCommunicator : MonoBehaviour {
 		playerController.JumpStart ();
 	}
 
+	public void InstantiateAndThrowLimb()
+	{
+		playerController.InstantiateAndThrowLimb ();
+	}
+
     public void DisableIsClubbing()
     {
         playerController.animIsClubbing = false;

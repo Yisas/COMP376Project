@@ -30,6 +30,10 @@ public class PlayerController : MonoBehaviour
 	public float clubAttackPepare;
 	[Tooltip("Speed for the club attack animation.")]
 	public float clubAttackSpeed;
+	[Tooltip("Speed at witch the animation prepares for the strike.")]
+	public float throwAttackPepare;
+	[Tooltip("Speed for the animation.")]
+	public float throwAttackSpeed;
 
 	[Header("--- State Variables ---")]
     public LayerMask mWhatIsGround;
@@ -158,7 +162,6 @@ public class PlayerController : MonoBehaviour
 			anim.SetFloat("jumpPrepareSpeed", jumpPrepareSpeed);
 			anim.SetFloat("jumpSpeed", jumpSpeed);
 			anim.SetTrigger ("jump");
-
         }
     }
 
@@ -214,24 +217,33 @@ public class PlayerController : MonoBehaviour
         
     }
 
+	// Starts the throw animation. The once the animation is done it will call InstantiateAndThrowLimb
     private void ThrowLimb()
     {
         if (hasWeapon && throwingLimb)
         {
-            if (weaponArm)
-            {
-                print("Im throwing limb with direction: " + direction);
-                weaponArm.GetComponent<Throw>().ThrowLimb(direction);
-            }
-
-            else if (weaponLeg)
-            {
-                print("Im throwing limb with direction: " + direction);
-                weaponLeg.GetComponent<Throw>().ThrowLimb(direction);
-            }
-            hasWeapon = false;
+			anim.SetFloat ("throwLimbPrepareSpeed", throwAttackPepare);
+			anim.SetFloat ("throwLimbSpeed", throwAttackSpeed);
+			anim.SetTrigger ("throwLimb");
         }
     }
+
+	// Called by the animation to finish the attack
+	public void InstantiateAndThrowLimb()
+	{
+		if (weaponArm)
+		{
+			print("Im throwing limb with direction: " + direction);
+			weaponArm.GetComponent<Throw>().ThrowLimb(direction);
+		}
+
+		else if (weaponLeg)
+		{
+			print("Im throwing limb with direction: " + direction);
+			weaponLeg.GetComponent<Throw>().ThrowLimb(direction);
+		}
+		hasWeapon = false;
+	}
 
     private void FaceDirection(Vector2 direction)
 	{
