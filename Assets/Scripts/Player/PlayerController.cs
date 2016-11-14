@@ -14,8 +14,12 @@ public class PlayerController : MonoBehaviour
 	public float jumpSpeed;
 	[Tooltip("This float is communicated to the animator to set the speed of the crouch animation")]
 	public float crouchSpeed;
+	[Tooltip("This float is communicated to the animator to set the speed of the dodge animation")]
+	public float dodgeSpeed;
+
 	[HideInInspector]				
     public bool animIsJabbing;
+	[HideInInspector]
     public bool animIsClubbing;
 
     [Header("--- Attack Variables ---")]
@@ -107,8 +111,6 @@ public class PlayerController : MonoBehaviour
             MeleeAttack();
             attackingMelee = false;
         }
-
-        
     }
 
     void FixedUpdate()
@@ -124,6 +126,7 @@ public class PlayerController : MonoBehaviour
 		Crouch ();
 		JumpPrepare();
         ThrowLimb();
+		Dodge ();
     }
 
     private void CollectInput()
@@ -236,6 +239,11 @@ public class PlayerController : MonoBehaviour
 			anim.SetTrigger ("throwLimb");
         }
     }
+
+	private void Dodge()
+	{
+
+	}
 
 	// Called by the animation to finish the attack
 	public void InstantiateAndThrowLimb()
