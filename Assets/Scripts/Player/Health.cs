@@ -37,7 +37,6 @@ public class Health : MonoBehaviour
 		nbOfLimbs = 3;
 
 	    player = GetComponent<PlayerController>();
-
 	}
 	
 	// Update is called once per frame
