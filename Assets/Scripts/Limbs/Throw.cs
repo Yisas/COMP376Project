@@ -16,12 +16,12 @@ public class Throw : MonoBehaviour {
     [Header("For testing purposes - Put this in the PlayerController")]
     public GameObject limbThrow;
 
-    
+	private Transform rotationPivot;
 
     // Use this for initialization
     void Start ()
     {
-        
+		rotationPivot = transform.FindChild ("rotationPivot").transform;
         
     }
 	
@@ -37,19 +37,18 @@ public class Throw : MonoBehaviour {
 
     public void ThrowLimb(Vector2 direction)
     {
-        GameObject parentArmThrow = Instantiate(limbThrow, transform.position + new Vector3(0.0f, -7.8f, 0.0f), Quaternion.identity) as GameObject;
+		GameObject parentArmThrow = Instantiate(limbThrow, rotationPivot.position, transform.rotation) as GameObject;
 
         if (parentArmThrow != null)
         {
             parentArmThrow.transform.SetParent(null);
             transform.SetParent(parentArmThrow.transform);
-            transform.localRotation = Quaternion.Euler(180, 0 ,0);
+            //transform.localRotation = Quaternion.Euler(180, 0 ,0);
             armThrowTransform = parentArmThrow.transform;
             limbDirection = direction;
-            parentArmThrow.transform.position += new Vector3(0.0f, 8.0f, 0.0f);
+            //parentArmThrow.transform.position += new Vector3(0.0f, 7.8f, 0.0f);
             isThrown = true;
         }
-
     }
 
     public bool LimbIsThrown()
