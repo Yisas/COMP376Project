@@ -25,6 +25,10 @@ public class PlayerController : MonoBehaviour
 	public float jabDashTreshold;	
 	[Tooltip("Single force to be applied on the dash attack")]
 	public float jabDashForce;
+    [Tooltip("Single force to be applied upon being punched, push player back")]
+    public float jabStagger;
+    [Tooltip("Single force to be applied upon being hit by weapon, push player back")]
+    public float limbStagger;
 
     [Tooltip("Speed at witch the club animation prepares for the strike.")]
 	public float clubAttackPepare;
@@ -77,6 +81,11 @@ public class PlayerController : MonoBehaviour
         sprites = transform.FindChild("Sprites");
         groundCheck = transform.FindChild("GroundCheck");
 	    health = GetComponent<Health>();
+
+        if (playerNumber == 1)
+            direction = new Vector2(1.0f, 0);
+        if (playerNumber == 2)
+            direction = new Vector2(-1.0f, 0);
 	}
 	
 	// Update is called once per frame
@@ -281,7 +290,8 @@ public class PlayerController : MonoBehaviour
             {
                 isHit = true; //I can't be hit twice by the same jab animation
                 jabCounter++;
-				Debug.Log (jabCounter);
+                rb.AddForce(jabStagger * (opponent.GetDirection())); // push player being hit back, "stagger"
+                Debug.Log (jabCounter);
                 if (jabCounter >= 3) //if I have been hit 3 times or more by a jab
                 {
                     health.TakeOffLimb();
@@ -298,6 +308,7 @@ public class PlayerController : MonoBehaviour
         {
             if (opponent.animIsClubbing && !isHit)
             {
+                rb.AddForce(limbStagger * (opponent.GetDirection())); // push player being hit back, "stagger"
                 StartCoroutine(RemoveLimb(0.5f));
             }
         }
@@ -348,6 +359,11 @@ public class PlayerController : MonoBehaviour
     public Animator GetAnimator()
     {
         return anim;
+    }
+
+    public Vector3 GetDirection()
+    {
+        return direction;
     }
 
 }
