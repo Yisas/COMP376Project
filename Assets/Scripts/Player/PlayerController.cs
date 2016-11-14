@@ -48,7 +48,8 @@ public class PlayerController : MonoBehaviour
     bool attackingMelee;
     bool isHit;
     bool tearOffLimb;
-	[Header("This is temporarily public until we add the functionality to modify at runtime.")]
+    bool throwingLimb;
+
 	public bool hasWeapon;			
 
 	// Numerical variables
@@ -63,6 +64,8 @@ public class PlayerController : MonoBehaviour
     Animator anim;
     Transform groundCheck;
     private Health health;
+    public GameObject weaponArm;
+    public GameObject weaponLeg;
     
 	// Use this for initialization
 	void Start ()
@@ -107,6 +110,7 @@ public class PlayerController : MonoBehaviour
         Move();
 		Crouch ();
 		JumpPrepare();
+        ThrowLimb();
     }
 
     private void CollectInput()
@@ -121,6 +125,8 @@ public class PlayerController : MonoBehaviour
         tearOffLimb = Input.GetButtonDown("Tear Limb " + playerNumber);
 
 		crouching = (Input.GetAxis ("Crouch " + playerNumber) == 0 ? false : true);
+
+        throwingLimb = Input.GetButtonDown("Throw Limb " + playerNumber);
     }
 
     private void Move()
@@ -129,8 +135,12 @@ public class PlayerController : MonoBehaviour
 		if (!crouching) 
 		{
 			// Horizontal movement
-			direction = new Vector2 (moveInput, 0.0f);
-			transform.Translate (direction * Time.deltaTime * moveSpeed);
+		    if (moveInput != 0.0f)
+		    {
+                direction = new Vector2(moveInput, 0.0f);
+            }
+            //print("In the move function, the direction vector is: " + direction);
+			transform.Translate (new Vector2(moveInput, 0.0f) * Time.deltaTime * moveSpeed);
 			FaceDirection (direction);
 			// Pass movement speed to animator
 			anim.SetFloat ("speed", Mathf.Abs (moveInput));
@@ -202,6 +212,24 @@ public class PlayerController : MonoBehaviour
 		}
         
         
+    }
+
+    private void ThrowLimb()
+    {
+        if (hasWeapon && throwingLimb)
+        {
+            if (weaponArm)
+            {
+                print("Im throwing limb with direction: " + direction);
+                weaponArm.GetComponent<Throw>().ThrowLimb(direction);
+            }
+
+            else if (weaponLeg)
+            {
+                print("Im throwing limb with direction: " + direction);
+                weaponLeg.GetComponent<Throw>().ThrowLimb(direction);
+            }
+        }
     }
 
     private void FaceDirection(Vector2 direction)
