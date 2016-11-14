@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
 
     // References
     Rigidbody2D rb;
-	Transform transform;
+	Transform myTransform;
     Transform sprites;
     Animator anim;
     Transform groundCheck;
@@ -77,8 +77,8 @@ public class PlayerController : MonoBehaviour
         // Setup references
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
-        transform = GetComponent<Transform>();
-        sprites = transform.FindChild("Sprites");
+        myTransform = transform;
+        sprites = myTransform.FindChild("Sprites");
         groundCheck = transform.FindChild("GroundCheck");
 	    health = GetComponent<Health>();
 	}
@@ -144,7 +144,7 @@ public class PlayerController : MonoBehaviour
                 direction = new Vector2(moveInput, 0.0f);
             }
             //print("In the move function, the direction vector is: " + direction);
-			transform.Translate (new Vector2(moveInput, 0.0f) * Time.deltaTime * moveSpeed);
+			myTransform.Translate (new Vector2(moveInput, 0.0f) * Time.deltaTime * moveSpeed);
 			FaceDirection (direction);
 			// Pass movement speed to animator
 			anim.SetFloat ("speed", Mathf.Abs (moveInput));
@@ -278,10 +278,10 @@ public class PlayerController : MonoBehaviour
 
     private void ClampToCamera()
     {
-        Vector3 position = Camera.main.WorldToViewportPoint(transform.position);
+        Vector3 position = Camera.main.WorldToViewportPoint(myTransform.position);
         position.x = Mathf.Clamp(position.x, 0.03f, 0.97f);
        // position.y = Mathf.Clamp(position.y, 0.05f, 0.95f);
-        transform.position = Camera.main.ViewportToWorldPoint(position);
+        myTransform.position = Camera.main.ViewportToWorldPoint(position);
     }
 
     public void GetHitByJab(GameObject oppositePlayer)
