@@ -21,15 +21,12 @@ public class Throw : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        
-        
     }
 	
 	// Update is called once per frame
 	void Update () {
 	    if (isThrown)
 	    {
-            print("Limb direction: " + limbDirection);
 	        armThrowTransform.Translate(limbDirection*projectileSpeed, Space.World);
 	        transform.RotateAround(armThrowTransform.position, Vector3.back*limbDirection.x, 20);
 	    }

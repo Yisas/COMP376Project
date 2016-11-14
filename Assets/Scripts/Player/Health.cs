@@ -24,6 +24,8 @@ public class Health : MonoBehaviour
 	private bool isDead;
     private PlayerController player;
 
+    public GameObject pileOfBones;
+
 	// References
 	Animator anim;
 
@@ -95,9 +97,16 @@ public class Health : MonoBehaviour
 		}
 	}
 
+    public void PutBackLimb()
+    {
+        
+    }
+
 	public void Kill ()
 	{
-		if (!isDead) {
+		if (!isDead)
+		{
+		    Instantiate(pileOfBones, transform.position + new Vector3(0, 0, -5f), Quaternion.identity);
             gameObject.SetActive(false);
             print ("I'm dead.");
 			isDead = true;
