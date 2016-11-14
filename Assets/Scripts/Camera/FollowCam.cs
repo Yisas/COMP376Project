@@ -19,6 +19,7 @@ public class FollowCam : MonoBehaviour {
 
    public void Move1(Transform player) //follow just one player
     {
+        //this is just for testing, make camera smothly follow living player
         transform.position = new Vector3(player.position.x, player.position.y, -10);
     }
 
