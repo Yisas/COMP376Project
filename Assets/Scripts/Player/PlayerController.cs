@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
 	public float crouchSpeed;
 	[Tooltip("This float is communicated to the animator to set the speed of the dodge animation")]
 	public float dodgeSpeed;
+	[Tooltip("Single force to be applied on the dodge movement")]
+	public float dodgeForce;
 
 	[HideInInspector]				
     public bool animIsJabbing;
@@ -247,7 +249,13 @@ public class PlayerController : MonoBehaviour
 	{
 		if (dodging) 
 		{
-			Debug.Log ("Dodge");
+			// Add force in oposite horizontal direction to where the player is facing
+			rb.AddForce (new Vector2(-Mathf.Sign(direction.x) * dodgeForce, direction.y));
+
+			// Trigger animator
+			anim.SetFloat ("dodgeSpeed", dodgeSpeed);
+			anim.SetTrigger ("dodge");
+
 			dodging = false;
 		}
 	}
