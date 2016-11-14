@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
 	public float jumpPrepareSpeed;
 	[Tooltip("This float is communicated to the animator to set the speed of the jump animation")]
 	public float jumpSpeed;
+	[Tooltip("This float is communicated to the animator to set the speed of the crouch animation")]
+	public float crouchSpeed;
 	[HideInInspector]				
     public bool animIsJabbing;
     public bool animIsClubbing;
@@ -40,12 +42,14 @@ public class PlayerController : MonoBehaviour
     bool running;
 	bool jumping;
     bool moving;
+	bool crouching;					
     bool grounded;
     bool falling;
     bool attackingMelee;
     bool isHit;
     bool tearOffLimb;
-	[Header("This is temporarily public until we add the functionality to modify at runtime.")]
+    bool throwingLimb;
+
 	public bool hasWeapon;			
 
 	// Numerical variables
@@ -60,6 +64,8 @@ public class PlayerController : MonoBehaviour
     Animator anim;
     Transform groundCheck;
     private Health health;
+    public GameObject weaponArm;
+    public GameObject weaponLeg;
     
 	// Use this for initialization
 	void Start ()
@@ -71,7 +77,6 @@ public class PlayerController : MonoBehaviour
         sprites = transform.FindChild("Sprites");
         groundCheck = transform.FindChild("GroundCheck");
 	    health = GetComponent<Health>();
-
 	}
 	
 	// Update is called once per frame
@@ -79,6 +84,7 @@ public class PlayerController : MonoBehaviour
     {
         CheckGrounded();
         CheckFalling();
+        ClampToCamera();
 
 		if(!inputLocked)
         	CollectInput();
@@ -102,7 +108,9 @@ public class PlayerController : MonoBehaviour
         }
 
         Move();
+		Crouch ();
 		JumpPrepare();
+        ThrowLimb();
     }
 
     private void CollectInput()
@@ -115,16 +123,28 @@ public class PlayerController : MonoBehaviour
 		jumping = Input.GetButtonDown ("Jump" + playerNumber);
 
         tearOffLimb = Input.GetButtonDown("Tear Limb " + playerNumber);
+
+		crouching = (Input.GetAxis ("Crouch " + playerNumber) == 0 ? false : true);
+
+        throwingLimb = Input.GetButtonDown("Throw Limb " + playerNumber);
     }
 
     private void Move()
     {
-        // Horizontal movement
-        direction = new Vector2(moveInput, 0.0f);
-        transform.Translate(direction * Time.deltaTime * moveSpeed);
-        FaceDirection (direction);
-        // Pass movement speed to animator
-        anim.SetFloat("speed",Mathf.Abs(moveInput));
+		// Don't move while holding down crouch button. The crouch method cancels horizontal velocity
+		if (!crouching) 
+		{
+			// Horizontal movement
+		    if (moveInput != 0.0f)
+		    {
+                direction = new Vector2(moveInput, 0.0f);
+            }
+            //print("In the move function, the direction vector is: " + direction);
+			transform.Translate (new Vector2(moveInput, 0.0f) * Time.deltaTime * moveSpeed);
+			FaceDirection (direction);
+			// Pass movement speed to animator
+			anim.SetFloat ("speed", Mathf.Abs (moveInput));
+		}
     }
 
 	// The animator will finish the jump sequence after this method is called
@@ -146,6 +166,18 @@ public class PlayerController : MonoBehaviour
 	public void JumpStart()
 	{
 		rb.velocity = new Vector2(0.0f, jumpForce);
+	}
+
+
+	private void Crouch()
+	{
+		if (crouching) 
+		{
+			CancelHorizontalVelocity ();
+
+			anim.SetFloat ("crouchSpeed", crouchSpeed);
+		}
+		anim.SetBool ("crouching", crouching);
 	}
 
     private void MeleeAttack()
@@ -182,6 +214,25 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    private void ThrowLimb()
+    {
+        if (hasWeapon && throwingLimb)
+        {
+            if (weaponArm)
+            {
+                print("Im throwing limb with direction: " + direction);
+                weaponArm.GetComponent<Throw>().ThrowLimb(direction);
+            }
+
+            else if (weaponLeg)
+            {
+                print("Im throwing limb with direction: " + direction);
+                weaponLeg.GetComponent<Throw>().ThrowLimb(direction);
+            }
+            hasWeapon = false;
+        }
+    }
+
     private void FaceDirection(Vector2 direction)
 	{
         if (direction.x != 0.0f)
@@ -211,6 +262,14 @@ public class PlayerController : MonoBehaviour
     private void CheckFalling()
     {
         falling = rb.velocity.y < 0.0f;
+    }
+
+    private void ClampToCamera()
+    {
+        Vector3 position = Camera.main.WorldToViewportPoint(transform.position);
+        position.x = Mathf.Clamp(position.x, 0.03f, 0.97f);
+       // position.y = Mathf.Clamp(position.y, 0.05f, 0.95f);
+        transform.position = Camera.main.ViewportToWorldPoint(position);
     }
 
     public void GetHitByJab(GameObject oppositePlayer)
@@ -258,6 +317,13 @@ public class PlayerController : MonoBehaviour
 
         isHit = false;
     }
+
+	private void CancelHorizontalVelocity()
+	{
+		// Cancel horizontal velocities and stop running animations
+		anim.SetFloat ("speed", 0);
+		rb.velocity = new Vector2(0, rb.velocity.y);
+	}
 
     public void SetIsHit(bool hit)
     {

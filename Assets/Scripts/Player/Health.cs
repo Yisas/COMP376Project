@@ -18,8 +18,6 @@ public class Health : MonoBehaviour
 	public GameObject weaponLeg;
 	[Tooltip ("A reference to this player's regular foreground leg gameobject")]         // TODO: Consider switching this to a runtime search when I'm not lazy
     public GameObject foregroundLeg;
-    [Tooltip("A reference to this player's head to take it off when he's dead.")]
-    public GameObject head;
 
 	// State variables
 	private int nbOfLimbs;
@@ -61,11 +59,13 @@ public class Health : MonoBehaviour
                     anim.SetFloat("takeOffArmSpeed", tearOffArmSpeed);
                     anim.SetTrigger("takeOffArm");
                     player.hasWeapon = true;
+                    nbOfLimbs--;
                     return true;
                 case 2:
                     anim.SetFloat("takeOffLegSpeed", tearOffLegSpeed);
                     anim.SetTrigger("takeOffLeg");
                     player.hasWeapon = true;
+                    nbOfLimbs--;
                     return true;
                 default:
                     return false;
