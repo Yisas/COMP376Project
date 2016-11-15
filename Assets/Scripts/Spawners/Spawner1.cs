@@ -10,18 +10,15 @@ public class Spawner1 : MonoBehaviour {
     GameObject newPlayer1;
     GameObject newPlayer2;
 
-    PlayerController[] player;
-    int numberOfPlayers;
-    int playerNumber;
-    bool deadPlayer = false;
+    private PlayerController[] player;
+    private float timeOfDeath;
+    private int playerNumber;
+    private bool deadPlayer = false;
 
     // Use this for initialization
     void Start () {
         SpawnPlayers();
         player = FindObjectsOfType<PlayerController>();
-
-        numberOfPlayers = player.Length;
-        Debug.Log(numberOfPlayers);
     }
 	
 	// Update is called once per frame
@@ -35,18 +32,28 @@ public class Spawner1 : MonoBehaviour {
         {
             if (player[0] == null) //if player 2 is dead
             {
+                timeOfDeath = Time.time;
                 int playerNum = player[0].playerNumber;
-                Debug.Log("Player 2 died so there is " + player.Length);
-                StartCoroutine(SpawnPlayer(playerNum));
-                //StartCoroutine(SpawnPlayer2());
+                Debug.Log("Start timer");
+                if(Time.time - timeOfDeath >= 1.5)
+                {
+                    Debug.Log("Timer started");
+                    SpawnPlayer(playerNum);
+                }
+                //StartCoroutine(SpawnPlayer(playerNum));
                 deadPlayer = true;
             }
             if (player[1] == null) //if player 1 is dead
             {
+                timeOfDeath = Time.time;
                 int playerNum = player[1].playerNumber;
-                Debug.Log("Player 1 died so there is " + player.Length);
-                StartCoroutine(SpawnPlayer(playerNum));
-                //StartCoroutine(SpawnPlayer1());
+                Debug.Log("Start Timer");
+                if (Time.time - timeOfDeath >= 1.5)
+                {
+                    Debug.Log("Timer Started");
+                    SpawnPlayer(playerNum);
+                }
+                // StartCoroutine(SpawnPlayer(playerNum));
                 deadPlayer = true;
             }
         }
@@ -74,23 +81,39 @@ public class Spawner1 : MonoBehaviour {
 
     }
 
-    IEnumerator SpawnPlayer(int playerNum)
+    private void SpawnPlayer(int playerNum)
+    {
+        playerNumber = playerNum;
+
+        if (playerNumber == 1) //if player 1 is dead spawn him
+        {
+            newPlayer1 = Instantiate(players[0], spawnPoints[0].position, Quaternion.identity) as GameObject;
+        }
+        else if(playerNumber == 2) //if player 2 is dead spawn him
+        {
+            newPlayer2 = Instantiate(players[1], spawnPoints[1].position, Quaternion.identity) as GameObject;
+        }
+
+        cam.Follow(newPlayer1.transform, newPlayer2.transform);
+        deadPlayer = false;
+    }
+
+    /*IEnumerator SpawnPlayer(int playerNum)
     {
         playerNumber = playerNum;
         Debug.Log("Waiting to respawn player");
 
         yield return new WaitForSeconds(1.5f);
-        if (playerNumber == 1)
+        if (playerNumber == 1) //if player 1 is dead spawn him
         {
             newPlayer1 = Instantiate(players[0], spawnPoints[0].position, Quaternion.identity) as GameObject;
         }
-        else
+        else //if player 2 is dead spawn him
         {
             newPlayer2 = Instantiate(players[1], spawnPoints[1].position, Quaternion.identity) as GameObject;
         }
-        player = FindObjectsOfType<PlayerController>();
-        Debug.Log("Length of player array" + player.Length);
+        
         cam.Follow(newPlayer1.transform, newPlayer2.transform);
         deadPlayer = false;
-    }
+    }*/
 }
