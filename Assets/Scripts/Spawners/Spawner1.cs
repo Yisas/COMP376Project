@@ -37,8 +37,6 @@ public class Spawner1 : MonoBehaviour {
             {
                 playerNumber = 1;
                 Debug.Log("Player 2 died so there is " + player.Length);
-               //cam.StopFollowing();
-                //cam.Move1(player[1].transform);
                 StartCoroutine(SpawnPlayer2());
                 deadPlayer = true;
             }
@@ -46,8 +44,7 @@ public class Spawner1 : MonoBehaviour {
             {
                 playerNumber = 2;
                 Debug.Log("Player 1 died so there is " + player.Length);
-                cam.StopFollowing();
-                cam.Move1(player[0].transform);
+                StartCoroutine(SpawnPlayer1());
                 deadPlayer = true;
             }
         }
@@ -75,21 +72,24 @@ public class Spawner1 : MonoBehaviour {
 
     }
 
-    void SpawnPlayer1()
+    IEnumerator SpawnPlayer1()
     {
-       
+        Debug.Log("Waiting to respawn player1");
+
+        yield return new WaitForSeconds(1.5f);
+        newPlayer1 = Instantiate(players[0], spawnPoints[1].position, Quaternion.identity) as GameObject;
+        player = FindObjectsOfType<PlayerController>();
+        cam.Follow(newPlayer1.transform, newPlayer2.transform);
+        deadPlayer = false;
     }
 
     IEnumerator SpawnPlayer2()
     {
-        yield return new WaitForSeconds(2);
         Debug.Log("Waiting to respawn player2");
+
+        yield return new WaitForSeconds(1.5f);
         newPlayer2 = Instantiate(players[1], spawnPoints[0].position, Quaternion.identity) as GameObject;
         player = FindObjectsOfType<PlayerController>();
-  
-        numberOfPlayers = player.Length;
-        Debug.Log("Spawning player 2 back, size of playercontroller array is " + numberOfPlayers);
-
         cam.Follow(newPlayer1.transform, newPlayer2.transform);
         deadPlayer = false;
     }
