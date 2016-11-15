@@ -242,14 +242,11 @@ public class PlayerController : MonoBehaviour
 	{
 		if (weaponArm.activeSelf)
 		{
-			print("Im throwing limb with direction: " + direction);
-			Debug.Log ("Position of weapon arm was: " + weaponArm.transform.position);
 			weaponArm.GetComponent<Throw>().ThrowLimb(direction);
 		}
 
 		else if (weaponLeg.activeSelf)
 		{
-			print("Im throwing limb with direction: " + direction);
 			weaponLeg.GetComponent<Throw>().ThrowLimb(direction);
 		}
 		hasWeapon = false;

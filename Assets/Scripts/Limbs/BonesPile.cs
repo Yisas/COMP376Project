@@ -28,7 +28,6 @@ public class BonesPile : MonoBehaviour
 
         else
         {
-            print("I collided with player");
             health.PutBackLimb();
             Destroy(gameObject);
         }

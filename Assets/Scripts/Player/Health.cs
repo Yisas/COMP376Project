@@ -82,16 +82,13 @@ public class Health : MonoBehaviour
 		if (nbOfLimbs == 3) {
             //take off arm
 			foregroundArm.SetActive(false);
-			print ("I took off arm");
 			nbOfLimbs--;
 		} else if (nbOfLimbs == 2) {
 			//take off leg
             foregroundLeg.SetActive(false);
-			print ("I took off leg");
 			nbOfLimbs--;
 		} else if (nbOfLimbs == 1) {
 			//take off head
-			print ("I took off head");
 			nbOfLimbs--;
 		}
 	}
@@ -102,6 +99,7 @@ public class Health : MonoBehaviour
         {
             case 3:
                 weaponArm.SetActive(true);
+                player.hasWeapon = true;
                 break;
             case 2:
                 foregroundArm.SetActive(true);
@@ -118,9 +116,8 @@ public class Health : MonoBehaviour
 	{
 		if (!isDead)
 		{
-		    Instantiate(pileOfBones, transform.position + new Vector3(0, 0, -5f), Quaternion.identity);
+		    Instantiate(pileOfBones, transform.position, Quaternion.identity); 
             gameObject.SetActive(false);
-            print ("I'm dead.");
 			isDead = true;
 		}
             

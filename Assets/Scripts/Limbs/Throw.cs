@@ -29,7 +29,6 @@ public class Throw : MonoBehaviour {
 	void Update () {
 	    if (isThrown)
 	    {
-            print("Limb direction: " + limbDirection);
 	        armThrowTransform.Translate(limbDirection*projectileSpeed, Space.World);
 	        transform.RotateAround(armThrowTransform.position, Vector3.back*limbDirection.x, 20);
 	    }
@@ -67,7 +66,7 @@ public class Throw : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (!col.gameObject.GetComponent<PlayerController>())
+        if (!(col.gameObject.GetComponent<PlayerController>() || col.gameObject.GetComponent<BonesPile>()))
         {
             Destroy(gameObject);
         }
