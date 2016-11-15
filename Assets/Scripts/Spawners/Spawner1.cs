@@ -35,16 +35,18 @@ public class Spawner1 : MonoBehaviour {
         {
             if (player[0] == null) //if player 2 is dead
             {
-                playerNumber = 1;
+                int playerNum = player[0].playerNumber;
                 Debug.Log("Player 2 died so there is " + player.Length);
-                StartCoroutine(SpawnPlayer2());
+                StartCoroutine(SpawnPlayer(playerNum));
+                //StartCoroutine(SpawnPlayer2());
                 deadPlayer = true;
             }
             if (player[1] == null) //if player 1 is dead
             {
-                playerNumber = 2;
+                int playerNum = player[1].playerNumber;
                 Debug.Log("Player 1 died so there is " + player.Length);
-                StartCoroutine(SpawnPlayer1());
+                StartCoroutine(SpawnPlayer(playerNum));
+                //StartCoroutine(SpawnPlayer1());
                 deadPlayer = true;
             }
         }
@@ -72,24 +74,22 @@ public class Spawner1 : MonoBehaviour {
 
     }
 
-    IEnumerator SpawnPlayer1()
+    IEnumerator SpawnPlayer(int playerNum)
     {
-        Debug.Log("Waiting to respawn player1");
+        playerNumber = playerNum;
+        Debug.Log("Waiting to respawn player");
 
         yield return new WaitForSeconds(1.5f);
-        newPlayer1 = Instantiate(players[0], spawnPoints[1].position, Quaternion.identity) as GameObject;
+        if (playerNumber == 1)
+        {
+            newPlayer1 = Instantiate(players[0], spawnPoints[0].position, Quaternion.identity) as GameObject;
+        }
+        else
+        {
+            newPlayer2 = Instantiate(players[1], spawnPoints[1].position, Quaternion.identity) as GameObject;
+        }
         player = FindObjectsOfType<PlayerController>();
-        cam.Follow(newPlayer1.transform, newPlayer2.transform);
-        deadPlayer = false;
-    }
-
-    IEnumerator SpawnPlayer2()
-    {
-        Debug.Log("Waiting to respawn player2");
-
-        yield return new WaitForSeconds(1.5f);
-        newPlayer2 = Instantiate(players[1], spawnPoints[0].position, Quaternion.identity) as GameObject;
-        player = FindObjectsOfType<PlayerController>();
+        Debug.Log("Length of player array" + player.Length);
         cam.Follow(newPlayer1.transform, newPlayer2.transform);
         deadPlayer = false;
     }
