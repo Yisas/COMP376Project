@@ -86,7 +86,11 @@ public class PlayerController : MonoBehaviour
 	private Health health;
 	public GameObject weaponArm;
 	public GameObject weaponLeg;
-    
+
+    [Header("--- Sound Effects ---")]
+    public AudioClip jabHit;
+    public AudioClip clubHit;
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -231,6 +235,7 @@ public class PlayerController : MonoBehaviour
 			anim.SetFloat ("clubSpeed", clubAttackSpeed);
 			anim.SetTrigger ("club");
 			animIsClubbing = true;
+            
 		}
         
         
@@ -332,11 +337,11 @@ public class PlayerController : MonoBehaviour
 		PlayerController opponent = oppositePlayer.GetComponent<PlayerController> ();
 		if (opponent) {
 			if (opponent.animIsJabbing && !isHit) { //if the opponent is in jab motion and I have not been hit yet
-				isHit = true; //I can't be hit twice by the same jab animation
+                AudioSource.PlayClipAtPoint(jabHit, transform.position, 0.5f);
+                isHit = true; //I can't be hit twice by the same jab animation
 				jabCounter++;
 				rb.AddForce (jabStagger * (opponent.GetDirection ())); // push player being hit back, "stagger"
-				Debug.Log (jabCounter);
-				if (jabCounter >= 3) { //if I have been hit 3 times or more by a jab
+                if (jabCounter >= 3) { //if I have been hit 3 times or more by a jab
 					health.TakeOffLimb ();
 					jabCounter = 0; //reset the jab counter
 				}
@@ -349,8 +354,9 @@ public class PlayerController : MonoBehaviour
 		PlayerController opponent = oppositePlayer.GetComponent<PlayerController> ();
 		if (opponent) {
 			if (opponent.animIsClubbing && !isHit) {
-				rb.AddForce (limbStagger * (opponent.GetDirection ())); // push player being hit back, "stagger"
-				StartCoroutine (RemoveLimb (0.5f));
+                AudioSource.PlayClipAtPoint(clubHit, transform.position, 0.5f);
+                rb.AddForce (limbStagger * (opponent.GetDirection ())); // push player being hit back, "stagger"
+                StartCoroutine (RemoveLimb (0.5f));
 			}
 		}
 	}
