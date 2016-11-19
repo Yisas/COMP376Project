@@ -52,6 +52,9 @@ public class Spawner1 : MonoBehaviour {
         newPlayer2 = Instantiate(players[1], spawnPoints[1].position, Quaternion.identity) as GameObject;
         Debug.Log("Player spawned");
 
+        spawnPoints[0].transform.position += new Vector3(-42, 0, 0);
+        spawnPoints[1].transform.position += new Vector3(42, 0, 0);
+
         cam.Follow(newPlayer1.transform, newPlayer2.transform);
     }
 
