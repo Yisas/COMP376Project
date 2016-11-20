@@ -52,8 +52,8 @@ public class Spawner1 : MonoBehaviour {
         newPlayer2 = Instantiate(players[1], spawnPoints[1].position, Quaternion.identity) as GameObject;
         Debug.Log("Player spawned");
 
-        spawnPoints[0].transform.position += new Vector3(-42, 0, 0);
-        spawnPoints[1].transform.position += new Vector3(42, 0, 0);
+        spawnPoints[0].transform.position += new Vector3(-39, 0, 0);
+        spawnPoints[1].transform.position += new Vector3(39, 0, 0);
 
         cam.Follow(newPlayer1.transform, newPlayer2.transform);
     }
@@ -63,7 +63,7 @@ public class Spawner1 : MonoBehaviour {
         playerNumber = playerNum;
         Debug.Log("Waiting to respawn player");
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(5f);
         if (playerNumber == 1) //if player 1 is dead spawn him
         {
             newPlayer1 = Instantiate(players[0], spawnPoints[0].position, Quaternion.identity) as GameObject;
