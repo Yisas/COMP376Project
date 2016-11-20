@@ -90,6 +90,7 @@ public class PlayerController : MonoBehaviour
     [Header("--- Sound Effects ---")]
     public AudioClip jabHit;
     public AudioClip clubHit;
+    public AudioClip throwSound;
 
 	// Use this for initialization
 	void Start ()
@@ -245,10 +246,11 @@ public class PlayerController : MonoBehaviour
 	private void ThrowLimb ()
 	{
 		if (hasWeapon && throwingLimb) {
-			anim.SetFloat ("throwLimbPrepareSpeed", throwAttackPepare);
+            AudioSource.PlayClipAtPoint(throwSound, transform.position, 0.99f); //I don't know why but we can't hear it
+            anim.SetFloat ("throwLimbPrepareSpeed", throwAttackPepare);
 			anim.SetFloat ("throwLimbSpeed", throwAttackSpeed);
 			anim.SetTrigger ("throwLimb");
-		    hasWeapon = false;
+            hasWeapon = false;
 		}
 	}
 
@@ -337,7 +339,7 @@ public class PlayerController : MonoBehaviour
 		PlayerController opponent = oppositePlayer.GetComponent<PlayerController> ();
 		if (opponent) {
 			if (opponent.animIsJabbing && !isHit) { //if the opponent is in jab motion and I have not been hit yet
-                AudioSource.PlayClipAtPoint(jabHit, transform.position, 0.5f);
+                AudioSource.PlayClipAtPoint(jabHit, transform.position, 0.75f);
                 isHit = true; //I can't be hit twice by the same jab animation
 				jabCounter++;
 				rb.AddForce (jabStagger * (opponent.GetDirection ())); // push player being hit back, "stagger"
@@ -354,7 +356,7 @@ public class PlayerController : MonoBehaviour
 		PlayerController opponent = oppositePlayer.GetComponent<PlayerController> ();
 		if (opponent) {
 			if (opponent.animIsClubbing && !isHit) {
-                AudioSource.PlayClipAtPoint(clubHit, transform.position, 0.5f);
+                AudioSource.PlayClipAtPoint(clubHit, transform.position, 0.75f);
                 rb.AddForce (limbStagger * (opponent.GetDirection ())); // push player being hit back, "stagger"
                 StartCoroutine (RemoveLimb (0.5f));
 			}
