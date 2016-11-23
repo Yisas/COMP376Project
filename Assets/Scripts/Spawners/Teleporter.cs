@@ -59,6 +59,7 @@ public class Teleporter : MonoBehaviour {
 
     private void ProgressToNextStage()
     {
+        //FOR THE MIDDLE STAGE---------------------------------------------------------------------------
         if (players[0] == null && players[1].playerNumber == 1 && teleporterNumber == 2) //player 2 dead
         {
             Debug.Log("Player 1 is trying to progress");
@@ -79,6 +80,52 @@ public class Teleporter : MonoBehaviour {
         {
             Debug.Log("Player 2 is trying to progress");
             LoadNextStage("left1");
+        }
+
+        //FOR RIGHT1 STAGE-----------------------------------------------------------------------------
+        if (players[0] == null && players[1].playerNumber == 1 && teleporterNumber == 4) //player 2 dead
+        {
+            Debug.Log("Player 1 is trying to progress");
+            //LoadNextStage("");
+        }
+        else if (players[1] == null && players[0].playerNumber == 1 && teleporterNumber == 4)
+        {
+            Debug.Log("Player 1 is trying to progress");
+            //LoadNextStage("");
+        }
+
+        if (players[1] == null && players[0].playerNumber == 2 && teleporterNumber == 3) //player 1 dead
+        {
+            Debug.Log("Player 2 is trying to progress");
+            LoadNextStage("middle");
+        }
+        else if (players[0] == null && players[1].playerNumber == 2 && teleporterNumber == 3)
+        {
+            Debug.Log("Player 2 is trying to progress");
+            LoadNextStage("middle");
+        }
+
+        //FOR LEFT1 STAGE------------------------------------------------------------------------------
+        if (players[0] == null && players[1].playerNumber == 1 && teleporterNumber == 6) //player 2 dead
+        {
+            Debug.Log("Player 1 is trying to progress");
+            LoadNextStage("middle");
+        }
+        else if (players[1] == null && players[0].playerNumber == 1 && teleporterNumber == 6)
+        {
+            Debug.Log("Player 1 is trying to progress");
+            LoadNextStage("middle");
+        }
+
+        if (players[1] == null && players[0].playerNumber == 2 && teleporterNumber == 5) //player 1 dead
+        {
+            Debug.Log("Player 2 is trying to progress");
+           // LoadNextStage("");
+        }
+        else if (players[0] == null && players[1].playerNumber == 2 && teleporterNumber == 5)
+        {
+            Debug.Log("Player 2 is trying to progress");
+          //LoadNextStage("");
         }
     }
 
