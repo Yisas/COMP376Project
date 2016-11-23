@@ -63,7 +63,7 @@ public class Spawner1 : MonoBehaviour {
         playerNumber = playerNum;
         Debug.Log("Waiting to respawn player");
 
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
         if (playerNumber == 1) //if player 1 is dead spawn him
         {
             newPlayer1 = Instantiate(players[0], spawnPoints[0].position, Quaternion.identity) as GameObject;

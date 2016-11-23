@@ -4,7 +4,7 @@ using System.Collections;
 public class Teleporter : MonoBehaviour {
 
     public int teleporterNumber;
-    float endTime = 5.5f; //this will have to be the same as respawn time in spawner script
+    float endTime = 3.2f; //this will have to be the same as respawn time in spawner script
     float timeRemaining = 2;
     bool playerTimer = true;
 
@@ -51,7 +51,7 @@ public class Teleporter : MonoBehaviour {
                     Debug.Log("Check player array");
                     players = FindObjectsOfType<PlayerController>();
                     Debug.Log("Player[0]: " + players[0].playerNumber + " and Player[1]: " + players[1].playerNumber);
-                    endTime = 5.5f; //must be the same as the respawn time 
+                    endTime = 3.2f; //must be the same as the respawn time 
                 }
             }
         }
@@ -62,23 +62,23 @@ public class Teleporter : MonoBehaviour {
         if (players[0] == null && players[1].playerNumber == 1 && teleporterNumber == 2) //player 2 dead
         {
             Debug.Log("Player 1 is trying to progress");
-         // LoadNextStage("right1");
+            LoadNextStage("right1");
         }
         else if(players[1] == null && players[0].playerNumber == 1 && teleporterNumber == 2)
         {
             Debug.Log("Player 1 is trying to progress");
-            // LoadNextStage("right1");
+            LoadNextStage("right1");
         }
 
         if (players[1] == null && players[0].playerNumber == 2 && teleporterNumber == 1) //player 1 dead
         {
             Debug.Log("Player 2 is trying to progress");
-            //LoadNextStage("left1");
+            LoadNextStage("left1");
         }
         else if(players[0] == null && players[1].playerNumber == 2 && teleporterNumber == 1)
         {
             Debug.Log("Player 2 is trying to progress");
-            //LoadNextStage("left1");
+            LoadNextStage("left1");
         }
     }
 
