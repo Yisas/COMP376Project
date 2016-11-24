@@ -4,132 +4,19 @@ using System.Collections;
 public class Teleporter : MonoBehaviour {
 
     public int teleporterNumber;
-    float endTime = 3.2f; //this will have to be the same as respawn time in spawner script
-    float timeRemaining = 2;
-    bool playerTimer = true;
+
+    static int currentStage = 3;
+    static string[] stages = { "leftFinal", "left2", "left1", "middle", "right1", "right2", "rightFinal"};
 
     PlayerController[] players;
 
-    private bool teleport = false;
-
-	// Use this for initialization
-	void Start () {
-       
-	}
-	
-	// Update is called once per frame
-	void Update () {
-
-        timeRemaining -= Time.deltaTime;
-        GetPlayers();
-        CheckPlayers();
-       
-	}
-
-    private void GetPlayers()
+    private void ProgressToNextStage(PlayerController player)
     {
-        if (playerTimer == true)
+        if (player.playerNumber == 1 && teleporterNumber > 0 || player.playerNumber == 2 && teleporterNumber < 0)
         {
-            if (timeRemaining <= 1)
-            {
-                players = FindObjectsOfType<PlayerController>();
-                Debug.Log("Player[0]: " + players[0].playerNumber + " and Player[1]: " + players[1].playerNumber);
-                playerTimer = false; //only want it to run this once
-            }
-        }
-    }
-
-    private void CheckPlayers()
-    {
-        if (timeRemaining <= 0)
-        {
-            if (players[0] == null || players[1] == null)
-            {
-                endTime -= Time.deltaTime;
-                if (endTime <= 0)
-                {
-                    Debug.Log("Check player array");
-                    players = FindObjectsOfType<PlayerController>();
-                    Debug.Log("Player[0]: " + players[0].playerNumber + " and Player[1]: " + players[1].playerNumber);
-                    endTime = 3.2f; //must be the same as the respawn time 
-                }
-            }
-        }
-    }
-
-    private void ProgressToNextStage()
-    {
-
-        if (players[0] == null && players[1] != null) DontDestroyOnLoad(players[1]);
-        else if (players[0] != null && players[1] == null) DontDestroyOnLoad(players[0]);
-
-        //FOR THE MIDDLE STAGE---------------------------------------------------------------------------
-        if (players[0] == null && players[1].playerNumber == 1 && teleporterNumber == 2) //player 2 dead
-        {
-            Debug.Log("Player 1 is trying to progress");
-            LoadNextStage("right1");
-        }
-        else if(players[1] == null && players[0].playerNumber == 1 && teleporterNumber == 2)
-        {
-            Debug.Log("Player 1 is trying to progress");
-            LoadNextStage("right1");
-        }
-
-        if (players[1] == null && players[0].playerNumber == 2 && teleporterNumber == 1) //player 1 dead
-        {
-            Debug.Log("Player 2 is trying to progress");
-            LoadNextStage("left1");
-        }
-        else if(players[0] == null && players[1].playerNumber == 2 && teleporterNumber == 1)
-        {
-            Debug.Log("Player 2 is trying to progress");
-            LoadNextStage("left1");
-        }
-
-        //FOR RIGHT1 STAGE-----------------------------------------------------------------------------
-        if (players[0] == null && players[1].playerNumber == 1 && teleporterNumber == 4) //player 2 dead
-        {
-            Debug.Log("Player 1 is trying to progress");
-            //LoadNextStage("");
-        }
-        else if (players[1] == null && players[0].playerNumber == 1 && teleporterNumber == 4)
-        {
-            Debug.Log("Player 1 is trying to progress");
-            //LoadNextStage("");
-        }
-
-        if (players[1] == null && players[0].playerNumber == 2 && teleporterNumber == 3) //player 1 dead
-        {
-            Debug.Log("Player 2 is trying to progress");
-            LoadNextStage("middle");
-        }
-        else if (players[0] == null && players[1].playerNumber == 2 && teleporterNumber == 3)
-        {
-            Debug.Log("Player 2 is trying to progress");
-            LoadNextStage("middle");
-        }
-
-        //FOR LEFT1 STAGE------------------------------------------------------------------------------
-        if (players[0] == null && players[1].playerNumber == 1 && teleporterNumber == 6) //player 2 dead
-        {
-            Debug.Log("Player 1 is trying to progress");
-            LoadNextStage("middle");
-        }
-        else if (players[1] == null && players[0].playerNumber == 1 && teleporterNumber == 6)
-        {
-            Debug.Log("Player 1 is trying to progress");
-            LoadNextStage("middle");
-        }
-
-        if (players[1] == null && players[0].playerNumber == 2 && teleporterNumber == 5) //player 1 dead
-        {
-            Debug.Log("Player 2 is trying to progress");
-           // LoadNextStage("");
-        }
-        else if (players[0] == null && players[1].playerNumber == 2 && teleporterNumber == 5)
-        {
-            Debug.Log("Player 2 is trying to progress");
-          //LoadNextStage("");
+            DontDestroyOnLoad(player);
+            currentStage += teleporterNumber;
+            LoadNextStage(stages[currentStage]);
         }
     }
 
@@ -143,7 +30,8 @@ public class Teleporter : MonoBehaviour {
         GameObject obj = collider.gameObject;
         if (obj.GetComponent<PlayerCollisionDetector>())
         {
-            ProgressToNextStage();
+            players = FindObjectsOfType<PlayerController>();
+            if (players.Length == 1) ProgressToNextStage(players[0]);
         }
     }
 }
