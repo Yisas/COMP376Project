@@ -25,10 +25,17 @@ public class PlayerCollisionDetector : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
+        
         GameObject oppositePlayer = col.transform.root.gameObject;
         PlayerController opponent = oppositePlayer.GetComponent<PlayerController>();
 
-		// Defensive programming, layer visibility should take care of the player hitting itself
+        if (col.gameObject.tag == "PitFall")
+        {
+            Debug.Log("kill falling player");
+            player.GetHitByThrowingLimb(); //kill the player
+        }
+
+        // Defensive programming, layer visibility should take care of the player hitting itself
         if (opponent)
         {
             if (opponent.playerNumber == player.playerNumber)
