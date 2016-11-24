@@ -6,11 +6,13 @@ public class FollowCam : MonoBehaviour {
     Transform follow;
     Transform other;
     public float smoothness;
+    public Transform leftSpawnPoint;
+    public Transform rightSpawnPoint;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
+    // Use this for initialization
+    void Start () {
+        SetLocation();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -52,4 +54,13 @@ public class FollowCam : MonoBehaviour {
         this.other = null;
     }
 
+    void SetLocation()
+    {
+        PlayerController[] players = FindObjectsOfType<PlayerController>();
+        if (players.Length == 1)
+        {
+            if (players[0].playerNumber == 1) transform.position = leftSpawnPoint.position;
+            else if (players[0].playerNumber == 2) transform.position = rightSpawnPoint.position;
+        }
+    }
 }
