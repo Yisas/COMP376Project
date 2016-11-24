@@ -59,6 +59,10 @@ public class Teleporter : MonoBehaviour {
 
     private void ProgressToNextStage()
     {
+
+        if (players[0] == null && players[1] != null) DontDestroyOnLoad(players[1]);
+        else if (players[0] != null && players[1] == null) DontDestroyOnLoad(players[0]);
+
         //FOR THE MIDDLE STAGE---------------------------------------------------------------------------
         if (players[0] == null && players[1].playerNumber == 1 && teleporterNumber == 2) //player 2 dead
         {

@@ -9,6 +9,9 @@ public class Spawner1 : MonoBehaviour {
 
     GameObject newPlayer1;
     GameObject newPlayer2;
+    
+    public LayerMask player1Layer;
+    public LayerMask player2Layer;
 
     PlayerController[] player;
     int playerNumber;
@@ -46,12 +49,34 @@ public class Spawner1 : MonoBehaviour {
 
     void SpawnPlayers()
     {
+        bool dontSpawnP1 = false;
+        bool dontSpawnP2 = false;
+        PlayerController[] players = FindObjectsOfType<PlayerController>();
+        if (players.Length == 1)
+        {
+            if (players[0].playerNumber == 1)
+            {
+                newPlayer1 = players[0].gameObject;
+                newPlayer1.transform.position = spawnPoints[0].position;
+                dontSpawnP1 = true;
+            }
+            else if (players[0].playerNumber == 2)
+            {
+                newPlayer2 = players[0].gameObject;
+                newPlayer2.transform.position = spawnPoints[1].position;
+                dontSpawnP2 = true;
+            }
+        }
+
+        if (!dontSpawnP1) { 
         newPlayer1 = Instantiate(players[0], spawnPoints[0].position, Quaternion.identity) as GameObject;
         Debug.Log("Player spawned");
-
-        newPlayer2 = Instantiate(players[1], spawnPoints[1].position, Quaternion.identity) as GameObject;
-        Debug.Log("Player spawned");
-
+        }
+        if (!dontSpawnP2)
+        {
+            newPlayer2 = Instantiate(players[1], spawnPoints[1].position, Quaternion.identity) as GameObject;
+            Debug.Log("Player spawned");
+        }
         spawnPoints[0].transform.position += new Vector3(-39, 0, 0);
         spawnPoints[1].transform.position += new Vector3(39, 0, 0);
 
