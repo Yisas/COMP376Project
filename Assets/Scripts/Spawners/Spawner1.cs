@@ -7,7 +7,7 @@ public class Spawner1 : MonoBehaviour {
     public Transform[] spawnPoints;
     public FollowCam cam;
     public LayerMask whatIsGround;
-    static public int playerHeight = 20;
+    static public int playerHeight = 30;
 
     GameObject newPlayer1;
     GameObject newPlayer2;
@@ -30,53 +30,59 @@ public class Spawner1 : MonoBehaviour {
     {
         if (deadPlayer == false)
         {
-            if (players[0] == null) //if player 2 is dead
+
+            for (int i = 0; i < players.Length; i++)
             {
-                int playerNum = players[0].playerNumber;
-                StartCoroutine(RespawnPlayer(playerNum));
-                deadPlayer = true;
-            }
-            if (players[1] == null) //if player 1 is dead
-            {
-                int playerNum = players[1].playerNumber;
-                StartCoroutine(RespawnPlayer(playerNum));
-                deadPlayer = true;
+                if (players[i] == null)
+                {
+                    int playerNum = players[i].playerNumber;
+                    StartCoroutine(RespawnPlayer(playerNum));
+                    deadPlayer = true;
+                }
             }
         }
     }
 
     void SpawnPlayers()
     {
+        PlayerController[] persistingPlayer = FindObjectsOfType<PlayerController>();
+
         bool dontSpawnP1 = false;
         bool dontSpawnP2 = false;
-        PlayerController[] persistingPlayer = FindObjectsOfType<PlayerController>();
+        Transform followP1 = null, followP2 = null;
         if (persistingPlayer.Length == 1)
         {
             if (persistingPlayer[0].playerNumber == 1)
             {
                 newPlayer1 = persistingPlayer[0].gameObject;
                 newPlayer1.transform.position = GetFloorSpawnPoint(1);
+                followP1 = newPlayer1.transform;
                 dontSpawnP1 = true;
             }
             else if (persistingPlayer[0].playerNumber == 2)
             {
                 newPlayer2 = persistingPlayer[0].gameObject;
                 newPlayer2.transform.position = GetFloorSpawnPoint(2);
+                followP2 = newPlayer2.transform;
                 dontSpawnP2 = true;
             }
         }
 
-        if (!dontSpawnP1) {
+
+        
+        if (playerTemplates[0] != null && spawnPoints[0] != null && !dontSpawnP1) {
             newPlayer1 = SpawnPlayer(1);
+            followP1 = newPlayer1.transform;
+            spawnPoints[0].transform.position += new Vector3(-39, 0, 0);
         }
-        if (!dontSpawnP2)
+        if (playerTemplates[1] != null && spawnPoints[1] != null && !dontSpawnP2)
         {
             newPlayer2 = SpawnPlayer(2);
+            followP2 = newPlayer2.transform;
+            spawnPoints[1].transform.position += new Vector3(39, 0, 0);
         }
-        spawnPoints[0].transform.position += new Vector3(-39, 0, 0);
-        spawnPoints[1].transform.position += new Vector3(39, 0, 0);
 
-        cam.Follow(newPlayer1.transform, newPlayer2.transform);
+        cam.Follow(followP1, followP2);
     }
 
     IEnumerator RespawnPlayer(int playerNum)
