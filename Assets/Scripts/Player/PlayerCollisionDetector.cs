@@ -15,12 +15,6 @@ public class PlayerCollisionDetector : MonoBehaviour
 	void Update () {
 	
 	}
-
-    private IEnumerator Wait(float seconds)
-    {
-        yield return new WaitForSeconds(seconds);
-    }
-
     
 
     void OnTriggerEnter2D(Collider2D col)
@@ -53,8 +47,7 @@ public class PlayerCollisionDetector : MonoBehaviour
 
             if (limb != null && limb.LimbIsThrown() && player.playerNumber != limb.playerNumber)
             {
-                print("The limb player number is: " + limb.playerNumber);
-                Destroy(col.gameObject);
+                Destroy(col.transform.parent.gameObject);
                 player.GetHitByThrowingLimb();
             }
 

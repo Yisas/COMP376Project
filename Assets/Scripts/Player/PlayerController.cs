@@ -73,6 +73,7 @@ public class PlayerController : MonoBehaviour
 	bool tearOffLimb;
 	bool throwingLimb;
 
+    public bool isDashing;
 	public bool hasWeapon;
 
 	// Numerical variables
@@ -90,9 +91,14 @@ public class PlayerController : MonoBehaviour
 	private Health health;
 	public GameObject weaponArm;
 	public GameObject weaponLeg;
-    
-	// Use this for initialization
-	void Start ()
+
+    [Header("--- Sound Effects ---")]
+    public AudioClip jabHit;
+    public AudioClip clubHit;
+    public AudioClip throwSound;
+
+    // Use this for initialization
+    void Start ()
 	{
 		// Setup references
 		rb = GetComponent<Rigidbody2D> ();
@@ -213,22 +219,19 @@ public class PlayerController : MonoBehaviour
 
 	private void MeleeAttack ()
 	{
-		// If the player doesn't have a weapon, jab attack...
-		if (!hasWeapon) {
-			// Read a speed treshold to see if you should do a dash attack
-			if (Mathf.Abs (moveInput) >= jabDashTreshold) {
-				// Lock movement inputs
-				movementLocked = true;
-				// Keep velocity in y, new velocity burst in x
-				moveInput = 0;
-				// Cancel prior horizontal velocity
-				rb.velocity = new Vector2 (0, rb.velocity.y);
-				// Using force instead of velocity to add single dash burst
-				rb.AddForce (new Vector2 (jabDashForce * Mathf.Sign (direction.x), 0));
-			}
+        // If the player doesn't have a weapon, jab attack...
+        if (!hasWeapon) {
+            // Read a speed treshold to see if you should do a dash attack
+            if (Mathf.Abs (moveInput) >= jabDashTreshold && grounded) {
+                rb.velocity = new Vector2(0, rb.velocity.y);
+                movementLocked = true;
+                isDashing = true;
+            }
 
-			// Set animator speed variables and trigger attack type
-			anim.SetFloat ("jabSpeed", jabSpeed);
+            
+
+            // Set animator speed variables and trigger attack type
+            anim.SetFloat ("jabSpeed", jabSpeed);
 			anim.SetTrigger ("jab");
 			animIsJabbing = true;
 		}
@@ -239,6 +242,7 @@ public class PlayerController : MonoBehaviour
 			anim.SetFloat ("clubSpeed", clubAttackSpeed);
 			anim.SetTrigger ("club");
 			animIsClubbing = true;
+            
 		}
         
         
@@ -248,10 +252,11 @@ public class PlayerController : MonoBehaviour
 	private void ThrowLimb ()
 	{
 		if (hasWeapon && throwingLimb) {
-			anim.SetFloat ("throwLimbPrepareSpeed", throwAttackPepare);
+            AudioSource.PlayClipAtPoint(throwSound, transform.position, 0.99f); //I don't know why but we can't hear it
+            anim.SetFloat ("throwLimbPrepareSpeed", throwAttackPepare);
 			anim.SetFloat ("throwLimbSpeed", throwAttackSpeed);
 			anim.SetTrigger ("throwLimb");
-		    hasWeapon = false;
+            hasWeapon = false;
 		}
 	}
 
@@ -340,11 +345,11 @@ public class PlayerController : MonoBehaviour
 		PlayerController opponent = oppositePlayer.GetComponent<PlayerController> ();
 		if (opponent) {
 			if (opponent.animIsJabbing && !isHit) { //if the opponent is in jab motion and I have not been hit yet
-				isHit = true; //I can't be hit twice by the same jab animation
+                AudioSource.PlayClipAtPoint(jabHit, transform.position, 0.75f);
+                isHit = true; //I can't be hit twice by the same jab animation
 				jabCounter++;
 				rb.AddForce (jabStagger * (opponent.GetDirection ())); // push player being hit back, "stagger"
-				Debug.Log (jabCounter);
-				if (jabCounter >= 3) { //if I have been hit 3 times or more by a jab
+                if (jabCounter >= 3) { //if I have been hit 3 times or more by a jab
 					health.TakeOffLimb ();
 					jabCounter = 0; //reset the jab counter
 				}
@@ -357,8 +362,9 @@ public class PlayerController : MonoBehaviour
 		PlayerController opponent = oppositePlayer.GetComponent<PlayerController> ();
 		if (opponent) {
 			if (opponent.animIsClubbing && !isHit) {
-				rb.AddForce (limbStagger * (opponent.GetDirection ())); // push player being hit back, "stagger"
-				StartCoroutine (RemoveLimb (0.5f));
+                AudioSource.PlayClipAtPoint(clubHit, transform.position, 0.75f);
+                rb.AddForce (limbStagger * (opponent.GetDirection ())); // push player being hit back, "stagger"
+                StartCoroutine (RemoveLimb (0.5f));
 			}
 		}
 	}
@@ -414,5 +420,7 @@ public class PlayerController : MonoBehaviour
 	{
 		return direction;
 	}
+
+
 
 }

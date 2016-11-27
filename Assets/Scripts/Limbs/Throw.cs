@@ -51,6 +51,8 @@ public class Throw : MonoBehaviour {
             gameObject.SetActive(false);
             //parentArmThrow.transform.position += new Vector3(0.0f, 7.8f, 0.0f);
             throwComponent.SetIsThrow(true);
+            limbWeaponCopy.GetComponent<Rigidbody2D>().isKinematic = false;
+            limbWeaponCopy.GetComponent<Rigidbody2D>().gravityScale = 0;
         }
     }
 
@@ -68,7 +70,7 @@ public class Throw : MonoBehaviour {
     {
         if (!(col.gameObject.GetComponent<PlayerController>() || col.gameObject.GetComponent<BonesPile>()))
         {
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
         }
     }
 }
