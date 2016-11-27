@@ -76,8 +76,9 @@ public class PlayerController : MonoBehaviour
 
 	// Numerical variables
 	private float moveInput = 0.0f;
-	private int jabCounter = 0;
+    private float playerDamage = 0;
 	private float dodgeCooldownTimer = 0.0f;		// When <= 0 you may dodge
+    private float damageMultiplier = 1f;
 
 
 	// References
@@ -127,6 +128,19 @@ public class PlayerController : MonoBehaviour
 			MeleeAttack ();
 			attackingMelee = false;
 		}
+        if (crouching)
+        {
+            damageMultiplier = 0.5f;
+        }
+        else
+        {
+            damageMultiplier = 1f;
+        }
+        if(playerDamage >= 3)
+        {
+            health.TakeOffLimb();
+            playerDamage = 0;
+        }
 
 		// Timer events
 		dodgeCooldownTimer -= Time.deltaTime;
@@ -215,36 +229,43 @@ public class PlayerController : MonoBehaviour
 		anim.SetBool ("crouching", crouching);
 	}
 
-	private void MeleeAttack ()
-	{
-        // If the player doesn't have a weapon, jab attack...
-        if (!hasWeapon) {
-            // Read a speed treshold to see if you should do a dash attack
-            if (Mathf.Abs (moveInput) >= jabDashTreshold && grounded) {
-                rb.velocity = new Vector2(0, rb.velocity.y);
-                movementLocked = true;
-                isDashing = true;
+    private void MeleeAttack()
+    {
+
+        if (!crouching)
+        {
+            // If the player doesn't have a weapon, jab attack...
+            if (!hasWeapon)
+            {
+                // Read a speed treshold to see if you should do a dash attack
+                if (Mathf.Abs(moveInput) >= jabDashTreshold)
+                {
+                    // Lock movement inputs
+                    movementLocked = true;
+                    // Keep velocity in y, new velocity burst in x
+                    moveInput = 0;
+                    // Cancel prior horizontal velocity
+                    rb.velocity = new Vector2(0, rb.velocity.y);
+                    // Using force instead of velocity to add single dash burst
+                    rb.AddForce(new Vector2(jabDashForce * Mathf.Sign(direction.x), 0));
+                }
+
+                // Set animator speed variables and trigger attack type
+                anim.SetFloat("jabSpeed", jabSpeed);
+                anim.SetTrigger("jab");
+                animIsJabbing = true;
             }
+            // ... else use weapon as a club
+            else {
+                // Set animator speed variables and trigger attack type
+                anim.SetFloat("clubPrepareSpeed", clubAttackPepare);
+                anim.SetFloat("clubSpeed", clubAttackSpeed);
+                anim.SetTrigger("club");
+                animIsClubbing = true;
+            }
+        }
+    }
 
-            
-
-            // Set animator speed variables and trigger attack type
-            anim.SetFloat ("jabSpeed", jabSpeed);
-			anim.SetTrigger ("jab");
-			animIsJabbing = true;
-		}
-		// ... else use weapon as a club
-		else {
-			// Set animator speed variables and trigger attack type
-			anim.SetFloat ("clubPrepareSpeed", clubAttackPepare);
-			anim.SetFloat ("clubSpeed", clubAttackSpeed);
-			anim.SetTrigger ("club");
-			animIsClubbing = true;
-            
-		}
-        
-        
-	}
 
 	// Starts the throw animation. The once the animation is done it will call InstantiateAndThrowLimb
 	private void ThrowLimb ()
@@ -343,13 +364,9 @@ public class PlayerController : MonoBehaviour
 		if (opponent) {
 			if (opponent.animIsJabbing && !isHit) { //if the opponent is in jab motion and I have not been hit yet
                 AudioSource.PlayClipAtPoint(jabHit, transform.position, 0.75f);
-                isHit = true; //I can't be hit twice by the same jab animation
-				jabCounter++;
+				isHit = true; //I can't be hit twice by the same jab animation
+				playerDamage += damageMultiplier;
 				rb.AddForce (jabStagger * (opponent.GetDirection ())); // push player being hit back, "stagger"
-                if (jabCounter >= 3) { //if I have been hit 3 times or more by a jab
-					health.TakeOffLimb ();
-					jabCounter = 0; //reset the jab counter
-				}
 			}
 		}  
 	}
@@ -374,8 +391,7 @@ public class PlayerController : MonoBehaviour
 	private IEnumerator RemoveLimb (float seconds)
 	{
 		isHit = true;
-		health.TakeOffLimb ();
-
+        playerDamage += (3 * damageMultiplier); 
 		yield return new WaitForSeconds (seconds);
 
 		isHit = false;
