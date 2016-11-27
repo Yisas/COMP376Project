@@ -12,6 +12,10 @@ public class PlayerController : MonoBehaviour
 	public float jumpPrepareSpeed;
 	[Tooltip ("This float is communicated to the animator to set the speed of the jump animation")]
 	public float jumpSpeed;
+
+	[Tooltip ("This float is communicated to the animator to set the speed of the jump animation")]
+	public float jumpMovingSpeed;
+
 	[Tooltip ("This float is communicated to the animator to set the speed of the crouch animation")]
 	public float crouchSpeed;
 	[Tooltip ("This float is communicated to the animator to set the speed of the dodge animation")]
@@ -188,6 +192,7 @@ public class PlayerController : MonoBehaviour
 			// Set animator speed variables and trigger attack type
 			anim.SetFloat ("jumpPrepareSpeed", jumpPrepareSpeed);
 			anim.SetFloat ("jumpSpeed", jumpSpeed);
+			anim.SetFloat ("jumpSpeedMoving", jumpMovingSpeed);
 			anim.SetTrigger ("jump");
 		}
 	}
