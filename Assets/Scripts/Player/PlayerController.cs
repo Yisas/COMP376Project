@@ -69,6 +69,7 @@ public class PlayerController : MonoBehaviour
 	bool tearOffLimb;
 	bool throwingLimb;
 
+    public bool isDashing;
 	public bool hasWeapon;
 
 	// Numerical variables
@@ -92,8 +93,8 @@ public class PlayerController : MonoBehaviour
     public AudioClip clubHit;
     public AudioClip throwSound;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
 	{
 		// Setup references
 		rb = GetComponent<Rigidbody2D> ();
@@ -210,22 +211,19 @@ public class PlayerController : MonoBehaviour
 
 	private void MeleeAttack ()
 	{
-		// If the player doesn't have a weapon, jab attack...
-		if (!hasWeapon) {
-			// Read a speed treshold to see if you should do a dash attack
-			if (Mathf.Abs (moveInput) >= jabDashTreshold) {
-				// Lock movement inputs
-				movementLocked = true;
-				// Keep velocity in y, new velocity burst in x
-				moveInput = 0;
-				// Cancel prior horizontal velocity
-				rb.velocity = new Vector2 (0, rb.velocity.y);
-				// Using force instead of velocity to add single dash burst
-				rb.AddForce (new Vector2 (jabDashForce * Mathf.Sign (direction.x), 0));
-			}
+        // If the player doesn't have a weapon, jab attack...
+        if (!hasWeapon) {
+            // Read a speed treshold to see if you should do a dash attack
+            if (Mathf.Abs (moveInput) >= jabDashTreshold && grounded) {
+                rb.velocity = new Vector2(0, rb.velocity.y);
+                movementLocked = true;
+                isDashing = true;
+            }
 
-			// Set animator speed variables and trigger attack type
-			anim.SetFloat ("jabSpeed", jabSpeed);
+            
+
+            // Set animator speed variables and trigger attack type
+            anim.SetFloat ("jabSpeed", jabSpeed);
 			anim.SetTrigger ("jab");
 			animIsJabbing = true;
 		}
@@ -414,5 +412,7 @@ public class PlayerController : MonoBehaviour
 	{
 		return direction;
 	}
+
+
 
 }

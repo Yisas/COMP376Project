@@ -47,7 +47,7 @@ public class PlayerCollisionDetector : MonoBehaviour
 
             if (limb != null && limb.LimbIsThrown() && player.playerNumber != limb.playerNumber)
             {
-                Destroy(col.gameObject);
+                Destroy(col.transform.parent.gameObject);
                 player.GetHitByThrowingLimb();
             }
 
