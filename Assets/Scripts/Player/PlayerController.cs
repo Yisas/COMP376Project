@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
 	public float jumpPrepareSpeed;
 	[Tooltip ("This float is communicated to the animator to set the speed of the jump animation")]
 	public float jumpSpeed;
+	[Tooltip ("This float is communicated to the animator to set the speed of the move while airborne animation")]
+	public float jumpMovingSpeed;
 	[Tooltip ("This float is communicated to the animator to set the speed of the crouch animation")]
 	public float crouchSpeed;
 	[Tooltip ("This float is communicated to the animator to set the speed of the dodge animation")]
@@ -69,6 +71,7 @@ public class PlayerController : MonoBehaviour
 	bool tearOffLimb;
 	bool throwingLimb;
 
+    public bool isDashing;
 	public bool hasWeapon;
 
 	// Numerical variables
@@ -87,9 +90,14 @@ public class PlayerController : MonoBehaviour
 	private Health health;
 	public GameObject weaponArm;
 	public GameObject weaponLeg;
-    
-	// Use this for initialization
-	void Start ()
+
+    [Header("--- Sound Effects ---")]
+    public AudioClip jabHit;
+    public AudioClip clubHit;
+    public AudioClip throwSound;
+
+    // Use this for initialization
+    void Start ()
 	{
 		// Setup references
 		rb = GetComponent<Rigidbody2D> ();
@@ -174,17 +182,20 @@ public class PlayerController : MonoBehaviour
 	private void Move ()
 	{
 		// Don't move while holding down crouch button. The crouch method cancels horizontal velocity
-		if (!crouching) {
+		if (!crouching && moveInput != 0.0f) {
 			// Horizontal movement
-			if (moveInput != 0.0f) {
-				direction = new Vector2 (moveInput, 0.0f);
-			}
+			moving = true;
+			direction = new Vector2 (moveInput, 0.0f);
+			
 			//print("In the move function, the direction vector is: " + direction);
 			myTransform.Translate (new Vector2 (moveInput, 0.0f) * Time.deltaTime * moveSpeed);
 			FaceDirection (direction);
-			// Pass movement speed to animator
-			anim.SetFloat ("speed", Mathf.Abs (moveInput));
-		}
+		} 
+		else
+			moving = false;
+
+		// Pass movement speed to animator
+		anim.SetFloat ("speed", Mathf.Abs (moveInput));
 	}
 
 	// The animator will finish the jump sequence after this method is called
@@ -196,6 +207,7 @@ public class PlayerController : MonoBehaviour
 			// Set animator speed variables and trigger attack type
 			anim.SetFloat ("jumpPrepareSpeed", jumpPrepareSpeed);
 			anim.SetFloat ("jumpSpeed", jumpSpeed);
+			anim.SetFloat ("jumpSpeedMoving", jumpMovingSpeed);
 			anim.SetTrigger ("jump");
 		}
 	}
@@ -217,8 +229,9 @@ public class PlayerController : MonoBehaviour
 		anim.SetBool ("crouching", crouching);
 	}
 
-	private void MeleeAttack ()
-	{
+    private void MeleeAttack()
+    {
+
         if (!crouching)
         {
             // If the player doesn't have a weapon, jab attack...
@@ -251,18 +264,18 @@ public class PlayerController : MonoBehaviour
                 animIsClubbing = true;
             }
         }
-        
-        
-	}
+    }
+
 
 	// Starts the throw animation. The once the animation is done it will call InstantiateAndThrowLimb
 	private void ThrowLimb ()
 	{
 		if (hasWeapon && throwingLimb) {
-			anim.SetFloat ("throwLimbPrepareSpeed", throwAttackPepare);
+            AudioSource.PlayClipAtPoint(throwSound, transform.position, 0.99f); //I don't know why but we can't hear it
+            anim.SetFloat ("throwLimbPrepareSpeed", throwAttackPepare);
 			anim.SetFloat ("throwLimbSpeed", throwAttackSpeed);
 			anim.SetTrigger ("throwLimb");
-		    hasWeapon = false;
+            hasWeapon = false;
 		}
 	}
 
@@ -351,6 +364,7 @@ public class PlayerController : MonoBehaviour
 		PlayerController opponent = oppositePlayer.GetComponent<PlayerController> ();
 		if (opponent) {
 			if (opponent.animIsJabbing && !isHit) { //if the opponent is in jab motion and I have not been hit yet
+                AudioSource.PlayClipAtPoint(jabHit, transform.position, 0.75f);
 				isHit = true; //I can't be hit twice by the same jab animation
 				playerDamage += damageMultiplier;
 				rb.AddForce (jabStagger * (opponent.GetDirection ())); // push player being hit back, "stagger"
@@ -363,8 +377,9 @@ public class PlayerController : MonoBehaviour
 		PlayerController opponent = oppositePlayer.GetComponent<PlayerController> ();
 		if (opponent) {
 			if (opponent.animIsClubbing && !isHit) {
-				rb.AddForce (limbStagger * (opponent.GetDirection ())); // push player being hit back, "stagger"
-				StartCoroutine (RemoveLimb (0.5f));
+                AudioSource.PlayClipAtPoint(clubHit, transform.position, 0.75f);
+                rb.AddForce (limbStagger * (opponent.GetDirection ())); // push player being hit back, "stagger"
+                StartCoroutine (RemoveLimb (0.5f));
 			}
 		}
 	}
@@ -419,5 +434,7 @@ public class PlayerController : MonoBehaviour
 	{
 		return direction;
 	}
+
+
 
 }
