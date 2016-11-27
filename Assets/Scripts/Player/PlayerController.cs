@@ -164,17 +164,20 @@ public class PlayerController : MonoBehaviour
 	private void Move ()
 	{
 		// Don't move while holding down crouch button. The crouch method cancels horizontal velocity
-		if (!crouching) {
+		if (!crouching && moveInput != 0.0f) {
 			// Horizontal movement
-			if (moveInput != 0.0f) {
-				direction = new Vector2 (moveInput, 0.0f);
-			}
+			moving = true;
+			direction = new Vector2 (moveInput, 0.0f);
+			
 			//print("In the move function, the direction vector is: " + direction);
 			myTransform.Translate (new Vector2 (moveInput, 0.0f) * Time.deltaTime * moveSpeed);
 			FaceDirection (direction);
-			// Pass movement speed to animator
-			anim.SetFloat ("speed", Mathf.Abs (moveInput));
-		}
+		} 
+		else
+			moving = false;
+
+		// Pass movement speed to animator
+		anim.SetFloat ("speed", Mathf.Abs (moveInput));
 	}
 
 	// The animator will finish the jump sequence after this method is called
