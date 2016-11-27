@@ -108,9 +108,9 @@ public class PlayerController : MonoBehaviour
 
 		// Setup variables
 		if (playerNumber == 1)
-			direction = new Vector2 (1.0f, 0);
+			FaceDirection(new Vector2 (1.0f, 0));
 		if (playerNumber == 2)
-			direction = new Vector2 (-1.0f, 0);
+            FaceDirection(new Vector2(-1.0f, 0));
 	}
 	
 	// Update is called once per frame
@@ -301,8 +301,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private
-	    void FaceDirection (Vector2 direction)
+    private void FaceDirection (Vector2 direction)
 	    {
 		    if (direction.x != 0.0f) {
 			    Quaternion rotation3D = direction.x > 0 ? Quaternion.LookRotation (Vector3.forward) : Quaternion.LookRotation (Vector3.back);
