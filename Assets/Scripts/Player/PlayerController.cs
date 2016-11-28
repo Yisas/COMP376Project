@@ -244,16 +244,14 @@ public class PlayerController : MonoBehaviour
             if (!hasWeapon)
             {
                 // Read a speed treshold to see if you should do a dash attack
-                if (Mathf.Abs(moveInput) >= jabDashTreshold)
+                if (Mathf.Abs(moveInput) >= jabDashTreshold && grounded)
                 {
                     // Lock movement inputs
                     movementLocked = true;
-                    // Keep velocity in y, new velocity burst in x
-                    moveInput = 0;
                     // Cancel prior horizontal velocity
                     rb.velocity = new Vector2(0, rb.velocity.y);
                     // Using force instead of velocity to add single dash burst
-                    rb.AddForce(new Vector2(jabDashForce * Mathf.Sign(direction.x), 0));
+                    isDashing = true;
                 }
 
                 // Set animator speed variables and trigger attack type
