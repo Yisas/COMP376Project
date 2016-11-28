@@ -39,8 +39,7 @@ public class PlayerCollisionDetector : MonoBehaviour
                 #endif
                 return;
             }
-        }
-			
+        }		
 
         if (col.gameObject.CompareTag("Hand"))
         {
@@ -62,8 +61,6 @@ public class PlayerCollisionDetector : MonoBehaviour
             {
                 player.GetHitByClub(oppositePlayer);
             }
-
-            
         }
         
     }
