@@ -374,7 +374,7 @@ public class PlayerController : MonoBehaviour
 			if (opponent.animIsJabbing && !isHit) { //if the opponent is in jab motion and I have not been hit yet
                 AudioSource.PlayClipAtPoint(jabHit, transform.position, 30.0f);
 				isHit = true; //I can't be hit twice by the same jab animation
-				playerDamage += damageMultiplier;
+				playerDamage += damageMultiplier/2;
 				rb.AddForce (jabStagger * (opponent.GetDirection ())); // push player being hit back, "stagger"
 			}
 		}  
