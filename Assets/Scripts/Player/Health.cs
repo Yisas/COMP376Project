@@ -116,8 +116,9 @@ public class Health : MonoBehaviour
 	{
 		if (!isDead)
 		{
-		    Instantiate(pileOfBones, transform.position, Quaternion.identity); 
-            gameObject.SetActive(false);
+		    Instantiate(pileOfBones, transform.position, Quaternion.identity);
+            // gameObject.SetActive(false);
+            Destroy(gameObject);
 			isDead = true;
 		}
             

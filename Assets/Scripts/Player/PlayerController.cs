@@ -12,10 +12,8 @@ public class PlayerController : MonoBehaviour
 	public float jumpPrepareSpeed;
 	[Tooltip ("This float is communicated to the animator to set the speed of the jump animation")]
 	public float jumpSpeed;
-
-	[Tooltip ("This float is communicated to the animator to set the speed of the jump animation")]
+	[Tooltip ("This float is communicated to the animator to set the speed of the move while airborne animation")]
 	public float jumpMovingSpeed;
-
 	[Tooltip ("This float is communicated to the animator to set the speed of the crouch animation")]
 	public float crouchSpeed;
 	[Tooltip ("This float is communicated to the animator to set the speed of the dodge animation")]
@@ -78,8 +76,9 @@ public class PlayerController : MonoBehaviour
 
 	// Numerical variables
 	private float moveInput = 0.0f;
-	private int jabCounter = 0;
+    private float playerDamage = 0;
 	private float dodgeCooldownTimer = 0.0f;		// When <= 0 you may dodge
+    private float damageMultiplier = 1f;
 
 
 	// References
@@ -108,11 +107,17 @@ public class PlayerController : MonoBehaviour
 		groundCheck = transform.FindChild ("GroundCheck");
 		health = GetComponent<Health> ();
 
-		// Setup variables
-		if (playerNumber == 1)
-			direction = new Vector2 (1.0f, 0);
-		if (playerNumber == 2)
-			direction = new Vector2 (-1.0f, 0);
+        // Setup variables
+        if (playerNumber == 1)
+        {
+            direction = new Vector2(1.0f, 0);
+            FaceDirection(new Vector2(1.0f, 0));
+        }
+        if (playerNumber == 2)
+        {
+            direction = new Vector2(-1.0f, 0);
+            FaceDirection(new Vector2(-1.0f, 0));
+        }
 	}
 	
 	// Update is called once per frame
@@ -129,6 +134,19 @@ public class PlayerController : MonoBehaviour
 			MeleeAttack ();
 			attackingMelee = false;
 		}
+        if (crouching)
+        {
+            damageMultiplier = 0.5f;
+        }
+        else
+        {
+            damageMultiplier = 1f;
+        }
+        if(playerDamage >= 3)
+        {
+            health.TakeOffLimb();
+            playerDamage = 0;
+        }
 
 		// Timer events
 		dodgeCooldownTimer -= Time.deltaTime;
@@ -170,17 +188,20 @@ public class PlayerController : MonoBehaviour
 	private void Move ()
 	{
 		// Don't move while holding down crouch button. The crouch method cancels horizontal velocity
-		if (!crouching) {
+		if (!crouching && moveInput != 0.0f) {
 			// Horizontal movement
-			if (moveInput != 0.0f) {
-				direction = new Vector2 (moveInput, 0.0f);
-			}
+			moving = true;
+			direction = new Vector2 (moveInput, 0.0f);
+			
 			//print("In the move function, the direction vector is: " + direction);
 			myTransform.Translate (new Vector2 (moveInput, 0.0f) * Time.deltaTime * moveSpeed);
 			FaceDirection (direction);
-			// Pass movement speed to animator
-			anim.SetFloat ("speed", Mathf.Abs (moveInput));
-		}
+		} 
+		else
+			moving = false;
+
+		// Pass movement speed to animator
+		anim.SetFloat ("speed", Mathf.Abs (moveInput));
 	}
 
 	// The animator will finish the jump sequence after this method is called
@@ -214,36 +235,41 @@ public class PlayerController : MonoBehaviour
 		anim.SetBool ("crouching", crouching);
 	}
 
-	private void MeleeAttack ()
-	{
-        // If the player doesn't have a weapon, jab attack...
-        if (!hasWeapon) {
-            // Read a speed treshold to see if you should do a dash attack
-            if (Mathf.Abs (moveInput) >= jabDashTreshold && grounded) {
-                rb.velocity = new Vector2(0, rb.velocity.y);
-                movementLocked = true;
-                isDashing = true;
+    private void MeleeAttack()
+    {
+
+        if (!crouching)
+        {
+            // If the player doesn't have a weapon, jab attack...
+            if (!hasWeapon)
+            {
+                // Read a speed treshold to see if you should do a dash attack
+                if (Mathf.Abs(moveInput) >= jabDashTreshold && grounded)
+                {
+                    // Lock movement inputs
+                    movementLocked = true;
+                    // Cancel prior horizontal velocity
+                    rb.velocity = new Vector2(0, rb.velocity.y);
+                    // Using force instead of velocity to add single dash burst
+                    isDashing = true;
+                }
+
+                // Set animator speed variables and trigger attack type
+                anim.SetFloat("jabSpeed", jabSpeed);
+                anim.SetTrigger("jab");
+                animIsJabbing = true;
             }
+            // ... else use weapon as a club
+            else {
+                // Set animator speed variables and trigger attack type
+                anim.SetFloat("clubPrepareSpeed", clubAttackPepare);
+                anim.SetFloat("clubSpeed", clubAttackSpeed);
+                anim.SetTrigger("club");
+                animIsClubbing = true;
+            }
+        }
+    }
 
-            
-
-            // Set animator speed variables and trigger attack type
-            anim.SetFloat ("jabSpeed", jabSpeed);
-			anim.SetTrigger ("jab");
-			animIsJabbing = true;
-		}
-		// ... else use weapon as a club
-		else {
-			// Set animator speed variables and trigger attack type
-			anim.SetFloat ("clubPrepareSpeed", clubAttackPepare);
-			anim.SetFloat ("clubSpeed", clubAttackSpeed);
-			anim.SetTrigger ("club");
-			animIsClubbing = true;
-            
-		}
-        
-        
-	}
 
 	// Starts the throw animation. The once the animation is done it will call InstantiateAndThrowLimb
 	private void ThrowLimb ()
@@ -300,8 +326,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private
-	    void FaceDirection (Vector2 direction)
+    private void FaceDirection (Vector2 direction)
 	    {
 		    if (direction.x != 0.0f) {
 			    Quaternion rotation3D = direction.x > 0 ? Quaternion.LookRotation (Vector3.forward) : Quaternion.LookRotation (Vector3.back);
@@ -343,13 +368,9 @@ public class PlayerController : MonoBehaviour
 		if (opponent) {
 			if (opponent.animIsJabbing && !isHit) { //if the opponent is in jab motion and I have not been hit yet
                 AudioSource.PlayClipAtPoint(jabHit, transform.position, 0.75f);
-                isHit = true; //I can't be hit twice by the same jab animation
-				jabCounter++;
+				isHit = true; //I can't be hit twice by the same jab animation
+				playerDamage += damageMultiplier;
 				rb.AddForce (jabStagger * (opponent.GetDirection ())); // push player being hit back, "stagger"
-                if (jabCounter >= 3) { //if I have been hit 3 times or more by a jab
-					health.TakeOffLimb ();
-					jabCounter = 0; //reset the jab counter
-				}
 			}
 		}  
 	}
@@ -374,8 +395,7 @@ public class PlayerController : MonoBehaviour
 	private IEnumerator RemoveLimb (float seconds)
 	{
 		isHit = true;
-		health.TakeOffLimb ();
-
+        playerDamage += (3 * damageMultiplier); 
 		yield return new WaitForSeconds (seconds);
 
 		isHit = false;
