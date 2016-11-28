@@ -180,7 +180,7 @@ public class PlayerController : MonoBehaviour
 
 		crouching = (Input.GetAxis ("Crouch " + playerNumber) == 0 ? false : true);
 
-		throwingLimb = Input.GetButtonDown ("Throw Limb " + playerNumber);
+		throwingLimb = Input.GetAxis ("Throw Limb " + playerNumber) == 1.0f ? true : false ;
 
 		dodging = Input.GetButtonDown ("Dodge " + playerNumber);
 	}
