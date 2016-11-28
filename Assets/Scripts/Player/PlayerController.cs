@@ -107,11 +107,17 @@ public class PlayerController : MonoBehaviour
 		groundCheck = transform.FindChild ("GroundCheck");
 		health = GetComponent<Health> ();
 
-		// Setup variables
-		if (playerNumber == 1)
-			FaceDirection(new Vector2 (1.0f, 0));
-		if (playerNumber == 2)
+        // Setup variables
+        if (playerNumber == 1)
+        {
+            direction = new Vector2(1.0f, 0);
+            FaceDirection(new Vector2(1.0f, 0));
+        }
+        if (playerNumber == 2)
+        {
+            direction = new Vector2(-1.0f, 0);
             FaceDirection(new Vector2(-1.0f, 0));
+        }
 	}
 	
 	// Update is called once per frame
