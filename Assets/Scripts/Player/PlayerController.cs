@@ -191,7 +191,12 @@ public class PlayerController : MonoBehaviour
 		if (!crouching && moveInput != 0.0f) {
 			// Horizontal movement
 			moving = true;
-			direction = new Vector2 (moveInput, 0.0f);
+
+			// Floor and ceiling functions are necessary for moveInput with a controller axis that returns a range between -1 and 1 
+			if(moveInput < 0)
+				direction = new Vector2 (Mathf.Floor(moveInput), 0.0f);
+			else
+				direction = new Vector2(Mathf.Ceil(moveInput), 0.0f);
 			
 			//print("In the move function, the direction vector is: " + direction);
 			myTransform.Translate (new Vector2 (moveInput, 0.0f) * Time.deltaTime * moveSpeed);
