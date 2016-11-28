@@ -17,4 +17,13 @@ public class Utility : MonoBehaviour {
         }
         return null; // Could not find a parent with given tag.
     }
+
+	public static void HideMouse(){		
+		Cursor.visible = false;
+	}
+
+	public void StaticWraperHideMouse(){
+		// OnClick events on Unity are real dumb and need an instance object to run a static function
+		HideMouse();
+	}
 }

@@ -180,7 +180,7 @@ public class PlayerController : MonoBehaviour
 
 		crouching = (Input.GetAxis ("Crouch " + playerNumber) == 0 ? false : true);
 
-		throwingLimb = Input.GetButtonDown ("Throw Limb " + playerNumber);
+		throwingLimb = Input.GetAxis ("Throw Limb " + playerNumber) == 1.0f ? true : false ;
 
 		dodging = Input.GetButtonDown ("Dodge " + playerNumber);
 	}
@@ -191,7 +191,12 @@ public class PlayerController : MonoBehaviour
 		if (!crouching && moveInput != 0.0f) {
 			// Horizontal movement
 			moving = true;
-			direction = new Vector2 (moveInput, 0.0f);
+
+			// Floor and ceiling functions are necessary for moveInput with a controller axis that returns a range between -1 and 1 
+			if(moveInput < 0)
+				direction = new Vector2 (Mathf.Floor(moveInput), 0.0f);
+			else
+				direction = new Vector2(Mathf.Ceil(moveInput), 0.0f);
 			
 			//print("In the move function, the direction vector is: " + direction);
 			myTransform.Translate (new Vector2 (moveInput, 0.0f) * Time.deltaTime * moveSpeed);
@@ -275,7 +280,7 @@ public class PlayerController : MonoBehaviour
 	private void ThrowLimb ()
 	{
 		if (hasWeapon && throwingLimb) {
-            AudioSource.PlayClipAtPoint(throwSound, transform.position, 0.99f); //I don't know why but we can't hear it
+            AudioSource.PlayClipAtPoint(throwSound, transform.position, 30f); //I don't know why but we can't hear it
             anim.SetFloat ("throwLimbPrepareSpeed", throwAttackPepare);
 			anim.SetFloat ("throwLimbSpeed", throwAttackSpeed);
 			anim.SetTrigger ("throwLimb");
@@ -367,9 +372,9 @@ public class PlayerController : MonoBehaviour
 		PlayerController opponent = oppositePlayer.GetComponent<PlayerController> ();
 		if (opponent) {
 			if (opponent.animIsJabbing && !isHit) { //if the opponent is in jab motion and I have not been hit yet
-                AudioSource.PlayClipAtPoint(jabHit, transform.position, 0.75f);
+                AudioSource.PlayClipAtPoint(jabHit, transform.position, 30.0f);
 				isHit = true; //I can't be hit twice by the same jab animation
-				playerDamage += damageMultiplier;
+				playerDamage += damageMultiplier/2;
 				rb.AddForce (jabStagger * (opponent.GetDirection ())); // push player being hit back, "stagger"
 			}
 		}  
@@ -380,7 +385,7 @@ public class PlayerController : MonoBehaviour
 		PlayerController opponent = oppositePlayer.GetComponent<PlayerController> ();
 		if (opponent) {
 			if (opponent.animIsClubbing && !isHit) {
-                AudioSource.PlayClipAtPoint(clubHit, transform.position, 0.75f);
+                AudioSource.PlayClipAtPoint(clubHit, transform.position, 30.0f);
                 rb.AddForce (limbStagger * (opponent.GetDirection ())); // push player being hit back, "stagger"
                 StartCoroutine (RemoveLimb (0.5f));
 			}
