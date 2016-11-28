@@ -4,12 +4,13 @@ using System.Collections;
 public class Throw : MonoBehaviour {
 
     private Rigidbody2D rb;
+    private PlayerController player;
 
     [SerializeField] private float projectileSpeed;
 
     public Transform armThrowTransform;
     public Vector2 limbDirection;
-    private bool isThrown;
+    public bool isThrown;
 
     public int playerNumber;
 
@@ -22,7 +23,7 @@ public class Throw : MonoBehaviour {
     void Start ()
     {
 		rotationPivot = transform.FindChild ("rotationPivot").transform;
-        
+        player = transform.root.gameObject.GetComponent<PlayerController>();
     }
 	
 	// Update is called once per frame
@@ -71,6 +72,15 @@ public class Throw : MonoBehaviour {
         if (!(col.gameObject.GetComponent<PlayerController>() || col.gameObject.GetComponent<BonesPile>()))
         {
             Destroy(transform.parent.gameObject);
+        }
+
+        Throw oppositeThrownLimb = col.gameObject.GetComponent<Throw>();
+        if (oppositeThrownLimb && oppositeThrownLimb.isThrown && oppositeThrownLimb.playerNumber != playerNumber)
+        {
+            if (player != null)
+            {
+                Destroy(player.gameObject);
+            }
         }
     }
 }
