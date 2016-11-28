@@ -10,6 +10,38 @@ public class Teleporter : MonoBehaviour {
 
     PlayerController[] players;
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Keypad1))
+        {
+            Application.LoadLevel("leftFinal");   
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad2))
+        {
+            Application.LoadLevel("left2");
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad3))
+        {
+            Application.LoadLevel("left1");
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad4))
+        {
+            Application.LoadLevel("middle");
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad5))
+        {
+            Application.LoadLevel("right1");
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad6))
+        {
+            Application.LoadLevel("right2");
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad7))
+        {
+            Application.LoadLevel("rightFinal");
+        }
+    }
+
     private void ProgressToNextStage(PlayerController player)
     {
         if (player.playerNumber == 1 && teleporterNumber > 0 || player.playerNumber == 2 && teleporterNumber < 0)

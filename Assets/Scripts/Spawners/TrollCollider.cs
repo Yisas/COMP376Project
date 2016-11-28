@@ -15,14 +15,14 @@ public class TrollCollider : MonoBehaviour {
         if (player)
         {
             endGame += Time.deltaTime;
-            if (endGame >= 0.5 && instantiateCounter == 0)
+            if (endGame >= 0.4 && instantiateCounter == 0)
             {
                 Instantiate(necromancer, transform.position, Quaternion.identity);
                 AudioSource.PlayClipAtPoint(laugh, transform.position);
                 instantiateCounter++;
             }
 
-            if (endGame >= 0.83)
+            if (endGame >= 0.5)
             {
                 Application.LoadLevel("Main Menu");
             }
