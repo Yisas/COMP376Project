@@ -15,12 +15,6 @@ public class PlayerCollisionDetector : MonoBehaviour
 	void Update () {
 	
 	}
-
-    private IEnumerator Wait(float seconds)
-    {
-        yield return new WaitForSeconds(seconds);
-    }
-
     
 
     void OnTriggerEnter2D(Collider2D col)
@@ -56,9 +50,11 @@ public class PlayerCollisionDetector : MonoBehaviour
 
         else if (col.gameObject.CompareTag("Club") && !player.GetIsHit())
         {
-            if (col.gameObject.GetComponent<Rigidbody2D>().velocity.x != 0)
+            Throw limb = col.gameObject.GetComponent<Throw>();
+
+            if (limb != null && limb.LimbIsThrown() && player.playerNumber != limb.playerNumber)
             {
-                col.gameObject.GetComponent<Rigidbody2D>().gravityScale = 10;
+                Destroy(col.transform.parent.gameObject);
                 player.GetHitByThrowingLimb();
             }
 
