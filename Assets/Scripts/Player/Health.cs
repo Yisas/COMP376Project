@@ -18,13 +18,13 @@ public class Health : MonoBehaviour
 	public GameObject weaponLeg;
 	[Tooltip ("A reference to this player's regular foreground leg gameobject")]         // TODO: Consider switching this to a runtime search when I'm not lazy
     public GameObject foregroundLeg;
-    [Tooltip("A reference to this player's head to take it off when he's dead.")]
-    public GameObject head;
 
 	// State variables
 	private int nbOfLimbs;
 	private bool isDead;
     private PlayerController player;
+
+    public GameObject pileOfBones;
 
 	// References
 	Animator anim;
@@ -39,7 +39,6 @@ public class Health : MonoBehaviour
 		nbOfLimbs = 3;
 
 	    player = GetComponent<PlayerController>();
-
 	}
 	
 	// Update is called once per frame
@@ -62,11 +61,13 @@ public class Health : MonoBehaviour
                     anim.SetFloat("takeOffArmSpeed", tearOffArmSpeed);
                     anim.SetTrigger("takeOffArm");
                     player.hasWeapon = true;
+                    nbOfLimbs--;
                     return true;
                 case 2:
                     anim.SetFloat("takeOffLegSpeed", tearOffLegSpeed);
                     anim.SetTrigger("takeOffLeg");
                     player.hasWeapon = true;
+                    nbOfLimbs--;
                     return true;
                 default:
                     return false;
@@ -81,26 +82,43 @@ public class Health : MonoBehaviour
 		if (nbOfLimbs == 3) {
             //take off arm
 			foregroundArm.SetActive(false);
-			print ("I took off arm");
 			nbOfLimbs--;
 		} else if (nbOfLimbs == 2) {
 			//take off leg
             foregroundLeg.SetActive(false);
-			print ("I took off leg");
 			nbOfLimbs--;
 		} else if (nbOfLimbs == 1) {
 			//take off head
-			print ("I took off head");
 			nbOfLimbs--;
 		}
 	}
 
+    public void PutBackLimb()
+    {
+        switch (nbOfLimbs)
+        {
+            case 3:
+                weaponArm.SetActive(true);
+                player.hasWeapon = true;
+                break;
+            case 2:
+                foregroundArm.SetActive(true);
+                nbOfLimbs++;
+                break;
+            case 1:
+                foregroundLeg.SetActive(true);
+                nbOfLimbs++;
+                break;
+        }
+    }
+
 	public void Kill ()
 	{
-		if (!isDead) {
-            //gameObject.SetActive(false);
+		if (!isDead)
+		{
+		    Instantiate(pileOfBones, transform.position, Quaternion.identity);
+            // gameObject.SetActive(false);
             Destroy(gameObject);
-            print ("I'm dead.");
 			isDead = true;
 		}
             
