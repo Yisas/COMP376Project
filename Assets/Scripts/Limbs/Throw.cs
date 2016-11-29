@@ -54,6 +54,9 @@ public class Throw : MonoBehaviour {
             throwComponent.SetIsThrow(true);
             limbWeaponCopy.GetComponent<Rigidbody2D>().isKinematic = false;
             limbWeaponCopy.GetComponent<Rigidbody2D>().gravityScale = 0;
+
+			//Start making SFX, audiosouce should have the required sfx
+			limbWeaponCopy.GetComponent<AudioSource>().Play();
         }
     }
 
