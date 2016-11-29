@@ -280,7 +280,8 @@ public class PlayerController : MonoBehaviour
 	// Starts the throw animation. The once the animation is done it will call InstantiateAndThrowLimb
 	private void ThrowLimb ()
 	{
-		if (hasWeapon && throwingLimb) {
+		// Don't throw when crouching
+		if (hasWeapon && throwingLimb && !crouching) {
             //AudioSource.PlayClipAtPoint(throwSound, transform.position, 30f); THIS WAS CHANGED, THE LIMB HAS AN AUDIOSOURCE SO IT CAN CONTINUOUSLY PLAY THE SFX
             anim.SetFloat ("throwLimbPrepareSpeed", throwAttackPepare);
 			anim.SetFloat ("throwLimbSpeed", throwAttackSpeed);
