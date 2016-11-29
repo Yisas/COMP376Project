@@ -190,11 +190,17 @@ public class PlayerController : MonoBehaviour
 
         if(paused && Input.GetButtonDown("Start" + playerNumber))
         {
+			ArrowCanvas arrowCanvas = FindObjectOfType<ArrowCanvas> ();
+			arrowCanvas.SetPasedText (false);
+
             Time.timeScale = 1;
             paused = false;
         }
         else if(!paused && Input.GetButtonDown("Start" + playerNumber))
         {
+			ArrowCanvas arrowCanvas = FindObjectOfType<ArrowCanvas> ();
+			arrowCanvas.SetPasedText (true);
+
             Debug.Log(Time.timeScale);
             Time.timeScale = 0;
             paused = true;
