@@ -75,11 +75,12 @@ public class Throw : MonoBehaviour {
         }
 
         Throw oppositeThrownLimb = col.gameObject.GetComponent<Throw>();
-        if (oppositeThrownLimb && oppositeThrownLimb.isThrown && oppositeThrownLimb.playerNumber != playerNumber)
+		if (oppositeThrownLimb && oppositeThrownLimb.isThrown && oppositeThrownLimb.playerNumber != playerNumber)
         {
             if (player != null)
             {
-                Destroy(player.gameObject);
+				// This should be get hit by thrown limb
+				player.GetHitByThrowingLimb();
             }
         }
     }
