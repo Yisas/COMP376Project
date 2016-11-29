@@ -124,6 +124,11 @@ public class Health : MonoBehaviour
             
 	}
 
+    public int GetNbOfLimbs()
+    {
+        return nbOfLimbs;
+    }
+
 	// To be called when the default, non weapon forground arm has to be replaced by the weapon arm object
 	public void SwapArms ()
 	{

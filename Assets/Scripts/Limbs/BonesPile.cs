@@ -9,12 +9,18 @@ public class BonesPile : MonoBehaviour
 	void Start ()
 	{
 	    rb = GetComponent<Rigidbody2D>();
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
 	}
+
+    public void DestroyBonePile(BonesPile pile)
+    {
+        Destroy(pile);
+    }
 
     void OnCollisionEnter2D(Collision2D col)
     {
@@ -28,8 +34,16 @@ public class BonesPile : MonoBehaviour
 
         else
         {
-            health.PutBackLimb();
-            Destroy(gameObject);
+            if (player.hasWeapon == true && health.GetNbOfLimbs() == 3)
+            {
+                return;
+            }
+            else
+            {
+                Destroy(gameObject);
+                health.PutBackLimb();
+            }
+                    
         }
     }
 }
