@@ -9,6 +9,7 @@ public class Spawner1 : MonoBehaviour {
 	public LayerMask whatIsGround;
 	static public Vector3 raycastOffset = new Vector3(1.0f,0.0f, 0.0f);
 	static public int playerHeight = 30;
+	public Canvas arrowsCanvas;
 
 	GameObject newPlayer1;
 	GameObject newPlayer2;
@@ -36,9 +37,11 @@ public class Spawner1 : MonoBehaviour {
 		{
 			if (players[i] == null)
 			{
+				// Show corresponding arrow in canvas (tied to camera)
+				ShowArrow ();
+
 				if (deadCtr > 3.0f)
 				{
-
 					deadCtr = 0.0f;
 					SpawnPlayers();
 					players = FindObjectsOfType<PlayerController>();
@@ -48,8 +51,31 @@ public class Spawner1 : MonoBehaviour {
 		}
 	}
 
+	void ShowArrow()
+	{
+		PlayerController[] persistingPlayer = FindObjectsOfType<PlayerController>();
+
+		if (persistingPlayer.Length == 1) 
+		{
+			if (persistingPlayer [0].playerNumber == 1) {
+				arrowsCanvas.GetComponent<ArrowCanvas> ().SetRightArrow (true);
+				arrowsCanvas.GetComponent<ArrowCanvas> ().SetLeftArrow (false);
+
+			} else 
+			{
+				arrowsCanvas.GetComponent<ArrowCanvas> ().SetRightArrow (false);
+				arrowsCanvas.GetComponent<ArrowCanvas> ().SetLeftArrow (true);
+			}
+
+		}
+	}
+
 	void SpawnPlayers()
 	{
+		// Turn off both arrows in canvas
+		arrowsCanvas.GetComponent<ArrowCanvas> ().SetRightArrow (false);
+		arrowsCanvas.GetComponent<ArrowCanvas> ().SetLeftArrow (false);
+
 		PlayerController[] persistingPlayer = FindObjectsOfType<PlayerController>();
 
 		bool dontSpawnP1 = false;
