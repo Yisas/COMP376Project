@@ -63,6 +63,7 @@ public class Teleporter : MonoBehaviour {
         if (obj.GetComponent<PlayerCollisionDetector>())
         {
             players = FindObjectsOfType<PlayerController>();
+            Debug.Log(players.Length);
             if (players.Length == 1) ProgressToNextStage(players[0]);
         }
     }
