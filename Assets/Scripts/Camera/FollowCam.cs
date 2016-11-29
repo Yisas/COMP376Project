@@ -23,8 +23,7 @@ public class FollowCam : MonoBehaviour
 	{
 		SetLocation ();
 
-		cameraHeight = 2f * GetComponent<Camera>().orthographicSize;
-		cameraWidth = cameraHeight * GetComponent<Camera>().aspect;
+		
 	}
 
 	// Update is called once per frame
@@ -52,9 +51,12 @@ public class FollowCam : MonoBehaviour
 			Vector2 between = new Vector2 (follow.position.x + (other.position.x - follow.position.x) / 2, follow.position.y + (other.position.y - follow.position.y) / 2);
 			direction = new Vector2 (between.x - GetComponent<Transform> ().position.x, between.y - GetComponent<Transform> ().position.y);
 
-		} 
+		}
 
-		float cameraLeftEdge = transform.position.x - (cameraWidth / 2);
+        cameraHeight = 2f * GetComponent<Camera>().orthographicSize;
+        cameraWidth = cameraHeight * GetComponent<Camera>().aspect;
+
+        float cameraLeftEdge = transform.position.x - (cameraWidth / 2);
 		float cameraRightEdge = transform.position.x + (cameraHeight / 2);
 
 		bool hittingLeftEdge = cameraLeftEdge <= leftScreenEdge.position.x;
