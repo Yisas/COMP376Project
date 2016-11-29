@@ -57,7 +57,7 @@ public class FollowCam : MonoBehaviour
         cameraWidth = cameraHeight * GetComponent<Camera>().aspect;
 
         float cameraLeftEdge = transform.position.x - (cameraWidth / 2);
-		float cameraRightEdge = transform.position.x + (cameraHeight / 2);
+		float cameraRightEdge = transform.position.x + (cameraWidth / 2);
 
 		bool hittingLeftEdge = cameraLeftEdge <= leftScreenEdge.position.x;
 		bool hittingRightEdge = (cameraRightEdge >= rightSreenEdge.position.x);
