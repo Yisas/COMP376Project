@@ -63,7 +63,8 @@ public class PlayerController : MonoBehaviour
 	bool jumping;
 	bool moving;
 	bool dodging;
-	bool crouching;
+	[HideInInspector]
+	public bool crouching;
 	bool grounded;
 	bool falling;
 	bool attackingMelee;

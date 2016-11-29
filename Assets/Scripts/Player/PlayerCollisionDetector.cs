@@ -51,10 +51,20 @@ public class PlayerCollisionDetector : MonoBehaviour
         {
             Throw limb = col.gameObject.GetComponent<Throw>();
 
-            if (limb != null && limb.LimbIsThrown() && player.playerNumber != limb.playerNumber)
+			if (limb != null && limb.LimbIsThrown() && player.playerNumber != limb.playerNumber)
             {
-                Destroy(col.transform.parent.gameObject);
-                player.GetHitByThrowingLimb();
+				// Test for opponent crouching, guard to avoid null references
+				if (opponent != null) {
+					if (!opponent.crouching) {
+						Destroy (col.transform.parent.gameObject);
+						player.GetHitByThrowingLimb ();
+					}
+						
+				} else {
+					// Same logic as above without testing opponent crouching
+					Destroy (col.transform.parent.gameObject);
+					player.GetHitByThrowingLimb ();
+				}
             }
 
             else if (gameObject != oppositePlayer)
