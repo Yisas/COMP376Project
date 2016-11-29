@@ -73,6 +73,7 @@ public class PlayerController : MonoBehaviour
 
     public bool isDashing;
 	public bool hasWeapon;
+    private bool paused;
 
 	// Numerical variables
 	private float moveInput = 0.0f;
@@ -106,6 +107,7 @@ public class PlayerController : MonoBehaviour
 		sprites = myTransform.FindChild ("Sprites");
 		groundCheck = transform.FindChild ("GroundCheck");
 		health = GetComponent<Health> ();
+        paused = false;
 
         // Setup variables
         if (playerNumber == 1)
@@ -183,6 +185,18 @@ public class PlayerController : MonoBehaviour
 		throwingLimb = Input.GetAxis ("Throw Limb " + playerNumber) == 1.0f ? true : false ;
 
 		dodging = Input.GetButtonDown ("Dodge " + playerNumber);
+
+        if(paused && Input.GetButtonDown("Start" + playerNumber))
+        {
+            Time.timeScale = 1;
+            paused = false;
+        }
+        else if(!paused && Input.GetButtonDown("Start" + playerNumber))
+        {
+            Debug.Log(Time.timeScale);
+            Time.timeScale = 0;
+            paused = true;
+        }
 	}
 
 	private void Move ()

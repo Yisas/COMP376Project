@@ -30,8 +30,8 @@ public class Throw : MonoBehaviour {
 	void Update () {
 	    if (isThrown)
 	    {
-	        armThrowTransform.Translate(limbDirection*projectileSpeed, Space.World);
-	        transform.RotateAround(armThrowTransform.position, Vector3.back*limbDirection.x, 20); 
+	        armThrowTransform.Translate(limbDirection*projectileSpeed * Time.timeScale, Space.World);
+	        transform.RotateAround(armThrowTransform.position, Vector3.back*limbDirection.x, 20 * Time.timeScale); 
 	    }
 	}
 
