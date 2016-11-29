@@ -68,9 +68,7 @@ public class Teleporter : MonoBehaviour {
             if (players.Length == 1)
             {
                 ProgressToNextStage(players[0]);
-                //to prevent spawning through multiple levels
-                gameObject.SetActive(false);
-                Debug.Log("teleporter deactivated");
+                gameObject.SetActive(false); //to prevent spawning through multiple levels
             }
 
         }
