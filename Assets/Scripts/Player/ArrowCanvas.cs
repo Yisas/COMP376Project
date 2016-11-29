@@ -3,13 +3,15 @@ using System.Collections;
 
 public class ArrowCanvas : MonoBehaviour {
 
-	public GameObject arrowLeft;
-	public GameObject arrowRight;
+	private GameObject arrowLeft;
+	private GameObject arrowRight;
+	private GameObject pausedText;
 
 	// Use this for initialization
 	void Start () {
 		arrowLeft = transform.FindChild ("Arrow Left").gameObject;
 		arrowRight = transform.FindChild ("Arrow Right").gameObject;
+		pausedText = transform.FindChild ("Paused Text").gameObject;
 	}
 	
 	public void SetRightArrow(bool active)
@@ -21,4 +23,10 @@ public class ArrowCanvas : MonoBehaviour {
 	{
 		arrowLeft.SetActive (active);
 	}
+
+	public void SetPasedText(bool active)
+	{
+		pausedText.SetActive (active);
+	}
 }
+
