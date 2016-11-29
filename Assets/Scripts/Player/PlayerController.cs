@@ -7,7 +7,8 @@ public class PlayerController : MonoBehaviour
 	public int playerNumber;
 	[Header ("--- General Movement Variables ---")]
 	public float moveSpeed;
-	public float jumpForce;
+    public float walkAnimationSpeed;
+    public float jumpForce;
 	[Tooltip ("This float is communicated to the animator to set the speed of the prepare for jump animation")]
 	public float jumpPrepareSpeed;
 	[Tooltip ("This float is communicated to the animator to set the speed of the jump animation")]
@@ -221,7 +222,7 @@ public class PlayerController : MonoBehaviour
 			moving = false;
 
 		// Pass movement speed to animator
-		anim.SetFloat ("speed", Mathf.Abs (moveInput));
+		anim.SetFloat ("speed", Mathf.Abs (moveInput) * walkAnimationSpeed);
 	}
 
 	// The animator will finish the jump sequence after this method is called
