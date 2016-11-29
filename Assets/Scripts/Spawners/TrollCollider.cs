@@ -22,7 +22,7 @@ public class TrollCollider : MonoBehaviour {
                 instantiateCounter++;
             }
 
-            if (endGame >= 0.5)
+            if (endGame >= 0.6)
             {
                 Application.LoadLevel("Main Menu");
             }
