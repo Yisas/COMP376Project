@@ -57,6 +57,7 @@ public class Teleporter : MonoBehaviour {
         Application.LoadLevel(stageName);
     }
 
+
     void OnTriggerEnter2D (Collider2D collider)
     {
         GameObject obj = collider.gameObject;
@@ -64,7 +65,14 @@ public class Teleporter : MonoBehaviour {
         {
             players = FindObjectsOfType<PlayerController>();
             Debug.Log(players.Length);
-            if (players.Length == 1) ProgressToNextStage(players[0]);
+            if (players.Length == 1)
+            {
+                ProgressToNextStage(players[0]);
+                //to prevent spawning through multiple levels
+                gameObject.SetActive(false);
+                Debug.Log("teleporter deactivated");
+            }
+
         }
     }
 }
