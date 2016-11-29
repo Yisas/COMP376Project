@@ -63,7 +63,8 @@ public class PlayerController : MonoBehaviour
 	bool jumping;
 	bool moving;
 	bool dodging;
-	bool crouching;
+	[HideInInspector]
+	public bool crouching;
 	bool grounded;
 	bool falling;
 	bool attackingMelee;
@@ -280,7 +281,7 @@ public class PlayerController : MonoBehaviour
 	private void ThrowLimb ()
 	{
 		if (hasWeapon && throwingLimb) {
-            AudioSource.PlayClipAtPoint(throwSound, transform.position, 30f); //I don't know why but we can't hear it
+            //AudioSource.PlayClipAtPoint(throwSound, transform.position, 30f); THIS WAS CHANGED, THE LIMB HAS AN AUDIOSOURCE SO IT CAN CONTINUOUSLY PLAY THE SFX
             anim.SetFloat ("throwLimbPrepareSpeed", throwAttackPepare);
 			anim.SetFloat ("throwLimbSpeed", throwAttackSpeed);
 			anim.SetTrigger ("throwLimb");

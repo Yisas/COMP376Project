@@ -54,6 +54,9 @@ public class Throw : MonoBehaviour {
             throwComponent.SetIsThrow(true);
             limbWeaponCopy.GetComponent<Rigidbody2D>().isKinematic = false;
             limbWeaponCopy.GetComponent<Rigidbody2D>().gravityScale = 0;
+
+			//Start making SFX, audiosouce should have the required sfx
+			limbWeaponCopy.GetComponent<AudioSource>().Play();
         }
     }
 
@@ -75,11 +78,12 @@ public class Throw : MonoBehaviour {
         }
 
         Throw oppositeThrownLimb = col.gameObject.GetComponent<Throw>();
-        if (oppositeThrownLimb && oppositeThrownLimb.isThrown && oppositeThrownLimb.playerNumber != playerNumber)
+		if (oppositeThrownLimb && oppositeThrownLimb.isThrown && oppositeThrownLimb.playerNumber != playerNumber)
         {
             if (player != null)
             {
-                Destroy(player.gameObject);
+				// This should be get hit by thrown limb
+				player.GetHitByThrowingLimb();
             }
         }
     }
