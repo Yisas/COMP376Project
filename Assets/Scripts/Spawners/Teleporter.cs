@@ -1,14 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Teleporter : MonoBehaviour {
 
     public int teleporterNumber;
-
-    static int currentStage = 3;
+    
     static string[] stages = { "leftFinal", "left2", "left1", "middle", "right1", "right2", "rightFinal"};
 
     PlayerController[] players;
+
+    Scene scene;
+
+    void Start()
+    {
+        scene = SceneManager.GetActiveScene();
+    }
 
     void Update()
     {
@@ -46,10 +53,22 @@ public class Teleporter : MonoBehaviour {
     {
         if (player.playerNumber == 1 && teleporterNumber > 0 || player.playerNumber == 2 && teleporterNumber < 0)
         {
+            int currentStage = FindCurrentStageIndex();
             DontDestroyOnLoad(player);
             currentStage += teleporterNumber;
             LoadNextStage(stages[currentStage]);
         }
+    }
+
+    private int FindCurrentStageIndex()
+    {
+        for(int i =0; i< stages.Length; i++)
+        {
+            if (scene.name.Equals(stages[i])){
+                return i;
+            }
+        }
+        return 1000;
     }
 
     private void LoadNextStage(string stageName)
