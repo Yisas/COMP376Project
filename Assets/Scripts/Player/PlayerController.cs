@@ -249,7 +249,7 @@ public class PlayerController : MonoBehaviour
 	private void Crouch ()
 	{
 		if (crouching) {
-			CancelHorizontalVelocity ();
+			//CancelHorizontalVelocity ();
 
 			anim.SetFloat ("crouchSpeed", crouchSpeed);
 		}
