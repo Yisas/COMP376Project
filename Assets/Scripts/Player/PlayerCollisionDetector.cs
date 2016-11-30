@@ -5,11 +5,12 @@ public class PlayerCollisionDetector : MonoBehaviour
 {
     private PlayerController player;
     
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
 	{
 	    player = transform.root.gameObject.GetComponent<PlayerController>();
-	}
+        
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -19,7 +20,7 @@ public class PlayerCollisionDetector : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        
+
         GameObject oppositePlayer = col.transform.root.gameObject;
         PlayerController opponent = oppositePlayer.GetComponent<PlayerController>();
 
@@ -99,4 +100,6 @@ public class PlayerCollisionDetector : MonoBehaviour
         
         
     }
+
+    
 }

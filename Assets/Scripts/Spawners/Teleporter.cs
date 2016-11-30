@@ -64,7 +64,8 @@ public class Teleporter : MonoBehaviour {
     {
         for(int i =0; i< stages.Length; i++)
         {
-            if (scene.name.Equals(stages[i])){
+            if (scene.name.Equals(stages[i], System.StringComparison.InvariantCultureIgnoreCase))
+            {
                 return i;
             }
         }

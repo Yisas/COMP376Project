@@ -8,7 +8,7 @@ public class Spawner1 : MonoBehaviour {
 	public FollowCam cam;
 	public LayerMask whatIsGround;
 	static public Vector3 raycastOffset = new Vector3(1.0f,0.0f, 0.0f);
-	static public int playerHeight = 30;
+	static public int playerHeight = 23;
 	public Canvas arrowsCanvas;
 
 	GameObject newPlayer1;
@@ -104,14 +104,12 @@ public class Spawner1 : MonoBehaviour {
 		if (playerTemplates[0] != null && spawnPoints[0] != null && !dontSpawnP1) {
 			newPlayer1 = SpawnPlayer(1);
 			followP1 = newPlayer1.transform;
-			spawnPoints[0].transform.position += new Vector3(-39, 0, 0);
 			playerDead = false;
 		}
 		if (playerTemplates[1] != null && spawnPoints[1] != null && !dontSpawnP2)
 		{
 			newPlayer2 = SpawnPlayer(2);
 			followP2 = newPlayer2.transform;
-			spawnPoints[1].transform.position += new Vector3(39, 0, 0);
 			playerDead = false;
 		}
 

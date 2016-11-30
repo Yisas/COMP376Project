@@ -99,6 +99,8 @@ public class PlayerController : MonoBehaviour
     public AudioClip clubHit;
     public AudioClip throwSound;
 
+    Color initialColor;
+    public Transform torso;
     // Use this for initialization
     void Start ()
 	{
@@ -110,7 +112,7 @@ public class PlayerController : MonoBehaviour
 		groundCheck = transform.FindChild ("GroundCheck");
 		health = GetComponent<Health> ();
         paused = false;
-
+        initialColor = torso.GetComponent<SpriteRenderer>().color;
         // Setup variables
         if (playerNumber == 1)
         {
@@ -395,6 +397,7 @@ public class PlayerController : MonoBehaviour
 		PlayerController opponent = oppositePlayer.GetComponent<PlayerController> ();
 		if (opponent) {
 			if (opponent.animIsJabbing && !isHit) { //if the opponent is in jab motion and I have not been hit yet
+                StartCoroutine(MakeHitVisible());
                 AudioSource.PlayClipAtPoint(jabHit, transform.position, 30.0f);
 				isHit = true; //I can't be hit twice by the same jab animation
 				playerDamage += damageMultiplier/2;
@@ -408,6 +411,7 @@ public class PlayerController : MonoBehaviour
 		PlayerController opponent = oppositePlayer.GetComponent<PlayerController> ();
 		if (opponent) {
 			if (opponent.animIsClubbing && !isHit) {
+                StartCoroutine(MakeHitVisible());
                 AudioSource.PlayClipAtPoint(clubHit, transform.position, 30.0f);
                 rb.AddForce (limbStagger * (opponent.GetDirection ())); // push player being hit back, "stagger"
                 StartCoroutine (RemoveLimb (0.5f));
@@ -466,6 +470,12 @@ public class PlayerController : MonoBehaviour
 		return direction;
 	}
 
+    IEnumerator MakeHitVisible()
+    {
 
+        torso.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255);
+        yield return new WaitForSeconds(0.3f);
+        torso.GetComponent<SpriteRenderer>().color = initialColor;
+    }
 
 }
