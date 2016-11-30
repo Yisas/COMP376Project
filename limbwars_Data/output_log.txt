@@ -16,27 +16,4274 @@ Platform assembly: C:\Users\king\Documents\Concordia\Year4\Fall\Comp376\Project\
 Loading C:\Users\king\Documents\Concordia\Year4\Fall\Comp376\Project\COMP376Project\limbwars_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\king\Documents\Concordia\Year4\Fall\Comp376\Project\COMP376Project\limbwars_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
 Loading C:\Users\king\Documents\Concordia\Year4\Fall\Comp376\Project\COMP376Project\limbwars_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.061 seconds
+- Completed reload, in  0.060 seconds
 Platform assembly: C:\Users\king\Documents\Concordia\Year4\Fall\Comp376\Project\COMP376Project\limbwars_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\king\Documents\Concordia\Year4\Fall\Comp376\Project\COMP376Project\limbwars_Data\Managed\System.dll (this message is harmless)
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.916710 ms
+UnloadTime: 0.888384 ms
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 11d0 -> priority: 1 
+  Thread -> id: 32cc -> priority: 1 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 7.791014 ms
+UnloadTime: 5.905866 ms
 
-Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3792.
-Total: 3.780148 ms (FindLiveObjects: 0.230717 ms CreateObjectMapping: 0.093600 ms MarkObjects: 0.687225 ms  DeleteObjects: 2.767374 ms)
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3816.
+Total: 3.952981 ms (FindLiveObjects: 0.212653 ms CreateObjectMapping: 0.068558 ms MarkObjects: 0.583361 ms  DeleteObjects: 3.086765 ms)
 
-Player spawned
+NullReferenceException: Object reference not set to an instance of an object
+  at ArrowCanvas.SetRightArrow (Boolean active) [0x00000] in <filename unknown>:0 
+  at Spawner1.SpawnPlayers () [0x00000] in <filename unknown>:0 
+  at Spawner1.Start () [0x00000] in <filename unknown>:0 
  
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+(Filename:  Line: -1)
 
-Player spawned
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
  
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spawner1.CheckIfDead () [0x00000] in <filename unknown>:0 
+  at Spawner1.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
 

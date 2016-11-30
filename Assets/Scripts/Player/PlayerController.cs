@@ -101,6 +101,11 @@ public class PlayerController : MonoBehaviour
 
     Color initialColor;
     public Transform torso;
+
+    float knockbackCtr;
+    public float knockbackEffectiveTime;
+    bool knockedback;
+    public float opponentSpeedKnockbackEffect;
     // Use this for initialization
     void Start ()
 	{
@@ -166,7 +171,14 @@ public class PlayerController : MonoBehaviour
 			tearOffLimb = false;
 		}
 
-		Move ();
+        if (knockedback)
+        {
+            knockbackCtr += Time.deltaTime;
+            if (knockbackCtr > knockbackEffectiveTime) knockedback = false;
+            
+        }
+       
+        Move ();
 		Crouch ();
 		JumpPrepare ();
 		ThrowLimb ();
@@ -212,7 +224,9 @@ public class PlayerController : MonoBehaviour
 	private void Move ()
 	{
 		// Don't move while holding down crouch button. The crouch method cancels horizontal velocity
-		if (!crouching && moveInput != 0.0f) {
+		if (!knockedback && !crouching && moveInput != 0.0f) {
+            knockedback = false;
+            knockbackCtr = 0.0f;
 			// Horizontal movement
 			moving = true;
 
@@ -401,10 +415,14 @@ public class PlayerController : MonoBehaviour
                 AudioSource.PlayClipAtPoint(jabHit, transform.position, 30.0f);
 				isHit = true; //I can't be hit twice by the same jab animation
 				playerDamage += damageMultiplier/2;
-				rb.AddForce (jabStagger * (opponent.GetDirection ())); // push player being hit back, "stagger"
+                rb.velocity = new Vector2(0.0f,0.0f);
+                knockedback = true;
+                float additionalKnocback = System.Math.Abs(oppositePlayer.GetComponent<Rigidbody2D>().velocity.x) * opponentSpeedKnockbackEffect + 1;
+				rb.AddForce (additionalKnocback * jabStagger * (opponent.GetDirection ()), ForceMode2D.Impulse); // push player being hit back, "stagger"
 			}
 		}  
 	}
+    
 
 	public void GetHitByClub (GameObject oppositePlayer)
 	{
@@ -413,7 +431,9 @@ public class PlayerController : MonoBehaviour
 			if (opponent.animIsClubbing && !isHit) {
                 StartCoroutine(MakeHitVisible());
                 AudioSource.PlayClipAtPoint(clubHit, transform.position, 30.0f);
-                rb.AddForce (limbStagger * (opponent.GetDirection ())); // push player being hit back, "stagger"
+                rb.velocity = new Vector2(0.0f, 0.0f);
+                knockedback = true;
+                rb.AddForce (limbStagger * (opponent.GetDirection ()), ForceMode2D.Impulse); // push player being hit back, "stagger"
                 StartCoroutine (RemoveLimb (0.5f));
 			}
 		}

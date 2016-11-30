@@ -18,8 +18,14 @@ public class FollowCam : MonoBehaviour
 	private float cameraHeight;
 	private float cameraWidth;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Awake()
+    {
+        SetLocation();
+
+
+    }
+    void Start ()
 	{
 		SetLocation ();
 
