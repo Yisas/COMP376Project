@@ -22,4 +22,3 @@ The developers did not create or own any of the art or sound assets used in this
 ![alt tag](https://github.com/Yisas/COMP376Project/blob/master/Guidelines_1.png)
 ![alt tag](https://github.com/Yisas/COMP376Project/blob/master/Guidelines_2.png)
 ![alt tag](https://github.com/Yisas/COMP376Project/blob/master/Guidelines_3.png)
-![alt tag](https://github.com/Yisas/COMP376Project/blob/master/Guidelines_4.png)
