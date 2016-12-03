@@ -3,13 +3,13 @@
 
 This is a project created for the Introduction to Game Development course offered at Concordia University, built using Unity3D. It is 2 player pvp video game prototype that's a spiritual successor to Nidhogg, with a twist: your most effective weapon is your own limbs. Tear off you own arms and legs to fight your friends in this fast paced brawling game. Play as a skeleton reanimated by an evil necromancer, forced to fight another poor reanimated soul for said necromancer's own amusement, with the promise of paradise to the victor.
 
-Created by:
-Joseph Atallah
-Francis Cote-Tremblay
-Jesus Imery 
-Anthony Mendez 
-Brandon Mendez 
-Fred Secco
+Contributors:
+* Joseph Atallah
+* Francis Cote-Tremblay
+* Jesus Imery 
+* Anthony Mendez 
+* Brandon Mendez 
+* Fred Secco
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:  
 
