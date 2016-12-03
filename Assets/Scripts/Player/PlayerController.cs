@@ -235,10 +235,10 @@ public class PlayerController : MonoBehaviour
 				direction = new Vector2 (Mathf.Floor(moveInput), 0.0f);
 			else
 				direction = new Vector2(Mathf.Ceil(moveInput), 0.0f);
-			
-			//print("In the move function, the direction vector is: " + direction);
-			myTransform.Translate (new Vector2 (moveInput, 0.0f) * Time.deltaTime * moveSpeed);
-			FaceDirection (direction);
+
+            //print("In the move function, the direction vector is: " + direction)
+            rb.velocity = new Vector2(moveInput * Time.timeScale * moveSpeed, rb.velocity.y);
+            FaceDirection (direction);
 		} 
 		else
 			moving = false;
