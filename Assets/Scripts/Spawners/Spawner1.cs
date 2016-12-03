@@ -123,7 +123,7 @@ public class Spawner1 : MonoBehaviour {
 
 		GameObject newPlayer = Instantiate(playerTemplates[playerNum-1], GetFloorSpawnPoint(playerNum) + new Vector2(0.0f, playerHeight), Quaternion.identity) as GameObject;
 
-		Debug.Log("Player spawned");
+		//Debug.Log("Player spawned");
 		return newPlayer;
 	}
 
