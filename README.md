@@ -19,6 +19,6 @@ The software is provided "as is", without warranty of any kind, express or impli
 
 The developers did not create or own any of the art or sound assets used in this project, though some were modified to fit the game's needs. What follows is a detail of the requirements provided to the developers:
 
-![alt tag](https://github.com/Yisas/COMP376Project/blob/master/Guidelines_1.png)
-![alt tag](https://github.com/Yisas/COMP376Project/blob/master/Guidelines_2.png)
-![alt tag](https://github.com/Yisas/COMP376Project/blob/master/Guidelines_3.png)
+![alt tag](https://github.com/Yisas/COMP376Project/blob/master/Documentation/Guidelines_1.png)
+![alt tag](https://github.com/Yisas/COMP376Project/blob/master/Documentation/Guidelines_2.png)
+![alt tag](https://github.com/Yisas/COMP376Project/blob/master/Documentation/Guidelines_3.png)
